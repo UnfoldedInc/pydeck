@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "bootstrap": "yarn submodules && (cd deck.gl; yarn bootstrap)",
+    "submodules": "git submodule update --init --recursive"
+  }
+}
