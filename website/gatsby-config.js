@@ -19,7 +19,7 @@ module.exports = {
         PROJECT_TYPE: 'github',
 
         PROJECT_NAME: 'pydeck',
-        PROJECT_ORG: 'uber-web',
+        PROJECT_ORG: 'unfoldedinc',
         PROJECT_ORG_LOGO: 'images/uber-logo.png',
         PROJECT_URL: 'https://github.com/unfoldedinc/pydeck.gl',
         PROJECT_DESC: 'GPU powered geospatial visualization for Python',
@@ -37,14 +37,6 @@ module.exports = {
           {
             name: 'deck.gl',
             url: 'https://deck.gl'
-          },
-          {
-            name: 'luma.gl',
-            url: 'https://luma.gl'
-          },
-          {
-            name: 'react-map-gl',
-            url: 'https://uber.github.io/react-map-gl'
           },
           {
             name: 'nebula.gl',
