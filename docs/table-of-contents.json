@@ -1,0 +1,19 @@
+{
+  "id": "table-of-contents",
+  "chapters": [
+    {
+      "title": "Developer Guide",
+      "chapters": [
+        {
+          "title": "Overview",
+          "entries": [
+            {"entry": "docs"},
+            {"entry": "docs/whats-new"},
+            {"entry": "docs/upgrade-guide"},
+            {"entry": "docs/roadmap"}
+          ]
+        }
+      ]
+    }
+  ]
+}
