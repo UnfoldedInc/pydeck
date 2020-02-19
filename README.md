@@ -1,4 +1,4 @@
-# pydeck.gl
+# pydeck
 
 Github pages repo for pydeck.gl documentation.
 
