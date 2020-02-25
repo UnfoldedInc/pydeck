@@ -1,3 +1,0 @@
-[submodule "deck.gl"]
-	path = deck.gl
-	url = https://github.com/uber/deck.gl.git
