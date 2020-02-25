@@ -14,6 +14,24 @@
           ]
         }
       ]
+    },
+    {
+      "title": "Generated Docs",
+      "chapters": [
+        {
+          "title": "Contents",
+          "entries": [
+            {"entry": "docs/generated-markdown/data-utils"},
+            {"entry": "docs/generated-markdown/deck"},
+            {"entry": "docs/generated-markdown/index"},
+            {"entry": "docs/generated-markdown/layer"},
+            {"entry": "docs/generated-markdown/light-settings"},
+            {"entry": "docs/generated-markdown/tooltip"},
+            {"entry": "docs/generated-markdown/view-state"},
+            {"entry": "docs/generated-markdown/view"}
+          ]
+        }
+      ]
     }
   ]
 }

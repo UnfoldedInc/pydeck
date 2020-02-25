@@ -1,6 +1,10 @@
 {
   "scripts": {
-    "bootstrap": "yarn submodules && (cd deck.gl; yarn bootstrap)",
-    "submodules": "git submodule update --init --recursive"
+    "bootstrap": "yarn submodules && (cd deck.gl; yarn bootstrap) && ./scripts/init.sh",
+    "submodules": "git submodule update --init --recursive",
+    "build:markdown": "./scripts/build-markdown.sh",
+    "build:website": "(cd website; yarn; yarn build)",
+    "build": "yarn build:markdown && yarn build:website",
+    "start": "yarn build:markdown && (cd website; yarn; yarn develop)"
   }
 }
