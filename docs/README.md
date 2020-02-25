@@ -1,11 +1,12 @@
 # pydeck
 
-Welcome to pydeck
+Welcome to `pydeck` (deck.gl bindings for Python). 
 
-## TODO 
+This is the documentation for `pydeck`  hosted on the pydeck.gl domain. 
 
-pydeck docs are curretly written in rst format, not markdown to support sphinx doc generation.
 
-Ideally we can find a way to avoid maintaining two copies of the documentation.
+## Attribution
 
-There is a gatsby-plugin-rst at https://github.com/rst-js/rst-js#readme, though the documentation seems poor it should be worth an investigation.
+The `pydeck.gl` domain as well as the `pydeck` documentation repository are provided by [Unfolded, Inc](www.unfolded.ai).
+
+The actual documentation is generated directly from Uber's [deck.gl](https://github.com/uber/deck.gl) repository.
