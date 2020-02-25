@@ -5,6 +5,7 @@
     "build:markdown": "./scripts/build-markdown.sh",
     "build:website": "(cd website; yarn; yarn build)",
     "build": "yarn build:markdown && yarn build:website",
-    "start": "yarn build:markdown && (cd website; yarn; yarn develop)"
+    "start": "yarn build:markdown && (cd website; yarn; yarn develop)",
+    "deploy": "(cd website; yarn deploy)"
   }
 }
