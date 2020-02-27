@@ -1,0 +1,14 @@
+{
+    "name": "TagmapLayer",
+    "version": "0.0.0",
+    "main": "index.js",
+    "private": true,
+    "dependencies": {
+        "@deck.gl/core": "^8.0.12",
+        "@deck.gl/layers": "^8.0.12"
+    },
+    "devDependencies": {
+        "webpack": "^4.41.6",
+        "webpack-cli": "^3.3.11"
+    }
+}
