@@ -1,8 +1,11 @@
 {
-    "name": "TagmapLayer",
+    "name": "custom-layer-library",
     "version": "0.0.0",
     "main": "index.js",
     "private": true,
+    "scripts": {
+      "build": "yarn; webpack; cp dist/bundle.js build/custom-layer-library-es6-amd.js"
+    },
     "dependencies": {
         "@deck.gl/core": "^8.0.12",
         "@deck.gl/layers": "^8.0.12"

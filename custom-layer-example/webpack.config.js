@@ -1,4 +1,7 @@
 module.exports = {
+  mode: 'development',
+  devtool: 'source-map',
+  
   output: {
     libraryTarget: "umd",
     filename: "bundle.js",
