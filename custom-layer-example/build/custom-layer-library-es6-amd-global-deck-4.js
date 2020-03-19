@@ -1,14 +1,4 @@
-(function webpackUniversalModuleDefinition(root, factory) {
-	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("deck"), require("deck"));
-	else if(typeof define === 'function' && define.amd)
-		define([, ], factory);
-	else if(typeof exports === 'object')
-		exports["CustomLayerLibrary"] = factory(require("deck"), require("deck"));
-	else
-		root["CustomLayerLibrary"] = factory(root["deck"], root["deck"]);
-})(window, function(__WEBPACK_EXTERNAL_MODULE__deck_gl_core__, __WEBPACK_EXTERNAL_MODULE__deck_gl_layers__) {
-return /******/ (function(modules) { // webpackBootstrap
+require([], function() { return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
 /******/
@@ -105,20 +95,23 @@ return /******/ (function(modules) { // webpackBootstrap
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DemoCompositeLayer", function() { return DemoCompositeLayer; });
-/* harmony import */ var _deck_gl_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @deck.gl/core */ "@deck.gl/core");
-/* harmony import */ var _deck_gl_core__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_deck_gl_core__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _deck_gl_layers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @deck.gl/layers */ "@deck.gl/layers");
-/* harmony import */ var _deck_gl_layers__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_deck_gl_layers__WEBPACK_IMPORTED_MODULE_1__);
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DemoCompositeLayer", function() { return DemoCompositeLayer; });
+const _global = typeof window === 'undefined' ? global : window;
+const CompositeLayer = _global.deck.CompositeLayer;
+const ScatterplotLayer = _global.deck.ScatterplotLayer;
 
-
-
-class DemoCompositeLayer extends _deck_gl_core__WEBPACK_IMPORTED_MODULE_0__["CompositeLayer"] {
+class DemoCompositeLayer extends CompositeLayer {
   renderLayers() {
-    return new _deck_gl_layers__WEBPACK_IMPORTED_MODULE_1__["ScatterplotLayer"](this.props);
+    return new ScatterplotLayer({
+      ...this.props,
+      id: this.props.id + 'point',
+      data: this.props.data
+    });
   }
 }
+DemoCompositeLayer.layerName = 'DemoCompositeLayer';
 
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
@@ -145,28 +138,36 @@ window.customLayerLibrary = {
 
 /***/ }),
 
-/***/ "@deck.gl/core":
-/*!*********************************************************************!*\
-  !*** external {"root":"deck","commonjs":"deck","commonjs2":"deck"} ***!
-  \*********************************************************************/
+/***/ "./node_modules/webpack/buildin/global.js":
+/*!***********************************!*\
+  !*** (webpack)/buildin/global.js ***!
+  \***********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = __WEBPACK_EXTERNAL_MODULE__deck_gl_core__;
+var g;
 
-/***/ }),
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
 
-/***/ "@deck.gl/layers":
-/*!*********************************************************************!*\
-  !*** external {"commonjs":"deck","commonjs2":"deck","root":"deck"} ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
 
-module.exports = __WEBPACK_EXTERNAL_MODULE__deck_gl_layers__;
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
 
 /***/ })
 
-/******/ });
-});
+/******/ })});;
 //# sourceMappingURL=bundle.js.map
