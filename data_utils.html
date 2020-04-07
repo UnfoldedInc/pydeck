@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Data utilities &mdash; pydeck 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ViewState" href="view_state.html" />
+    <link rel="prev" title="Deck" href="deck.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pydeck
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installing pydeck</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="layer.html">Layer Overview and Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deck.html">Deck</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Data utilities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="view_state.html">ViewState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="view.html">View</a></li>
+<li class="toctree-l1"><a class="reference internal" href="light_settings.html">LightSettings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Jupyter</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter-specific features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binary_transfer.html">Binary data transfer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Further customization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tooltip.html">Configuring tooltips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_layers.html">Custom layers</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pydeck</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Data utilities</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/data_utils.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-utilities">
+<h1>Data utilities<a class="headerlink" href="#data-utilities" title="Permalink to this headline">¶</a></h1>
+<p>These items are convenience functions for common data processing work done for pydeck maps.</p>
+<dl class="py function">
+<dt id="pydeck.data_utils.viewport_helpers.compute_view">
+<code class="sig-prename descclassname">pydeck.data_utils.viewport_helpers.</code><code class="sig-name descname">compute_view</code><span class="sig-paren">(</span><em class="sig-param">points</em>, <em class="sig-param">view_proportion=1</em>, <em class="sig-param">view_type=&lt;class 'pydeck.bindings.view_state.ViewState'&gt;</em><span class="sig-paren">)</span><a class="headerlink" href="#pydeck.data_utils.viewport_helpers.compute_view" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatically computes a zoom level for the points passed in.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>points</strong> (<em>list of list of float</em><em> or </em><em>pandas.DataFrame</em>) – A list of points</p></li>
+<li><p><strong>view_propotion</strong> (<em>float</em><em>, </em><em>default 1</em>) – Proportion of the data that is meaningful to plot</p></li>
+<li><p><strong>view_type</strong> (class constructor for pydeck.ViewState, default <a class="reference internal" href="view_state.html#pydeck.bindings.view_state.ViewState" title="pydeck.bindings.view_state.ViewState"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydeck.bindings.view_state.ViewState</span></code></a>) – Class constructor for a viewport. In the current version of pydeck,
+users most likely do not have to modify this attribute.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Viewport fitted to the data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>pydeck.Viewport</p>
+</dd>
+</dl>
+</dd></dl>
+
+<p>For example, suppose you have 100 points, most of which are centered
+around London and ten of which are distributed a few 100 kilometers away
+from it. If you set <code class="docutils literal notranslate"><span class="pre">view_proportion=0.9</span></code>, pydeck will attempt to fit
+to the middle 90% of the data, aiming to exclude the points furthest
+from the core of the visualization. Suppose your ten points
+are in the Americas in this example–they would be excluded.</p>
+<dl class="py function">
+<dt id="pydeck.data_utils.color_scales.assign_random_colors">
+<code class="sig-prename descclassname">pydeck.data_utils.color_scales.</code><code class="sig-name descname">assign_random_colors</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data_vector</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydeck.data_utils.color_scales.assign_random_colors" title="Permalink to this definition">¶</a></dt>
+<dd><p>Produces lookup table keyed by each class of data, with value as an RGB array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>data_vector</strong> (<em>list</em>) – Vector of data classes to be categorized, passed from the data itself</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Dictionary of random RGBA value per class, keyed on class</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>collections.OrderedDict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>Below is an illustration of <a class="reference internal" href="#pydeck.data_utils.color_scales.assign_random_colors" title="pydeck.data_utils.color_scales.assign_random_colors"><code class="xref py py-func docutils literal notranslate"><span class="pre">pydeck.data_utils.color_scales.assign_random_colors()</span></code></a>,
+using a small data set of two classes (here, ‘Palace’ and ‘Clock Tower)
+and three obervations (‘Big Ben’, ‘Kensington Palace’, and ‘Buckingham Palace’).
+Our goal is to quickly color the data by category.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pydeck</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">pandas</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span> <span class="o">=</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">{</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="s1">&#39;site&#39;</span><span class="p">:</span> <span class="s1">&#39;Big Ben&#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="s1">&#39;attraction_type&#39;</span><span class="p">:</span> <span class="s1">&#39;Clock Tower&#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">51.5006958</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="s1">&#39;lng&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1266639</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">},</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">{</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="s1">&#39;site&#39;</span><span class="p">:</span> <span class="s1">&#39;Kensington Palace&#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="s1">&#39;attraction_type&#39;</span><span class="p">:</span> <span class="s1">&#39;Palace&#39;</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">51.5046188</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="s1">&#39;lng&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.1839472</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">},</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">{</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="s1">&#39;attraction_type&#39;</span><span class="p">:</span> <span class="s1">&#39;Palace&#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="s1">&#39;site&#39;</span><span class="p">:</span> <span class="s1">&#39;Buckingham Palace&#39;</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="s1">&#39;lat&#39;</span><span class="p">:</span> <span class="mf">51.501364</span><span class="p">,</span>
+<span class="gp">&gt;&gt;&gt; </span>        <span class="s1">&#39;lng&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.14189</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">color_lookup</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">data_utils</span><span class="o">.</span><span class="n">assign_random_colors</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;attraction_type&#39;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Assign a color based on attraction_type</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">color_lookup</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;attraction_type&#39;</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Data now has an RGB color by attraction type:</span>
+<span class="go">[</span>
+<span class="go">  {</span>
+<span class="go">        &#39;site&#39;: &#39;Big Ben&#39;,</span>
+<span class="go">        &#39;attraction_type&#39;: &#39;Clock Tower&#39;,</span>
+<span class="go">        &#39;lat&#39;: 51.5006958,</span>
+<span class="go">        &#39;lng&#39;: -0.1266639,</span>
+<span class="go">        &#39;color&#39;: [0, 10, 35]</span>
+<span class="go">    },</span>
+<span class="go">    {</span>
+<span class="go">        &#39;site&#39;: &#39;Kensington Palace&#39;,</span>
+<span class="go">        &#39;attraction_type&#39;: &#39;Palace&#39;:</span>
+<span class="go">        &#39;lat&#39;: 51.5046188,</span>
+<span class="go">        &#39;lng&#39;: -0.1839472,</span>
+<span class="go">        &#39;color&#39;: [53, 243, 130]</span>
+<span class="go">    },</span>
+<span class="go">  {</span>
+<span class="go">        &#39;attraction_type&#39;: &#39;Palace&#39;,</span>
+<span class="go">        &#39;site&#39;: &#39;Buckingham Palace&#39;,</span>
+<span class="go">        &#39;lat&#39;: 51.501364,</span>
+<span class="go">        &#39;lng&#39;: -0.14189,</span>
+<span class="go">        &#39;color&#39;: [53, 243, 130]</span>
+<span class="go">    }</span>
+<span class="go">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="view_state.html" class="btn btn-neutral float-right" title="ViewState" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="deck.html" class="btn btn-neutral float-left" title="Deck" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Uber Technologies, Inc.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

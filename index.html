@@ -1,73 +1,496 @@
-<!DOCTYPE html><html><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><meta name="generator" content="Gatsby 2.18.25"/><title data-react-helmet="true">pydeck</title><link data-react-helmet="true" rel="icon" type="img/ico" href="favicon.ico"/><meta data-react-helmet="true" name="description"/><meta data-react-helmet="true" name="image" content="NaN"/><meta data-react-helmet="true" property="og:url" content="NaN"/><meta data-react-helmet="true" property="og:title"/><meta data-react-helmet="true" property="og:description"/><meta data-react-helmet="true" property="og:image" content="NaN"/><meta data-react-helmet="true" property="fb:app_id" content=""/><meta data-react-helmet="true" name="twitter:card" content="summary_large_image"/><meta data-react-helmet="true" name="twitter:creator" content=""/><meta data-react-helmet="true" name="twitter:title"/><meta data-react-helmet="true" name="twitter:description"/><meta data-react-helmet="true" name="twitter:image" content="NaN"/><script data-react-helmet="true" type="application/ld+json">[{"@context":"http://schema.org","@type":"WebSite","url":null,"alternateName":""}]</script><style data-styled="bDuPoM jSLBtv RJnNb dyloyq cHaLri hUDXst fKpgxq iZhuWO ixcLqZ kcTJUg eTZWpm SJzLG bwWQsF gClZxo" data-styled-version="4.4.1">
-/* sc-component-id: header__HeaderContainer-sc-1hd3yin-1 */
-.bDuPoM{grid-column:1/3;grid-row:1/2;} @media screen and (max-width:600px){.bDuPoM{-webkit-order:1;-ms-flex-order:1;order:1;}}
-/* sc-component-id: body__BodyContainerFull-lvm4v2-0 */
-.jSLBtv{margin:0 auto;}
-/* sc-component-id: sc-global-495056895 */
-body{margin:0;overflow-x:hidden;} *{box-sizing:border-box;}
-/* sc-component-id: github-contributors__ContribContainer-sc-12w0yk9-0 */
-.eTZWpm{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-wrap:wrap;-ms-flex-wrap:wrap;flex-wrap:wrap;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;}
-/* sc-component-id: home__Banner-f9hbqs-0 */
-.RJnNb{position:relative;height:30rem;background:#333333;color:#FFFFFF;z-index:0;}
-/* sc-component-id: home__Container-f9hbqs-1 */
-.ixcLqZ{position:relative;padding:2rem 2rem 2rem 4rem;max-width:80rem;width:100%;height:100%;font:normal 16px/24px "Uber Move",Helvetica,Arial,sans-serif;margin:0;}
-/* sc-component-id: home__BannerContainer-f9hbqs-2 */
-.cHaLri{position:relative;padding:2rem 2rem 2rem 4rem;max-width:80rem;width:100%;height:100%;font:normal 16px/24px "Uber Move",Helvetica,Arial,sans-serif;margin:0;padding-top:192px;z-index:0;pointer-events:none;}
-/* sc-component-id: home__HeroExampleContainer-f9hbqs-3 */
-.dyloyq{position:absolute;top:0;left:0;right:0;bottom:0;z-index:-1;}
-/* sc-component-id: home__Section-f9hbqs-4 */
-.iZhuWO:nth-child(2n+1){background:#E8E8E8;}
-/* sc-component-id: home__ProjectName-f9hbqs-5 */
-.hUDXst{font-size:5em;line-height:1;text-transform:uppercase;-webkit-letter-spacing:4px;-moz-letter-spacing:4px;-ms-letter-spacing:4px;letter-spacing:4px;font-weight:700;margin:0;margin-bottom:16px;}
-/* sc-component-id: home__GetStartedLink-f9hbqs-6 */
-.fKpgxq{pointer-events:all;font-size:12px;line-height:44px;-webkit-letter-spacing:2px;-moz-letter-spacing:2px;-ms-letter-spacing:2px;letter-spacing:2px;font-weight:bold;margin:24px 0;padding:0 4rem;pointer-events:all;display:inline-block;-webkit-text-decoration:none;text-decoration:none;-webkit-transition:background-color 250ms ease-in,color 250ms ease-in;transition:background-color 250ms ease-in,color 250ms ease-in;border:solid 2px #276EF1;color:#FFFFFF;border-image:linear-gradient(to right,#276EF1 0%,#D2E0FC 100%);border-image-slice:2;} .fKpgxq:visited{color:#FFFFFF;} .fKpgxq:active{color:#FFFFFF;} .fKpgxq:hover{color:#FFFFFF;background-color:#276EF1;}
-/* sc-component-id: home__Footer-f9hbqs-7 */
-.SJzLG{position:absolute;bottom:-$footer-height;width:100%;z-index:2;background-image:url(data:image/gif;base64,R0lGODlhIAAgAKIAABUjMRYkMhclM0xXYU1YYgAAAAAAAAAAACwAAAAAIAAgAAADKjgjEP4wyklWmzg/IbTPwPWNZGmeaKqubOu+cCzPdG3feK7vfO//wKAwAQA7);background-size:32px;background-repeat:repeat;background-position:16px -8px;color:#FFFFFF;}
-/* sc-component-id: home__FooterText-f9hbqs-8 */
-.bwWQsF{font-size:12px;line-height:20px;font-weight:400;-webkit-letter-spacing:2px;-moz-letter-spacing:2px;-ms-letter-spacing:2px;letter-spacing:2px;opacity:0.4;margin-bottom:1rem;margin-right:1rem;}
-/* sc-component-id: home__FooterLogo-f9hbqs-9 */
-.gClZxo{max-height:32px;display:inline-block;}
-/* sc-component-id: templates__Bullet-c3ktv6-0 */
-.kcTJUg{background:url(images/icon-high-precision.svg) no-repeat left top;list-style:none;max-width:540px;padding:8px 0 12px 42px;font:normal 14px/20px "Uber Move",Helvetica,Arial,sans-serif;}</style><style type="text/css">
-    .anchor {
-      float: left;
-      padding-right: 4px;
-      margin-left: -20px;
-    }
-    h1 .anchor svg,
-    h2 .anchor svg,
-    h3 .anchor svg,
-    h4 .anchor svg,
-    h5 .anchor svg,
-    h6 .anchor svg {
-      visibility: hidden;
-    }
-    h1:hover .anchor svg,
-    h2:hover .anchor svg,
-    h3:hover .anchor svg,
-    h4:hover .anchor svg,
-    h5:hover .anchor svg,
-    h6:hover .anchor svg,
-    h1 .anchor:focus svg,
-    h2 .anchor:focus svg,
-    h3 .anchor:focus svg,
-    h4 .anchor:focus svg,
-    h5 .anchor:focus svg,
-    h6 .anchor:focus svg {
-      visibility: visible;
-    }
-  </style><script>
-    document.addEventListener("DOMContentLoaded", function(event) {
-      var hash = window.decodeURI(location.hash.replace('#', ''))
-      if (hash !== '') {
-        var element = document.getElementById(hash)
-        if (element) {
-          var offset = element.offsetTop
-          // Wait for the browser to finish rendering before scrolling.
-          setTimeout((function() {
-            window.scrollTo(0, offset - 64)
-          }), 0)
-        }
-      }
-    })
-  </script><link as="script" rel="preload" href="/webpack-runtime-d96677b839d796249c25.js"/><link as="script" rel="preload" href="/app-f03c2f900421fabf2582.js"/><link as="script" rel="preload" href="/commons-e5e3a621177ad00fa1a7.js"/><link as="script" rel="preload" href="/component---templates-index-jsx-2cd321138d15d5543ba8.js"/><link as="fetch" rel="preload" href="/page-data/index/page-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group" id="gatsby-focus-wrapper"><div><div><div class="header__HeaderContainer-sc-1hd3yin-1 bDuPoM"><div></div></div><div class="body__BodyContainerFull-lvm4v2-0 jSLBtv"><main><section class="home__Banner-f9hbqs-0 RJnNb"><div class="home__HeroExampleContainer-f9hbqs-3 dyloyq"><div>Add Example</div></div><div class="home__Container-f9hbqs-1 home__BannerContainer-f9hbqs-2 cHaLri"><h1 class="home__ProjectName-f9hbqs-5 hUDXst">pydeck</h1><p>GPU powered geospatial visualization for Python</p><a class="home__GetStartedLink-f9hbqs-6 fKpgxq" href="/docs/developer-guide/get-started">GET STARTED</a></div></section><section class="home__Section-f9hbqs-4 iZhuWO"><div class="home__Container-f9hbqs-1 ixcLqZ"><ul><li class="templates__Bullet-c3ktv6-0 kcTJUg">GPU powered geospatial visualizations for Python.</li><li class="templates__Bullet-c3ktv6-0 kcTJUg">Data Science made easy.</li><li class="templates__Bullet-c3ktv6-0 kcTJUg">All the power of deck.gl right in your Jupyter Notebo=ok.</li></ul></div></section><section class="home__Section-f9hbqs-4 iZhuWO"><div class="home__Container-f9hbqs-1 ixcLqZ"><h3>Contributors</h3><span>Join us!</span><div class="github-contributors__ContribContainer-sc-12w0yk9-0 eTZWpm"></div></div></section><footer class="home__Footer-f9hbqs-7 SJzLG"><div class="home__Container-f9hbqs-1 ixcLqZ"><div class="home__FooterText-f9hbqs-8 bwWQsF">Made by</div><img src="images/uber-logo.png" alt="logo" class="home__FooterLogo-f9hbqs-9 gClZxo"/></div></footer></main></div></div></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-f03c2f900421fabf2582.js"],"component---templates-index-jsx":["/component---templates-index-jsx-2cd321138d15d5543ba8.js"],"component---node-modules-gatsby-theme-ocular-src-react-templates-documentation-jsx":["/component---node-modules-gatsby-theme-ocular-src-react-templates-documentation-jsx-837df6644221065e33af.js"],"component---node-modules-gatsby-theme-ocular-src-react-templates-search-jsx":["/component---node-modules-gatsby-theme-ocular-src-react-templates-search-jsx-23c52ceaa68181e4ea2c.js"]};/*]]>*/</script><script src="/component---templates-index-jsx-2cd321138d15d5543ba8.js" async=""></script><script src="/commons-e5e3a621177ad00fa1a7.js" async=""></script><script src="/app-f03c2f900421fabf2582.js" async=""></script><script src="/webpack-runtime-d96677b839d796249c25.js" async=""></script></body></html>
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>pydeck &mdash; pydeck 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Installing pydeck" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="#" class="icon icon-home"> pydeck
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installing pydeck</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="layer.html">Layer Overview and Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deck.html">Deck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_utils.html">Data utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="view_state.html">ViewState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="view.html">View</a></li>
+<li class="toctree-l1"><a class="reference internal" href="light_settings.html">LightSettings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Jupyter</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter-specific features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binary_transfer.html">Binary data transfer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Further customization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tooltip.html">Configuring tooltips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_layers.html">Custom layers</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">pydeck</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">Docs</a> &raquo;</li>
+        
+      <li>pydeck</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pydeck">
+<h1>pydeck<a class="headerlink" href="#pydeck" title="Permalink to this headline">¶</a></h1>
+<p>High-scale spatial rendering in Python, powered by <a class="reference external" href="https://deck.gl/#/">deck.gl</a>.</p>
+<p>Get started by <a class="reference external" href="installation.html">installing pydeck</a>.</p>
+<div class="section" id="gallery">
+<h2>Gallery<a class="headerlink" href="#gallery" title="Permalink to this headline">¶</a></h2>
+
+<style>
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+.grid-cell {
+  margin: 0;
+  min-height: 60px;
+  position: relative;
+
+}
+.thumb-text {
+  z-index: 1;
+  margin-left: 2px;
+  bottom: 0;
+  left: 0;
+  position: absolute;
+  font-weight: 100;
+  color: white;
+  background: charcoal;
+}
+.grid-cell:hover {
+  filter: hue-rotate(3.142rad);
+}
+
+</style>
+
+<div class='wrapper'>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/arc_layer.html">
+    <img width="200" src="/_images/arc_layer.png"></img>
+      <div class='thumb-text'>ArcLayer</div></a>
+  </div>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/bitmap_layer.html">
+    <img width="200" src="/_images/bitmap_layer.png"></img>
+      <div class='thumb-text'>BitmapLayer</div></a>
+  </div>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/column_layer.html">
+    <img width="200" src="/_images/column_layer.png"></img>
+      <div class='thumb-text'>ColumnLayer</div></a>
+  </div>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/contour_layer.html">
+    <img width="200" src="/_images/contour_layer.png"></img>
+      <div class='thumb-text'>ContourLayer</div></a>
+  </div>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/custom_layer.html">
+    <img width="200" src="/_images/custom_layer.png"></img>
+      <div class='thumb-text'>CustomLayer</div></a>
+  </div>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/geojson_layer.html">
+    <img width="200" src="/_images/geojson_layer.png"></img>
+      <div class='thumb-text'>GeoJsonLayer</div></a>
+  </div>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/great_circle_layer.html">
+    <img width="200" src="/_images/great_circle_layer.png"></img>
+      <div class='thumb-text'>GreatCircleLayer</div></a>
+  </div>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/grid_layer.html">
+    <img width="200" src="/_images/grid_layer.png"></img>
+      <div class='thumb-text'>GridLayer</div></a>
+  </div>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/h3_cluster_layer.html">
+    <img width="200" src="/_images/h3_cluster_layer.png"></img>
+      <div class='thumb-text'>H3ClusterLayer</div></a>
+  </div>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/h3_hexagon_layer.html">
+    <img width="200" src="/_images/h3_hexagon_layer.png"></img>
+      <div class='thumb-text'>H3HexagonLayer</div></a>
+  </div>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/heatmap_layer.html">
+    <img width="200" src="/_images/heatmap_layer.png"></img>
+      <div class='thumb-text'>HeatmapLayer</div></a>
+  </div>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/hexagon_layer.html">
+    <img width="200" src="/_images/hexagon_layer.png"></img>
+      <div class='thumb-text'>HexagonLayer</div></a>
+  </div>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/icon_layer.html">
+    <img width="200" src="/_images/icon_layer.png"></img>
+      <div class='thumb-text'>IconLayer</div></a>
+  </div>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/line_layer.html">
+    <img width="200" src="/_images/line_layer.png"></img>
+      <div class='thumb-text'>LineLayer</div></a>
+  </div>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/path_layer.html">
+    <img width="200" src="/_images/path_layer.png"></img>
+      <div class='thumb-text'>PathLayer</div></a>
+  </div>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/point_cloud_layer.html">
+    <img width="200" src="/_images/point_cloud_layer.png"></img>
+      <div class='thumb-text'>PointCloudLayer</div></a>
+  </div>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/polygon_layer.html">
+    <img width="200" src="/_images/polygon_layer.png"></img>
+      <div class='thumb-text'>PolygonLayer</div></a>
+  </div>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/s2_layer.html">
+    <img width="200" src="/_images/s2_layer.png"></img>
+      <div class='thumb-text'>S2Layer</div></a>
+  </div>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/scatterplot_layer.html">
+    <img width="200" src="/_images/scatterplot_layer.png"></img>
+      <div class='thumb-text'>ScatterplotLayer</div></a>
+  </div>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/screengrid_layer.html">
+    <img width="200" src="/_images/screengrid_layer.png"></img>
+      <div class='thumb-text'>ScreengridLayer</div></a>
+  </div>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/text_layer.html">
+    <img width="200" src="/_images/text_layer.png"></img>
+      <div class='thumb-text'>TextLayer</div></a>
+  </div>
+
+  
+  <div class='grid-cell'>
+      <a href="/gallery/trips_layer.html">
+    <img width="200" src="/_images/trips_layer.png"></img>
+      <div class='thumb-text'>TripsLayer</div></a>
+  </div>
+
+</div><a class="reference internal image-reference" href="_images/arc_layer.png"><img alt="_images/arc_layer.png" src="_images/arc_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/bitmap_layer.png"><img alt="_images/bitmap_layer.png" src="_images/bitmap_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/column_layer.png"><img alt="_images/column_layer.png" src="_images/column_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/contour_layer.png"><img alt="_images/contour_layer.png" src="_images/contour_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/custom_layer.png"><img alt="_images/custom_layer.png" src="_images/custom_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/geojson_layer.png"><img alt="_images/geojson_layer.png" src="_images/geojson_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/great_circle_layer.png"><img alt="_images/great_circle_layer.png" src="_images/great_circle_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/grid_layer.png"><img alt="_images/grid_layer.png" src="_images/grid_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/h3_cluster_layer.png"><img alt="_images/h3_cluster_layer.png" src="_images/h3_cluster_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/h3_hexagon_layer.png"><img alt="_images/h3_hexagon_layer.png" src="_images/h3_hexagon_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/heatmap_layer.png"><img alt="_images/heatmap_layer.png" src="_images/heatmap_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/hexagon_layer.png"><img alt="_images/hexagon_layer.png" src="_images/hexagon_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/icon_layer.png"><img alt="_images/icon_layer.png" src="_images/icon_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/line_layer.png"><img alt="_images/line_layer.png" src="_images/line_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/path_layer.png"><img alt="_images/path_layer.png" src="_images/path_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/point_cloud_layer.png"><img alt="_images/point_cloud_layer.png" src="_images/point_cloud_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/polygon_layer.png"><img alt="_images/polygon_layer.png" src="_images/polygon_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/s2_layer.png"><img alt="_images/s2_layer.png" src="_images/s2_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/scatterplot_layer.png"><img alt="_images/scatterplot_layer.png" src="_images/scatterplot_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/screengrid_layer.png"><img alt="_images/screengrid_layer.png" src="_images/screengrid_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/text_layer.png"><img alt="_images/text_layer.png" src="_images/text_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/trips_layer.png"><img alt="_images/trips_layer.png" src="_images/trips_layer.png" style="width: 0px;" /></a>
+</div>
+<div class="section" id="documentation">
+<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="pydeck-in-jupyter">
+<h2><a class="reference external" href="jupyter.html">pydeck in Jupyter</a><a class="headerlink" href="#pydeck-in-jupyter" title="Permalink to this headline">¶</a></h2>
+<p>Uniquely integrated with the Jupyter ecosystem, pydeck supports interactions in a visualization that communicate
+with the Jupyter kernel. Read more about usage in Jupyter <a class="reference external" href="jupyter.html">here</a>.</p>
+<div class="figure align-default" id="id1">
+<img alt="https://i.imgur.com/qenLNEf.gif" src="https://i.imgur.com/qenLNEf.gif" />
+<p class="caption"><span class="caption-text"><a class="reference external" href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Conway’s Game of Life</a> in pydeck</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="figure align-default" id="id2">
+<a class="reference external image-reference" href="https://mybinder.org/v2/gh/uber/deck.gl/binder"><img alt="Hosted Jupyter notebook examples" src="https://camo.githubusercontent.com/020e7749ebfb7a8f50403fcbc8650833608c006d/68747470733a2f2f6d7962696e6465722e6f72672f7374617469632f6c6f676f2e7376673f763d6639663064393237623637636339646339396437383863383232636132316330" /></a>
+<p class="caption"><span class="caption-text"><a class="reference external" href="https://mybinder.org/v2/gh/uber/deck.gl/binder">See hosted examples on mybinder.org</a></span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</div>
+</div>
+<div class="section" id="layers">
+<h2><a class="reference external" href="layer.html">Layers</a><a class="headerlink" href="#layers" title="Permalink to this headline">¶</a></h2>
+<p>Configure one of the many deck.gl layers for rendering in pydeck.</p>
+</div>
+<div class="section" id="deck">
+<h2><a class="reference external" href="deck.html">Deck</a><a class="headerlink" href="#deck" title="Permalink to this headline">¶</a></h2>
+<p>Better understand the main object within visualization, used to write data out to a widget in Jupyter,
+save it out to HTML, and configure some global parameters of a visualization, like its size or
+tooltip.</p>
+</div>
+<div class="section" id="data-utilities">
+<h2><a class="reference external" href="data_utils.html">Data utilities</a><a class="headerlink" href="#data-utilities" title="Permalink to this headline">¶</a></h2>
+<p>A handful of functions to make certain common data exercises easier,
+like automatically fitting a viewport to data on a map or quickly coloring categorical data</p>
+</div>
+<div class="section" id="viewstate">
+<h2><a class="reference external" href="view_state.html">ViewState</a><a class="headerlink" href="#viewstate" title="Permalink to this headline">¶</a></h2>
+<p>Used to set the precise location of a user’s vantage point on the data, like
+a user’s zoom level</p>
+</div>
+<div class="section" id="view">
+<h2><a class="reference external" href="view.html">View</a><a class="headerlink" href="#view" title="Permalink to this headline">¶</a></h2>
+<p>Used to enable or disable map controls and also modify the kind of map projection,
+like plotting in flat plane instead of plotting on a mercator projection</p>
+</div>
+<div class="section" id="lightsettings-experimental">
+<h2><a class="reference external" href="light_settings.html">LightSettings (Experimental)</a><a class="headerlink" href="#lightsettings-experimental" title="Permalink to this headline">¶</a></h2>
+<p>Configure the lighting within a visualization.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The pydeck library assumes Internet access. You will need an Internet connection or the visualization will not render.</p>
+<p>Currently, pydeck will <strong>not</strong> raise an error on incorrect or omitted Layer arguments.
+If nothing renders in your viewport, check your browser’s <a class="reference external" href="https://javascript.info/devtools">developer console</a>
+or review the layer catalog. You are encouraged to file an issue by clicking <a class="reference external" href="https://github.com/uber/deck.gl/issues/new?assignees=&amp;labels=bug&amp;template=bug-report.md&amp;title=">here</a>
+and mention <code class="docutils literal notranslate"><span class="pre">pydeck</span></code> in the title.</p>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="installation.html" class="btn btn-neutral float-right" title="Installing pydeck" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Uber Technologies, Inc.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

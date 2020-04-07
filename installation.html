@@ -1,0 +1,305 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Installing pydeck &mdash; pydeck 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Layer Overview and Examples" href="layer.html" />
+    <link rel="prev" title="pydeck" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pydeck
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installing pydeck</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#via-pip">Via pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#via-conda">Via conda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-a-mapbox-api-key">Getting a Mapbox API key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#enabling-pydeck-for-jupyter">Enabling pydeck for Jupyter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installing-from-source">Installing from source</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#development-notes">Development notes</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="layer.html">Layer Overview and Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deck.html">Deck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_utils.html">Data utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="view_state.html">ViewState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="view.html">View</a></li>
+<li class="toctree-l1"><a class="reference internal" href="light_settings.html">LightSettings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Jupyter</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter-specific features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binary_transfer.html">Binary data transfer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Further customization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tooltip.html">Configuring tooltips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_layers.html">Custom layers</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pydeck</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Installing pydeck</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/installation.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="installing-pydeck">
+<h1>Installing pydeck<a class="headerlink" href="#installing-pydeck" title="Permalink to this headline">¶</a></h1>
+<p>There are three steps before using pydeck:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li><p>Install the library via pip or conda</p></li>
+<li><p>Get a Mapbox API token</p></li>
+<li><p>Enable pydeck for Jupyter Lab or Jupyter Notebook</p></li>
+</ol>
+</div></blockquote>
+<div class="section" id="via-pip">
+<h2>Via pip<a class="headerlink" href="#via-pip" title="Permalink to this headline">¶</a></h2>
+<p>Note: It is best practice to run this command in a <a class="reference external" href="https://docs.python.org/3/library/venv.html#creating-virtual-environments">virtual environment</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install pydeck
+</pre></div>
+</div>
+</div>
+<div class="section" id="via-conda">
+<h2>Via conda<a class="headerlink" href="#via-conda" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda install -c conda-forge pydeck
+</pre></div>
+</div>
+</div>
+<div class="section" id="getting-a-mapbox-api-key">
+<h2>Getting a Mapbox API key<a class="headerlink" href="#getting-a-mapbox-api-key" title="Permalink to this headline">¶</a></h2>
+<p>To add basemap tiles, you must get a Mapbox API key, which you can do by
+registering for Mapbox via <a class="reference external" href="https://account.mapbox.com/auth/signup/">this link</a>.
+You should then create a <a class="reference external" href="https://account.mapbox.com/access-tokens/">new public API token</a>.</p>
+<p>Mapbox tiles are free for a rather high level of usage. You can learn more about
+Mapbox tokens via their <a class="reference external" href="https://docs.mapbox.com/help/how-mapbox-works/access-tokens/#how-access-tokens-work">documentation</a>.</p>
+<p>If you set a <code class="docutils literal notranslate"><span class="pre">MAPBOX_API_KEY</span></code> environment variable, pydeck will detect it. This way, you do not
+need to specify the Mapbox token in your source code.</p>
+</div>
+<div class="section" id="enabling-pydeck-for-jupyter">
+<h2>Enabling pydeck for Jupyter<a class="headerlink" href="#enabling-pydeck-for-jupyter" title="Permalink to this headline">¶</a></h2>
+<p>Jupyter allows for more complex server/client interactions. You or your system administrator
+must enable pydeck for use in Jupyter. Binary data transportation, data selection, and updating data over time
+interactively only work if pydeck is enabled for use in a Jupyter environments.</p>
+<p>To enable pydeck for Jupyter Notebook:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter nbextension install --sys-prefix --symlink --overwrite --py pydeck
+jupyter nbextension <span class="nb">enable</span> --sys-prefix --py pydeck
+</pre></div>
+</div>
+<p>To enable pydeck for Jupyter Lab:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter labextension install @jupyter-widgets/jupyterlab-manager
+<span class="nv">DECKGL_SEMVER</span><span class="o">=</span><span class="sb">`</span>python -c <span class="s2">&quot;import pydeck; print(pydeck.frontend_semver.DECKGL_SEMVER)&quot;</span><span class="sb">`</span>
+jupyter labextension install @deck.gl/jupyter-widget@<span class="nv">$DECKGL_SEMVER</span>
+</pre></div>
+</div>
+<p>Currently while you can install pydeck in Google Collab via pip, it is not enabled for server use there.</p>
+</div>
+<div class="section" id="installing-from-source">
+<h2>Installing from source<a class="headerlink" href="#installing-from-source" title="Permalink to this headline">¶</a></h2>
+<p>If you want to install the library from its source:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/uber/deck.gl
+<span class="nb">cd</span> deck.gl/bindings/pydeck
+make pre-init
+. env/bin/activate
+make init
+make prepare-jupyter
+</pre></div>
+</div>
+<p>You can run the local tests to verify that the installation worked via <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">test</span></code>.</p>
+</div>
+<div class="section" id="development-notes">
+<h2>Development notes<a class="headerlink" href="#development-notes" title="Permalink to this headline">¶</a></h2>
+<p>Please note that if you are installing a pydeck prerelease, you may have to specify a specific version
+of <code class="docutils literal notranslate"><span class="pre">&#64;deck.gl/jupyter-widget</span></code> to install for JupyterLab. You can read this version from pydeck itself.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">DECKGL_SEMVER</span><span class="o">=</span><span class="sb">`</span>python -c <span class="s2">&quot;import pydeck; print(pydeck.frontend_semver.DECKGL_SEMVER)&quot;</span><span class="sb">`</span>
+jupyter labextension install @deck.gl/jupyter-widget@<span class="nv">$DECKGL_SEMVER</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="layer.html" class="btn btn-neutral float-right" title="Layer Overview and Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral float-left" title="pydeck" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Uber Technologies, Inc.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

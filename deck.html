@@ -1,0 +1,297 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Deck &mdash; pydeck 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Data utilities" href="data_utils.html" />
+    <link rel="prev" title="Layer Overview and Examples" href="layer.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pydeck
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installing pydeck</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Usage</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="layer.html">Layer Overview and Examples</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Deck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_utils.html">Data utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="view_state.html">ViewState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="view.html">View</a></li>
+<li class="toctree-l1"><a class="reference internal" href="light_settings.html">LightSettings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Jupyter</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter-specific features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binary_transfer.html">Binary data transfer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Further customization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tooltip.html">Configuring tooltips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_layers.html">Custom layers</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pydeck</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Deck</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/deck.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="deck">
+<h1>Deck<a class="headerlink" href="#deck" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="pydeck.bindings.deck.Deck">
+<em class="property">class </em><code class="sig-prename descclassname">pydeck.bindings.deck.</code><code class="sig-name descname">Deck</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layers</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">views</span><span class="o">=</span><span class="default_value">[{'&#64;&#64;type': 'MapView', 'controller': true}]</span></em>, <em class="sig-param"><span class="n">map_style</span><span class="o">=</span><span class="default_value">'mapbox://styles/mapbox/dark-v9'</span></em>, <em class="sig-param"><span class="n">mapbox_key</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initial_view_state</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">width</span><span class="o">=</span><span class="default_value">'100%'</span></em>, <em class="sig-param"><span class="n">height</span><span class="o">=</span><span class="default_value">500</span></em>, <em class="sig-param"><span class="n">tooltip</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">effects</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydeck.bindings.deck.Deck" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the renderer and configuration for a deck.gl visualization, similar to the
+<a class="reference external" href="https://deck.gl/#/documentation/deckgl-api-reference/deck">Deck</a> class from deck.gl.
+Pass <cite>Deck</cite> a Mapbox API token to display a basemap; see the notes below.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>layers</strong> (<em>pydeck.Layer</em><em> or </em><em>list of pydeck.Layer</em><em>, </em><em>default</em><em> [</em><em>]</em>) – List of <a class="reference internal" href="layer.html#pydeck.bindings.layer.Layer" title="pydeck.bindings.layer.Layer"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydeck.bindings.layer.Layer</span></code></a> layers to render.</p></li>
+<li><p><strong>views</strong> (<em>list of pydeck.View</em><em>, </em><em>[</em><em>]</em>) – List of <a class="reference internal" href="view.html#pydeck.bindings.view.View" title="pydeck.bindings.view.View"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydeck.bindings.view.View</span></code></a> objects to render.</p></li>
+<li><p><strong>map_style</strong> (<em>str</em><em>, </em><em>default 'mapbox://styles/mapbox/dark-v9'</em>) – URI for Mapbox basemap style. See Mapbox’s <a class="reference external" href="https://www.mapbox.com/gallery/">gallery</a> for examples.
+If not using a basemap, you can set this value to to an empty string, <cite>‘’</cite>.</p></li>
+<li><p><strong>initial_view_state</strong> (<em>pydeck.ViewState</em><em>, </em><em>default None</em>) – Initial camera angle relative to the map, defaults to a fully zoomed out 0, 0-centered map
+To compute a viewport from data, see <a class="reference internal" href="data_utils.html#pydeck.data_utils.viewport_helpers.compute_view" title="pydeck.data_utils.viewport_helpers.compute_view"><code class="xref py py-func docutils literal notranslate"><span class="pre">pydeck.data_utils.viewport_helpers.compute_view()</span></code></a></p></li>
+<li><p><strong>mapbox_key</strong> (<em>str</em><em>, </em><em>default None</em>) – Read on initialization from the MAPBOX_API_KEY environment variable. Defaults to None if not set.
+See your Mapbox
+<a class="reference external" href="https://docs.mapbox.com/help/how-mapbox-works/access-tokens/#mapbox-account-dashboard">dashboard</a>
+to get an API token.
+If not using a basemap, you can set this value to <cite>‘’</cite>.</p></li>
+<li><p><strong>height</strong> (<em>int</em><em>, </em><em>default 500</em>) – Height of Jupyter notebook cell, in pixels.</p></li>
+<li><p><strong>width</strong> (<em>int`</em><em> or </em><em>string</em><em>, </em><em>default '100%'</em>) – Width of visualization, in pixels (if a number) or as a CSS value string.</p></li>
+<li><p><strong>tooltip</strong> (<em>bool</em><em> or </em><em>dict of {str: str}</em><em>, </em><em>default True</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>/<code class="docutils literal notranslate"><span class="pre">False</span></code>, toggles a default tooltip on visualization hover.
+Layers must have <code class="docutils literal notranslate"><span class="pre">pickable=True</span></code> set in order to display a tooltip.
+For more advanced usage, the user can pass a dict to configure more custom tooltip features.
+Documentation on this is available <a class="reference external" href="tooltip.html">in the hosted pydeck documentation</a>.</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt id="pydeck.bindings.deck.Deck.show">
+<code class="sig-name descname">show</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pydeck.bindings.deck.Deck.show" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display current Deck object for a Jupyter notebook</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pydeck.bindings.deck.Deck.to_html">
+<code class="sig-name descname">to_html</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">open_browser</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">notebook_display</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">iframe_width</span><span class="o">=</span><span class="default_value">700</span></em>, <em class="sig-param"><span class="n">iframe_height</span><span class="o">=</span><span class="default_value">500</span></em>, <em class="sig-param"><span class="n">as_string</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">offline</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydeck.bindings.deck.Deck.to_html" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a file and loads it to an iframe, if in a Jupyter environment;
+otherwise, write a file and optionally open it in a web browser</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>filename</strong> (<em>str</em><em>, </em><em>default None</em>) – Name of the file. If no name is provided, a randomly named file will be written locally.</p></li>
+<li><p><strong>open_browser</strong> (<em>bool</em><em>, </em><em>default False</em>) – Whether a browser window will open or not after write</p></li>
+<li><p><strong>notebook_display</strong> (<em>bool</em><em>, </em><em>default True</em>) – Attempts to display the HTML output in an iframe if True. Only works in a Jupyter environment.</p></li>
+<li><p><strong>iframe_width</strong> (<em>int</em><em>, </em><em>default 700</em>) – Height of Jupyter notebook iframe in pixels, if rendered in a Jupyter environment.</p></li>
+<li><p><strong>iframe_height</strong> (<em>int</em><em>, </em><em>default 500</em>) – Width of Jupyter notebook iframe in pixels, if rendered in a Jupyter environment.</p></li>
+<li><p><strong>as_string</strong> (<em>bool</em><em>, </em><em>default False</em>) – Whether the HTML should be written as a string rather than to a file. Defaults to writing to a file.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Returns absolute path of the file</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pydeck.bindings.deck.Deck.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pydeck.bindings.deck.Deck.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update a deck.gl map to reflect the current configuration</p>
+<p>For example, if you’ve modified data passed to Layer and rendered the map using <cite>.show()</cite>,
+you can call <cite>update</cite> to change the data on the map.</p>
+<p>Intended for use in a Jupyter environment.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="data_utils.html" class="btn btn-neutral float-right" title="Data utilities" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="layer.html" class="btn btn-neutral float-left" title="Layer Overview and Examples" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Uber Technologies, Inc.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
