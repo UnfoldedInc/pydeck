@@ -24,7 +24,7 @@ Most of the source documentation is in Uber's [deck.gl](https://github.com/uber/
 We currently do a preconversion of rst to markdown before running gatsby. There is also a [`gatsby-plugin-rst`](https://github.com/rst-js/rst-js#readme). The documentation seems poor but it could be worth an investigation.
 
 
-## Detailed Setup Notes
+## Setup Notes
 
 Make sure you have `pip` and `sphinx-doc` installed
 ```
@@ -35,11 +35,13 @@ brew install sphinx-doc
 ```bash
 git clone https://github.com/UnfoldedInc/pydeck.git
 cd pydeck
-get fetch ; git checkout ajd/update-makefile # Will not be needed once this branch is merged to master
+git fetch
 yarn bootstrap
 ```
 
-See [deck.gl/bindings/pydeck/PUBLISH.md]
+## Detailed Setup Notes
+
+Note: This is handled by `yarn bootstrap`, but described here for advanced users. Also see [deck.gl/bindings/pydeck/PUBLISH.md]
 
 ```bash
 cd deck.gl/bindings/pydeck
