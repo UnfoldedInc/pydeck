@@ -35,7 +35,7 @@ brew install sphinx-doc
 ```bash
 git clone https://github.com/UnfoldedInc/pydeck.git
 cd pydeck
-get fetch ; git checkout ajd/update-makefile # Will not be needed once this branch is merged to master
+get fetch
 yarn bootstrap
 ```
 
