@@ -2,11 +2,12 @@
   "scripts": {
     "bootstrap": "yarn submodules && (cd deck.gl; yarn bootstrap) && ./scripts/init.sh",
     "submodules": "git submodule update --init --recursive",
-    "build": "yarn build:sphinx && yarn build:copy-files",
-    "deploy": "yarn deploy:sphinx",
-    "build:sphinx": "(cd deck.gl/bindings/pydeck/docs; sphinx-build -b html . _build_html)",
-    "build:copy-files": "(cd deck.gl/bindings/pydeck/docs; mkdir -p _build_html/docs; touch _build_html/docs/.nojekyll; cp ../../../../experimental/website/static/CNAME _build_html)",
-    "deploy:sphinx": "yarn build:sphinx; yarn; NODE_DEBUG=gh-pages gh-pages -d deck.gl/bindings/pydeck/docs/_build_html"
+    "build": "yarn build:clean; yarn build:sphinx && yarn build:copy-files",
+    "deploy": "yarn; yarn deploy:sphinx",
+    "build:clean": "rm -fr deck.gl/bindings/pydeck/docs/_build/html",
+    "build:sphinx": "(cd deck.gl/bindings/pydeck/docs; mkdir -p _build; sphinx-build -b html . _build/html)",
+    "build:copy-files": "(cd deck.gl/bindings/pydeck/docs; mkdir -p _build/html/docs; touch _build/html/.nojekyll _build/html/docs/.nojekyll; cp ../../../../experimental/website/static/CNAME _build/html)",
+    "deploy:sphinx": "NODE_DEBUG=gh-pages gh-pages -d deck.gl/bindings/pydeck/docs/_build/html"
   },
   "devDependencies": {
     "gh-pages": "^2.1.0"
