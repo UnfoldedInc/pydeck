@@ -43,6 +43,10 @@ yarn build   # build for deployment
 yarn deploy  # deploy (push to `gh-pages` branch)
 ```
 
+Remarks:
+- There will be some warnings relating to examples not being referenced, these can be safely ignored.
+- you may need to setup certificates for Python if you have not already done so. Browse to `Applications/Python 3.8` and double-click `Install Certificates.command`.
+
 ### Detailed Setup Notes
 
 > Note: The steps below are performed automatically when running `yarn bootstrap`. They are described here for advanced use cases only. Also see [deck.gl/bindings/pydeck/PUBLISH.md]
