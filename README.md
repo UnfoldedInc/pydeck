@@ -16,7 +16,7 @@ The source files for documentation is located in the [deck.gl](https://github.co
 
 Both this repository and the deck.gl repository are open source and MIT licensed.
 
-## Setup Notes
+## Setup and Build Instructions
 
 ### Quick Setup
 
@@ -35,16 +35,29 @@ git fetch
 yarn bootstrap
 ```
 
+### Build and Deploy
+
 ```sh
 yarn start   # build and test locally
 yarn build   # build for deployment
 yarn deploy  # deploy (push to `gh-pages` branch)
 ```
 
+> There is currently an issue in that the generated website will only work if the `docs/.nojekyll` file is present on github pages. This file is added by the build script, however the `gh-deploy` command does not seem to push this file. Until this is fixed, do the following after deploying:
+
+```
+git checkout gh-pages
+mkdir -p docs
+touch docs/.nojekyll
+git add docs/.nojekyll
+git commit -nm nojekyll
+git push
+git checkout master
+```
 
 ### Detailed Setup Notes
 
-Note: This is handled by `yarn bootstrap`, but described here for advanced users. Also see [deck.gl/bindings/pydeck/PUBLISH.md]
+> Note: The steps below are performed automatically when running `yarn bootstrap`. They are described here for advanced use cases only. Also see [deck.gl/bindings/pydeck/PUBLISH.md]
 
 ```bash
 cd deck.gl/bindings/pydeck
