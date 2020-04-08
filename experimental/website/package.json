@@ -15,6 +15,12 @@
     "serve": "gatsby serve",
     "deploy": "NODE_DEBUG=gh-pages gh-pages -d public"
   },
+  "scripts_gatsby_root": {
+    "build:gatsby": "yarn build:markdown && (cd website; yarn; yarn build)",
+    "start:gatsby": "yarn build:markdown && (cd website; yarn; yarn develop)",
+    "deploy:gatsby": "(cd website; yarn deploy)",
+    "build:markdown": "./scripts/build-markdown.sh"
+  },
   "dependencies": {
     "@deck.gl/core": "^8.0.0",
     "@deck.gl/geo-layers": "^8.0.0",

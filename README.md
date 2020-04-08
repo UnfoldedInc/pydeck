@@ -1,45 +1,48 @@
 # pydeck
 
-Github pages repo for pydeck.gl documentation.
+This repository is dedicated to hosting `pydeck` documentation on https://pydeck.com.
 
-Note: this is a merely a helper repository to serve the built pydeck documentation on github pages. The main body of the pydeck documentation and code is in the deck.gl repository, which is a submodule of this repo.
-
+> Note: this is just a helper repository that serves the pydeck documentation on the dedicated https://pydeck.com URL via github pages. The source files from which the pydeck documentation is built is located in the [deck.gl](https://github.com/uber/deck.gl) repository, so any changes the documentation must first be made there.
 
 ## Overview/Notes
 
-`pydeck` docs (in the deck.gl repo) are curretly written in rst format, not markdown. This is to support sphinx doc generation per Python conventions. The output is currently not very pleasing (though it could likely be improved with a better theme).
-
-This repo builds a website using the `gatsby-theme-ocular` gatsby-based website generater (used by most of the vis.gl frameworks including deck.gl).
-
+In contrast to most vis.gl framework documentation websites which have markdown documentation and are built with `gatsby` via the `gatsby-theme-ocular` theme, the `pydeck` documentation is written in `.rst` (ReStructured Text) files and built with `sphinx`.
 
 ## Attribution
 
-This helper repository as well as the pydeck.gl domain are provided by [Unfolded, Inc](www.unfolded.ai).
+This helper repository as well as the https://pydeck.gl domain are provided by [Unfolded, Inc](www.unfolded.ai).
 
-Most of the source documentation is in Uber's [deck.gl](https://github.com/uber/deck.gl) repository (which is included "in whole" as a git submodule in this repo).
+The source files for documentation is located in the [deck.gl](https://github.com/uber/deck.gl) repository (which is included "in whole" as a git submodule in this repo).
 
-
-## TODO 
-
-We currently do a preconversion of rst to markdown before running gatsby. There is also a [`gatsby-plugin-rst`](https://github.com/rst-js/rst-js#readme). The documentation seems poor but it could be worth an investigation.
-
+Both this repository and the deck.gl repository are open source and MIT licensed.
 
 ## Setup Notes
 
-Make sure you have `pip` and `sphinx-doc` installed
+### Quick Setup
+
+Building the `pydeck` documentation requires a substantial amount of javascript and python tooling setup. However this repository comes with a `bootstrap` script that should automate the process.
+
+Make sure you have `pip` and `sphinx-doc` installed. On MacOS you can use `brew`:
 ```
 sudo easy_install pip
 brew install sphinx-doc
 ```
 
-```bash
+```sh
 git clone https://github.com/UnfoldedInc/pydeck.git
 cd pydeck
 git fetch
 yarn bootstrap
 ```
 
-## Detailed Setup Notes
+```sh
+yarn start   # build and test locally
+yarn build   # build for deployment
+yarn deploy  # deploy (push to `gh-pages` branch)
+```
+
+
+### Detailed Setup Notes
 
 Note: This is handled by `yarn bootstrap`, but described here for advanced users. Also see [deck.gl/bindings/pydeck/PUBLISH.md]
 
@@ -68,4 +71,3 @@ make markdown
 cd ..
 make screenshot-examples
 ```
-
