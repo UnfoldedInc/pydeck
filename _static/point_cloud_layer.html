@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>pydeck</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script src=https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.2.0-alpha.1/dist/index.js></script>
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #deck-map-container {
+      width: 100%;
+      height: 100%;
+      background-color: black;
+    }
+
+    #map {
+      pointer-events: none;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: 1;
+    }
+
+    #deckgl-overlay {
+      z-index: 2;
+      background: #add8e6;
+    }
+
+    #deck-map-wrapper {
+      width: 100%;
+      height: 100%;
+    }
+
+    #deck-container {
+      width: 100vw;
+      height: 100vh;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="deck-container">
+    </div>
+  </body>
+  <script>
+    const jsonInput = {"initialViewState": {"controller": true, "rotationOrbit": 30, "rotationX": 15, "target": [0.6562291561182195, -0.4211164301364786, 319.72425513820497], "zoom": 5.3}, "layers": [{"@@type": "PointCloudLayer", "autoHighlight": true, "data": "https://raw.githubusercontent.com/ajduberstein/geo_datasets/master/small_waterfall.csv", "getColor": "@@=[r, g, b]", "getNormal": [0, 0, 15], "getPosition": "@@=[x, y, z]", "id": "3aa8eac9-ffc3-4667-811a-866b3159a98b", "pickable": true, "pointSize": 3}], "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "OrbitView", "controller": true}]};
+    const MAPBOX_API_KEY = 'pk.eyJ1Ijoia3lsZWJhcnJvbiIsImEiOiJjazJieGNtd2MwNmRrM25sY3BsdXVwaGhiIn0.CUixqH36Knh0ra_TaG5aug';
+    const tooltip = true;
+    const customLibraries = null;
+
+    const deck = createDeck({
+      mapboxApiKey: MAPBOX_API_KEY,
+      container: document.getElementById('deck-container'),
+      jsonInput,
+      tooltip,
+      customLibraries
+    });
+
+  </script>
+</html>

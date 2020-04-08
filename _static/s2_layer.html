@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>pydeck</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script src=https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.2.0-alpha.1/dist/index.js></script>
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #deck-map-container {
+      width: 100%;
+      height: 100%;
+      background-color: black;
+    }
+
+    #map {
+      pointer-events: none;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: 1;
+    }
+
+    #deckgl-overlay {
+      z-index: 2;
+      background: none;
+    }
+
+    #deck-map-wrapper {
+      width: 100%;
+      height: 100%;
+    }
+
+    #deck-container {
+      width: 100vw;
+      height: 100vh;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="deck-container">
+    </div>
+  </body>
+  <script>
+    const jsonInput = {"initialViewState": {"bearing": 0, "latitude": 37.7749295, "longitude": -122.4194155, "pitch": 45, "zoom": 11}, "layers": [{"@@type": "S2Layer", "data": [{"token": "80858004", "value": 0.5979242952642341}, {"token": "8085800c", "value": 0.5446256069712141}, {"token": "80858014", "value": 0.11871715971099701}, {"token": "8085801c", "value": 0.285914631403755}, {"token": "80858024", "value": 0.195490123675041}, {"token": "80858034", "value": 0.33734529742306}, {"token": "8085803c", "value": 0.9218176408795661}, {"token": "80858044", "value": 0.23470692356446102}, {"token": "8085804c", "value": 0.158050967037968}, {"token": "80858054", "value": 0.159927456287439}, {"token": "8085805c", "value": 0.08396995862593601}, {"token": "80858064", "value": 0.8528624994099131}, {"token": "8085806c", "value": 0.644205644051216}, {"token": "80858074", "value": 0.732782457539021}, {"token": "8085807c", "value": 0.032061163685016006}, {"token": "80858084", "value": 0.13521469550102602}, {"token": "8085808c", "value": 0.853553086404605}, {"token": "80858094", "value": 0.302107165629291}, {"token": "8085809c", "value": 0.31451353861333303}, {"token": "808580a4", "value": 0.22221972654594102}, {"token": "808580ac", "value": 0.20898247555507002}, {"token": "808580b4", "value": 0.215682174726806}, {"token": "808580bc", "value": 0.993088243710151}, {"token": "808580c4", "value": 0.677146801034193}, {"token": "808580cc", "value": 0.06254546149649501}, {"token": "808580d4", "value": 0.08984759894126301}, {"token": "808580dc", "value": 0.49162678093756}, {"token": "808580e4", "value": 0.051892796689529}, {"token": "808580ec", "value": 0.7656423773539721}, {"token": "808580f4", "value": 0.41769616816467703}, {"token": "808580fc", "value": 0.47645757626904606}, {"token": "80858104", "value": 0.8755606634742531}, {"token": "8085811c", "value": 0.32099590139411205}, {"token": "80858124", "value": 0.9676094014498651}, {"token": "8085812c", "value": 0.800350657435516}, {"token": "80858134", "value": 0.034891461780171}, {"token": "80858644", "value": 0.848834708137384}, {"token": "8085864c", "value": 0.541159776558048}, {"token": "80858654", "value": 0.302050513328593}, {"token": "8085865c", "value": 0.440538518107968}, {"token": "80858664", "value": 0.018102931578807}, {"token": "8085866c", "value": 0.47086108837442503}, {"token": "80858674", "value": 0.8445041920035181}, {"token": "8085867c", "value": 0.739256245451511}, {"token": "8085868c", "value": 0.393471300675277}, {"token": "80858694", "value": 0.44498309263850905}, {"token": "808586bc", "value": 0.7950865956130441}, {"token": "808586c4", "value": 0.73852325997708}, {"token": "808586cc", "value": 0.018430696365115}, {"token": "808586d4", "value": 0.697687691470394}, {"token": "808586dc", "value": 0.25548321522154804}, {"token": "808586e4", "value": 0.419078125687033}, {"token": "808586ec", "value": 0.729089922279469}, {"token": "808586f4", "value": 0.48765221325502806}, {"token": "808586fc", "value": 0.9791814942123481}, {"token": "80858704", "value": 0.156405123769564}, {"token": "8085870c", "value": 0.7444950383065151}, {"token": "80858714", "value": 0.5636255749919981}, {"token": "8085871c", "value": 0.717766994062175}, {"token": "80858724", "value": 0.935541364441353}, {"token": "8085872c", "value": 0.23813259699989403}, {"token": "80858734", "value": 0.206463982675044}, {"token": "8085873c", "value": 0.230223150620701}, {"token": "80858744", "value": 0.814652893732252}, {"token": "8085874c", "value": 0.162506408478018}, {"token": "80858754", "value": 0.8559251431793231}, {"token": "8085875c", "value": 0.55180849187366}, {"token": "80858764", "value": 0.37241546362733}, {"token": "8085876c", "value": 0.012832647697721002}, {"token": "80858774", "value": 0.5610069108638971}, {"token": "8085877c", "value": 0.47765816435720104}, {"token": "80858784", "value": 0.12728544885717502}, {"token": "8085878c", "value": 0.47893591531516405}, {"token": "80858794", "value": 0.30633378759358104}, {"token": "8085879c", "value": 0.907380033092774}, {"token": "808587a4", "value": 0.5379301824132301}, {"token": "808587ac", "value": 0.011113123736386002}, {"token": "808587b4", "value": 0.33081342331714503}, {"token": "808587bc", "value": 0.161916416310033}, {"token": "808f78ac", "value": 0.521668395430222}, {"token": "808f78b4", "value": 0.528527935750127}, {"token": "808f7c24", "value": 0.24964281774378802}, {"token": "808f7c2c", "value": 0.532801588509919}, {"token": "808f7c34", "value": 0.581976731696777}, {"token": "808f7c3c", "value": 0.589644135169763}, {"token": "808f7c44", "value": 0.5765363622666121}, {"token": "808f7c4c", "value": 0.814945968790706}, {"token": "808f7c54", "value": 0.12107787886389201}, {"token": "808f7cfc", "value": 0.852650248648217}, {"token": "808f7d04", "value": 0.28623779830815205}, {"token": "808f7d0c", "value": 0.10419603053055}, {"token": "808f7d14", "value": 0.25202316525622903}, {"token": "808f7d1c", "value": 0.8877852826515231}, {"token": "808f7d64", "value": 0.251699040897125}, {"token": "808f7d6c", "value": 0.788633689843326}, {"token": "808f7d74", "value": 0.33083574824218204}, {"token": "808f7d7c", "value": 0.995469879836096}, {"token": "808f7d84", "value": 0.281998441233824}, {"token": "808f7d8c", "value": 0.32430099417470504}, {"token": "808f7d94", "value": 0.5984402085884061}, {"token": "808f7d9c", "value": 0.679347205778262}, {"token": "808f7da4", "value": 0.033929426787699}, {"token": "808f7dac", "value": 0.767883479917506}, {"token": "808f7db4", "value": 0.9941391037002041}, {"token": "808f7dbc", "value": 0.36675213183092303}, {"token": "808f7dc4", "value": 0.40066088856840504}, {"token": "808f7dcc", "value": 0.726337840617706}, {"token": "808f7dd4", "value": 0.04477271874976901}, {"token": "808f7ddc", "value": 0.7104685877059941}, {"token": "808f7de4", "value": 0.13419724684085402}, {"token": "808f7dec", "value": 0.7547222857615961}, {"token": "808f7df4", "value": 0.9280683006322381}, {"token": "808f7dfc", "value": 0.8220141360591591}, {"token": "808f7e04", "value": 0.9963272967038981}, {"token": "808f7e0c", "value": 0.155557751593684}, {"token": "808f7e14", "value": 0.563111114551021}, {"token": "808f7e1c", "value": 0.48498738652813905}, {"token": "808f7e24", "value": 0.63908466223431}, {"token": "808f7e2c", "value": 0.771341134616477}, {"token": "808f7e34", "value": 0.30300925574785903}, {"token": "808f7e3c", "value": 0.558699849050589}, {"token": "808f7e44", "value": 0.09988990383867401}, {"token": "808f7e4c", "value": 0.306906732873065}, {"token": "808f7e54", "value": 0.43128853083719304}, {"token": "808f7e5c", "value": 0.5928264763933371}, {"token": "808f7e64", "value": 0.161175727674283}, {"token": "808f7e6c", "value": 0.23086119346847303}, {"token": "808f7e74", "value": 0.253620959992852}, {"token": "808f7e7c", "value": 0.6134003809540041}, {"token": "808f7e84", "value": 0.783384955112945}, {"token": "808f7e8c", "value": 0.45498849941513303}, {"token": "808f7e94", "value": 0.08962987759426401}, {"token": "808f7e9c", "value": 0.005011873959296}, {"token": "808f7ea4", "value": 0.578466572316301}, {"token": "808f7ebc", "value": 0.519130923330372}, {"token": "808f7ec4", "value": 0.39905530113616805}, {"token": "808f7ed4", "value": 0.138251695955214}, {"token": "808f7edc", "value": 0.820417534062378}, {"token": "808f7ee4", "value": 0.6226974505960311}, {"token": "808f7eec", "value": 0.912342802444809}, {"token": "808f7ef4", "value": 0.7929627313491231}, {"token": "808f7efc", "value": 0.140579253360848}, {"token": "808f7f04", "value": 0.033073043750846}, {"token": "808f7f0c", "value": 0.561032612507367}, {"token": "808f7f14", "value": 0.43225705587641705}, {"token": "808f7f1c", "value": 0.050314511626238005}, {"token": "808f7f24", "value": 0.164018879590477}, {"token": "808f7f2c", "value": 0.47515203173825105}, {"token": "808f7f34", "value": 0.23500681721624903}, {"token": "808f7f3c", "value": 0.33015285910199205}, {"token": "808f7f44", "value": 0.458420143719014}, {"token": "808f7f4c", "value": 0.06578565472002901}, {"token": "808f7f54", "value": 0.618656407389724}, {"token": "808f7f5c", "value": 0.6773939262080391}, {"token": "808f7f64", "value": 0.112661128755782}, {"token": "808f7f6c", "value": 0.24580063451598802}, {"token": "808f7f74", "value": 0.9769378264780041}, {"token": "808f7f7c", "value": 0.8704465762998471}, {"token": "808f7f84", "value": 0.391774236584122}, {"token": "808f7f8c", "value": 0.9262572914676891}, {"token": "808f7f94", "value": 0.9053184108632221}, {"token": "808f7f9c", "value": 0.30218376990413903}, {"token": "808f7fa4", "value": 0.29824837147682104}, {"token": "808f7fac", "value": 0.675810505753995}, {"token": "808f7fb4", "value": 0.153277431615776}, {"token": "808f7fbc", "value": 0.930821246750661}, {"token": "808f7fc4", "value": 0.7937065369136601}, {"token": "808f7fcc", "value": 0.604374557575115}, {"token": "808f7fd4", "value": 0.745564823465186}, {"token": "808f7fdc", "value": 0.7621016332623171}, {"token": "808f7fe4", "value": 0.079259268233}, {"token": "808f7fec", "value": 0.42279838014027704}, {"token": "808f7ff4", "value": 0.9807399010025761}, {"token": "808f7ffc", "value": 0.351417800868964}], "elevationScale": 1000, "extruded": true, "filled": true, "getElevation": "@@=value", "getFillColor": "@@=[value * 255, (1 - value) * 255, (1 - value) * 128]", "getS2Token": "@@=token", "id": "ab3cc124-b00d-4756-acae-dac7a90011c2", "pickable": true, "wireframe": false}], "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "MapView", "controller": true}]};
+    const MAPBOX_API_KEY = 'pk.eyJ1Ijoia3lsZWJhcnJvbiIsImEiOiJjazJieGNtd2MwNmRrM25sY3BsdXVwaGhiIn0.CUixqH36Knh0ra_TaG5aug';
+    const tooltip = {'text': '{token} value: {value}'};
+    const customLibraries = null;
+
+    const deck = createDeck({
+      mapboxApiKey: MAPBOX_API_KEY,
+      container: document.getElementById('deck-container'),
+      jsonInput,
+      tooltip,
+      customLibraries
+    });
+
+  </script>
+</html>

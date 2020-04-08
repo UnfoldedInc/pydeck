@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>pydeck</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script src=https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.2.0-alpha.1/dist/index.js></script>
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #deck-map-container {
+      width: 100%;
+      height: 100%;
+      background-color: black;
+    }
+
+    #map {
+      pointer-events: none;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: 1;
+    }
+
+    #deckgl-overlay {
+      z-index: 2;
+      background: none;
+    }
+
+    #deck-map-wrapper {
+      width: 100%;
+      height: 100%;
+    }
+
+    #deck-container {
+      width: 100vw;
+      height: 100vh;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="deck-container">
+    </div>
+  </body>
+  <script>
+    const jsonInput = {"initialViewState": {"bearing": 0, "latitude": 50, "longitude": -40, "pitch": 0, "zoom": 1}, "layers": [{"@@type": "GreatCircleLayer", "autoHighlight": true, "data": [{"from": {"abbrev": "SFO", "coordinates": [-122.38347034444931, 37.61702508680534], "name": "San Francisco Int'l", "type": "major"}, "from_name": "San Francisco Int'l", "to": {"abbrev": "LPL", "coordinates": [-2.858620657849378, 53.3363751054422], "name": "Liverpool John Lennon", "type": "major"}, "to_name": "Liverpool John Lennon"}, {"from": {"abbrev": "SFO", "coordinates": [-122.38347034444931, 37.61702508680534], "name": "San Francisco Int'l", "type": "major"}, "from_name": "San Francisco Int'l", "to": {"abbrev": "NCL", "coordinates": [-1.7103457840721599, 55.03708486080194], "name": "Newcastle Int'l", "type": "major"}, "to_name": "Newcastle Int'l"}, {"from": {"abbrev": "SFO", "coordinates": [-122.38347034444931, 37.61702508680534], "name": "San Francisco Int'l", "type": "major"}, "from_name": "San Francisco Int'l", "to": {"abbrev": "MED", "coordinates": [39.69913595604173, 24.544233960566075], "name": "Madinah Int'l", "type": "major"}, "to_name": "Madinah Int'l"}, {"from": {"abbrev": "SFO", "coordinates": [-122.38347034444931, 37.61702508680534], "name": "San Francisco Int'l", "type": "major"}, "from_name": "San Francisco Int'l", "to": {"abbrev": "ADA", "coordinates": [35.296961426833796, 36.985209064179486], "name": "Sakirpasa", "type": "major"}, "to_name": "Sakirpasa"}, {"from": {"abbrev": "SFO", "coordinates": [-122.38347034444931, 37.61702508680534], "name": "San Francisco Int'l", "type": "major"}, "from_name": "San Francisco Int'l", "to": {"abbrev": "AMA", "coordinates": [-101.70535277269676, 35.21840319193981], "name": "Amarillo Int'l", "type": "major"}, "to_name": "Amarillo Int'l"}, {"from": {"abbrev": "SFO", "coordinates": [-122.38347034444931, 37.61702508680534], "name": "San Francisco Int'l", "type": "major"}, "from_name": "San Francisco Int'l", "to": {"abbrev": "BHM", "coordinates": [-86.75237736154622, 33.561867282805764], "name": "Birmingham Int'l", "type": "major"}, "to_name": "Birmingham Int'l"}, {"from": {"abbrev": "SFO", "coordinates": [-122.38347034444931, 37.61702508680534], "name": "San Francisco Int'l", "type": "major"}, "from_name": "San Francisco Int'l", "to": {"abbrev": "BIL", "coordinates": [-108.5369293881246, 45.80368557152783], "name": "Logan Int'l", "type": "major"}, "to_name": "Logan Int'l"}, {"from": {"abbrev": "SFO", "coordinates": [-122.38347034444931, 37.61702508680534], "name": "San Francisco Int'l", "type": "major"}, "from_name": "San Francisco Int'l", "to": {"abbrev": "BOJ", "coordinates": [27.516409366295253, 42.56708354877018], "name": "Bourgas", "type": "major"}, "to_name": "Bourgas"}, {"from": {"abbrev": "SFO", "coordinates": [-122.38347034444931, 37.61702508680534], "name": "San Francisco Int'l", "type": "major"}, "from_name": "San Francisco Int'l", "to": {"abbrev": "BRE", "coordinates": [8.785861770313199, 53.052287104156], "name": "Bremen", "type": "major"}, "to_name": "Bremen"}, {"from": {"abbrev": "SFO", "coordinates": [-122.38347034444931, 37.61702508680534], "name": "San Francisco Int'l", "type": "major"}, "from_name": "San Francisco Int'l", "to": {"abbrev": "BRS", "coordinates": [-2.710864691343084, 51.386293418914825], "name": "Bristol Int'l", "type": "major"}, "to_name": "Bristol Int'l"}, {"from": {"abbrev": "SFO", "coordinates": [-122.38347034444931, 37.61702508680534], "name": "San Francisco Int'l", "type": "major"}, "from_name": "San Francisco Int'l", "to": {"abbrev": "BTR", "coordinates": [-91.15675440481046, 30.532613804058553], "name": "Baton Rouge Metro", "type": "major"}, "to_name": "Baton Rouge Metro"}, {"from": {"abbrev": "SFO", "coordinates": [-122.38347034444931, 37.61702508680534], "name": "San Francisco Int'l", "type": "major"}, "from_name": "San Francisco Int'l", "to": {"abbrev": "BTS", "coordinates": [17.199985002220785, 48.16983790625348], "name": "Bratislava-M.R. Stefanik", "type": "major"}, "to_name": "Bratislava-M.R. Stefanik"}, {"from": {"abbrev": "SFO", "coordinates": [-122.38347034444931, 37.61702508680534], "name": "San Francisco Int'l", "type": "major"}, "from_name": "San Francisco Int'l", "to": {"abbrev": "CAE", "coordinates": [-81.1093352429377, 33.93420545842753], "name": "Columbia Metro", "type": "major"}, "to_name": "Columbia Metro"}, {"from": {"abbrev": "SFO", "coordinates": [-122.38347034444931, 37.61702508680534], "name": "San Francisco Int'l", "type": "major"}, "from_name": "San Francisco Int'l", "to": {"abbrev": "CPR", "coordinates": [-106.46444480969177, 42.89719004830056], "name": "Casper/Natrona County Int'l", "type": "major"}, "to_name": "Casper/Natrona County Int'l"}, {"from": {"abbrev": "SFO", "coordinates": [-122.38347034444931, 37.61702508680534], "name": "San Francisco Int'l", "type": "major"}, "from_name": "San Francisco Int'l", "to": {"abbrev": "CTA", "coordinates": [15.067460500705339, 37.47007280034101], "name": "Catania Fontanarossa", "type": "major"}, "to_name": "Catania Fontanarossa"}, {"from": {"abbrev": "SFO", "coordinates": [-122.38347034444931, 37.61702508680534], "name": "San Francisco Int'l", "type": "major"}, "from_name": "San Francisco Int'l", "to": {"abbrev": "CWL", "coordinates": [-3.339568764291176, 51.398622091101736], "name": "Cardiff", "type": "major"}, "to_name": "Cardiff"}, {"from": {"abbrev": "SFO", "coordinates": [-122.38347034444931, 37.61702508680534], "name": "San Francisco Int'l", "type": "major"}, "from_name": "San Francisco Int'l", "to": {"abbrev": "DAY", "coordinates": [-84.22045942381023, 39.899040286536184], "name": "James M. Cox Dayton Int'l", "type": "major"}, "to_name": "James M. Cox Dayton Int'l"}, {"from": {"abbrev": "SFO", "coordinates": [-122.38347034444931, 37.61702508680534], "name": "San Francisco Int'l", "type": "major"}, "from_name": "San Francisco Int'l", "to": {"abbrev": "DCA", "coordinates": [-77.0433373925631, 38.85371620121225], "name": "Washington Nat'l", "type": "major"}, "to_name": "Washington Nat'l"}, {"from": {"abbrev": "SFO", "coordinates": [-122.38347034444931, 37.61702508680534], "name": "San Francisco Int'l", "type": "major"}, "from_name": "San Francisco Int'l", "to": {"abbrev": "DOK", "coordinates": [37.74480855721033, 48.06916712855818], "name": "Donetsk", "type": "major"}, "to_name": "Donetsk"}, {"from": {"abbrev": "SFO", "coordinates": [-122.38347034444931, 37.61702508680534], "name": "San Francisco Int'l", "type": "major"}, "from_name": "San Francisco Int'l", "to": {"abbrev": "EDI", "coordinates": [-3.364284685135544, 55.94855401136389], "name": "Edinburgh Int'l", "type": "major"}, "to_name": "Edinburgh Int'l"}], "getSourceColor": [64, 255, 0], "getSourcePosition": "@@=from.coordinates", "getStrokeWidth": 12, "getTargetColor": [0, 128, 200], "getTargetPosition": "@@=to.coordinates", "id": "4458d82a-6c99-45ff-95ad-6b2c227bf8f8", "pickable": true}], "mapStyle": "mapbox://styles/mapbox/dark-v9", "pickingRadius": 10, "views": [{"@@type": "MapView", "controller": true}]};
+    const MAPBOX_API_KEY = 'pk.eyJ1Ijoia3lsZWJhcnJvbiIsImEiOiJjazJieGNtd2MwNmRrM25sY3BsdXVwaGhiIn0.CUixqH36Knh0ra_TaG5aug';
+    const tooltip = {'text': '{from_name} to {to_name}'};
+    const customLibraries = null;
+
+    const deck = createDeck({
+      mapboxApiKey: MAPBOX_API_KEY,
+      container: document.getElementById('deck-container'),
+      jsonInput,
+      tooltip,
+      customLibraries
+    });
+
+  </script>
+</html>
