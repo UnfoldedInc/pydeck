@@ -9,7 +9,7 @@ make pre-init
 python --version
 which python
 
-# If not your default, you can do 
+# If not your default, you can do
 cd env
 . bin/activate
 
