@@ -10,7 +10,7 @@ In contrast to most vis.gl framework documentation websites which have markdown 
 
 ## Attribution
 
-This helper repository as well as the https://pydeck.gl domain are provided by [Unfolded, Inc](www.unfolded.ai).
+This helper repository as well as the https://pydeck.gl domain are provided by [Unfolded, Inc](https://www.unfolded.ai).
 
 The source files for documentation is located in the [deck.gl](https://github.com/uber/deck.gl) repository (which is included "in whole" as a git submodule in this repo).
 
