@@ -1,0 +1,263 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CustomLayer &mdash; pydeck 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> pydeck
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installing pydeck</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Usage</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../layer.html">Layer Overview and Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deck.html">Deck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_utils.html">Data utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../view_state.html">ViewState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../view.html">View</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../light_settings.html">LightSettings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Jupyter</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter.html">Jupyter-specific features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binary_transfer.html">Binary data transfer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Further customization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tooltip.html">Configuring tooltips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_layers.html">Custom layers</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pydeck</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>CustomLayer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/gallery/custom_layer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="customlayer">
+<h1>CustomLayer<a class="headerlink" href="#customlayer" title="Permalink to this headline">¶</a></h1>
+<iframe width="650" height="400" src="../_static/custom_layer.html"></iframe><div class="section" id="source">
+<h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">CustomLayer</span>
+<span class="sd">===========</span>
+
+<span class="sd">A custom layer named LabeledGeoJsonLayer copied from this Observable Notebook for use in pydeck:</span>
+
+<span class="sd">https://observablehq.com/@pessimistress/deck-gl-custom-layer-tutorial</span>
+
+<span class="sd">Registering a custom layer requires some knowledge of JavaScript and bundling.</span>
+<span class="sd">See https://github.com/ajduberstein/pydeck_custom_layer for a minimal example layer.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">pydeck</span>
+
+<span class="n">pydeck</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">custom_libraries</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;libraryName&quot;</span><span class="p">:</span> <span class="s2">&quot;LabeledGeoJsonLayerLibrary&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;resourceUri&quot;</span><span class="p">:</span> <span class="s2">&quot;https://unpkg.com/pydeck-custom-layer-demo@0.0.1/dist/bundle.js&quot;</span><span class="p">,</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+
+<span class="n">DATA_URL</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json&quot;</span>
+
+<span class="n">custom_layer</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
+    <span class="s2">&quot;LabeledGeoJsonLayer&quot;</span><span class="p">,</span>
+    <span class="n">data</span><span class="o">=</span><span class="n">DATA_URL</span><span class="p">,</span>
+    <span class="n">filled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">billboard</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">get_line_color</span><span class="o">=</span><span class="p">[</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">],</span>
+    <span class="n">get_label</span><span class="o">=</span><span class="s2">&quot;properties.name&quot;</span><span class="p">,</span>
+    <span class="n">get_label_size</span><span class="o">=</span><span class="mi">200000</span><span class="p">,</span>
+    <span class="n">get_label_color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span>
+    <span class="n">label_size_units</span><span class="o">=</span><span class="s1">&#39;&quot;meters&quot;&#39;</span><span class="p">,</span>
+    <span class="n">line_width_min_pixels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+<span class="p">)</span>
+
+<span class="n">view_state</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">ViewState</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Deck</span><span class="p">(</span><span class="n">custom_layer</span><span class="p">,</span> <span class="n">initial_view_state</span><span class="o">=</span><span class="n">view_state</span><span class="p">,</span> <span class="n">map_style</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,)</span>
+
+<span class="n">r</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="s2">&quot;custom_layer.html&quot;</span><span class="p">,</span> <span class="n">css_background_color</span><span class="o">=</span><span class="s2">&quot;#333&quot;</span><span class="p">,</span> <span class="n">notebook_display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<br />
+<a style="float:left;" target="_blank" href="../_static/custom_layer.html">Full screen example</a>
+<a style="float:right;" target="_blank" href="https://deck.gl/#/documentation/deckgl-api-reference/layers/custom-layer">deck.gl docs</a></div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Uber Technologies, Inc.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
