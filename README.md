@@ -43,19 +43,6 @@ yarn build   # build for deployment
 yarn deploy  # deploy (push to `gh-pages` branch)
 ```
 
-> There is currently an issue in that the generated website will only work if the `docs/.nojekyll` file is present on github pages. This file is added by the build script, however the `gh-deploy` command does not seem to push this file. Until this is fixed, do the following after deploying:
-
-```
-git checkout gh-pages
-git pull
-mkdir -p docs
-touch docs/.nojekyll
-git add docs/.nojekyll
-git commit -nm nojekyll
-git push
-git checkout master
-```
-
 ### Detailed Setup Notes
 
 > Note: The steps below are performed automatically when running `yarn bootstrap`. They are described here for advanced use cases only. Also see [deck.gl/bindings/pydeck/PUBLISH.md]
@@ -69,7 +56,7 @@ make pre-init
 python --version
 which python
 
-# If not your default, you can do 
+# If not your default, you can do
 cd env
 . bin/activate
 
