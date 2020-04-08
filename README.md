@@ -1,8 +1,8 @@
 # pydeck
 
-This repository is dedicated to hosting `pydeck` documentation on https://pydeck.com.
+This repository is dedicated to hosting `pydeck` documentation on https://pydeck.gl.
 
-> Note: this is just a helper repository that serves the pydeck documentation on the dedicated https://pydeck.com URL via github pages. The source files from which the pydeck documentation is built is located in the [deck.gl](https://github.com/uber/deck.gl) repository, so any changes the documentation must first be made there.
+> Note: this is just a helper repository that serves the pydeck documentation on the dedicated https://pydeck.gl URL via github pages. The source files from which the pydeck documentation is built is located in the [deck.gl](https://github.com/uber/deck.gl) repository, so any changes the documentation must first be made there.
 
 ## Overview/Notes
 
