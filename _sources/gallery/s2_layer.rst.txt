@@ -1,10 +1,29 @@
 
 S2Layer
-================================
+^^^^^^^^^^^^^^^^
 
 .. raw:: html
 
-    <iframe width="650" height="400" src="../_static/s2_layer.html"></iframe>
+    <a id="deck-link" target="_blank" href="https://deck.gl/#/documentation/deckgl-api-reference/layers/s2-layer">deck.gl docs</a>
+    <br />
+
+.. raw:: html
+   :file: ./html/s2_layer.html
+
+.. raw:: html
+
+    <style>
+    #deck-container {
+        height: 50vh;
+        max-width: 650px;
+        width: 100%;
+    }
+    #deck-link {
+        float: right;
+        position: relative;
+        top: -20px;
+    }
+    </style>
 
 Source
 ------
@@ -48,9 +67,3 @@ Source
     r = pdk.Deck(layers=[layer], initial_view_state=view_state, tooltip={"text": "{token} value: {value}"},)
     r.to_html("s2_layer.html", notebook_display=False)
 
-
-.. raw:: html
-
-    <br />
-    <a style="float:left;" target="_blank" href="../_static/s2_layer.html">Full screen example</a>
-    <a style="float:right;" target="_blank" href="https://deck.gl/#/documentation/deckgl-api-reference/layers/s2-layer">deck.gl docs</a>
