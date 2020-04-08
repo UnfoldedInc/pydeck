@@ -172,9 +172,9 @@
             
   <div class="section" id="deck">
 <h1>Deck<a class="headerlink" href="#deck" title="Permalink to this headline">¶</a></h1>
-<dl class="py class">
+<dl class="class">
 <dt id="pydeck.bindings.deck.Deck">
-<em class="property">class </em><code class="sig-prename descclassname">pydeck.bindings.deck.</code><code class="sig-name descname">Deck</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layers</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">views</span><span class="o">=</span><span class="default_value">[{'&#64;&#64;type': 'MapView', 'controller': true}]</span></em>, <em class="sig-param"><span class="n">map_style</span><span class="o">=</span><span class="default_value">'mapbox://styles/mapbox/dark-v9'</span></em>, <em class="sig-param"><span class="n">mapbox_key</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initial_view_state</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">width</span><span class="o">=</span><span class="default_value">'100%'</span></em>, <em class="sig-param"><span class="n">height</span><span class="o">=</span><span class="default_value">500</span></em>, <em class="sig-param"><span class="n">tooltip</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">effects</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydeck.bindings.deck.Deck" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">pydeck.bindings.deck.</code><code class="sig-name descname">Deck</code><span class="sig-paren">(</span><em class="sig-param">layers=[], views=[{&quot;&#64;&#64;type&quot;: &quot;MapView&quot;, &quot;controller&quot;: true}], map_style='mapbox://styles/mapbox/dark-v9', mapbox_key=None, initial_view_state=None, width='100%', height=500, tooltip=True, description=None, effects=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pydeck.bindings.deck.Deck" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is the renderer and configuration for a deck.gl visualization, similar to the
 <a class="reference external" href="https://deck.gl/#/documentation/deckgl-api-reference/deck">Deck</a> class from deck.gl.
 Pass <cite>Deck</cite> a Mapbox API token to display a basemap; see the notes below.</p>
@@ -201,15 +201,15 @@ Documentation on this is available <a class="reference external" href="tooltip.h
 </ul>
 </dd>
 </dl>
-<dl class="py method">
+<dl class="method">
 <dt id="pydeck.bindings.deck.Deck.show">
 <code class="sig-name descname">show</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pydeck.bindings.deck.Deck.show" title="Permalink to this definition">¶</a></dt>
 <dd><p>Display current Deck object for a Jupyter notebook</p>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="pydeck.bindings.deck.Deck.to_html">
-<code class="sig-name descname">to_html</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">open_browser</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">notebook_display</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">iframe_width</span><span class="o">=</span><span class="default_value">700</span></em>, <em class="sig-param"><span class="n">iframe_height</span><span class="o">=</span><span class="default_value">500</span></em>, <em class="sig-param"><span class="n">as_string</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">offline</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydeck.bindings.deck.Deck.to_html" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">to_html</code><span class="sig-paren">(</span><em class="sig-param">filename=None</em>, <em class="sig-param">open_browser=False</em>, <em class="sig-param">notebook_display=True</em>, <em class="sig-param">iframe_width=700</em>, <em class="sig-param">iframe_height=500</em>, <em class="sig-param">as_string=False</em>, <em class="sig-param">offline=False</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pydeck.bindings.deck.Deck.to_html" title="Permalink to this definition">¶</a></dt>
 <dd><p>Write a file and loads it to an iframe, if in a Jupyter environment;
 otherwise, write a file and optionally open it in a web browser</p>
 <dl class="field-list simple">
@@ -232,7 +232,7 @@ otherwise, write a file and optionally open it in a web browser</p>
 </dl>
 </dd></dl>
 
-<dl class="py method">
+<dl class="method">
 <dt id="pydeck.bindings.deck.Deck.update">
 <code class="sig-name descname">update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pydeck.bindings.deck.Deck.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Update a deck.gl map to reflect the current configuration</p>
