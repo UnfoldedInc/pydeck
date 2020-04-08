@@ -47,6 +47,7 @@ yarn deploy  # deploy (push to `gh-pages` branch)
 
 ```
 git checkout gh-pages
+git pull
 mkdir -p docs
 touch docs/.nojekyll
 git add docs/.nojekyll
