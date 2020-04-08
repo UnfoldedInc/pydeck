@@ -7,7 +7,7 @@
     "build:clean": "rm -fr deck.gl/bindings/pydeck/docs/_build",
     "build:sphinx": "(cd deck.gl/bindings/pydeck/docs; mkdir -p _build; sphinx-build -b html . _build/html)",
     "build:copy-files": "(cd deck.gl/bindings/pydeck/docs; mkdir -p _build/html/docs; touch _build/html/.nojekyll _build/html/docs/.nojekyll; cp ../../../../experimental/website/static/CNAME _build/html)",
-    "deploy:sphinx": "NODE_DEBUG=gh-pages gh-pages -d deck.gl/bindings/pydeck/docs/_build/html"
+    "deploy:sphinx": "NODE_DEBUG=gh-pages gh-pages --dotfiles -d deck.gl/bindings/pydeck/docs/_build/html"
   },
   "devDependencies": {
     "gh-pages": "^2.1.0"
