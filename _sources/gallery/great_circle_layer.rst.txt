@@ -1,29 +1,10 @@
 
 GreatCircleLayer
-^^^^^^^^^^^^^^^^
+================================
 
 .. raw:: html
 
-    <a id="deck-link" target="_blank" href="https://deck.gl/#/documentation/deckgl-api-reference/layers/great-circle-layer">deck.gl docs</a>
-    <br />
-
-.. raw:: html
-   :file: ./html/great_circle_layer.html
-
-.. raw:: html
-
-    <style>
-    #deck-container {
-        height: 50vh;
-        max-width: 650px;
-        width: 100%;
-    }
-    #deck-link {
-        float: right;
-        position: relative;
-        top: -20px;
-    }
-    </style>
+    <iframe width="650" height="400" src="../_static/great_circle_layer.html"></iframe>
 
 Source
 ------
@@ -76,3 +57,9 @@ Source
 
     r.to_html("great_circle_layer.html", notebook_display=False)
 
+
+.. raw:: html
+
+    <br />
+    <a style="float:left;" target="_blank" href="../_static/great_circle_layer.html">Full screen example</a>
+    <a style="float:right;" target="_blank" href="https://deck.gl/#/documentation/deckgl-api-reference/layers/great-circle-layer">deck.gl docs</a>
