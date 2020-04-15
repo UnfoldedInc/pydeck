@@ -35,6 +35,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="CHANGELOG" href="CHANGELOG.html" />
     <link rel="prev" title="Configuring tooltips" href="tooltip.html" /> 
 </head>
 
@@ -83,11 +84,14 @@
               
             
             
-              <p class="caption"><span class="caption-text">Getting started</span></p>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installing pydeck</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Usage</span></p>
+<p class="caption"><span class="caption-text">API documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="layer.html">Layer Overview and Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deck.html">Deck</a></li>
@@ -105,6 +109,10 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="tooltip.html">Configuring tooltips</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Custom layers</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CHANGELOG.html">CHANGELOG</a></li>
 </ul>
 
             
@@ -204,8 +212,8 @@ You can see <a class="reference external" href="https://github.com/ajduberstein/
 <span class="n">custom_layer</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
     <span class="s2">&quot;LabeledGeoJsonLayer&quot;</span><span class="p">,</span>
     <span class="n">data</span><span class="o">=</span><span class="n">DATA_URL</span><span class="p">,</span>
-    <span class="n">filled</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-    <span class="n">billboard</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">filled</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+    <span class="n">billboard</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
     <span class="n">get_line_color</span><span class="o">=</span><span class="p">[</span><span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">,</span> <span class="mi">180</span><span class="p">],</span>
     <span class="n">get_label</span><span class="o">=</span><span class="s2">&quot;properties.name&quot;</span><span class="p">,</span>
     <span class="n">get_label_size</span><span class="o">=</span><span class="mi">200000</span><span class="p">,</span>
@@ -218,7 +226,7 @@ You can see <a class="reference external" href="https://github.com/ajduberstein/
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Deck</span><span class="p">(</span><span class="n">custom_layer</span><span class="p">,</span> <span class="n">initial_view_state</span><span class="o">=</span><span class="n">view_state</span><span class="p">,</span> <span class="n">map_style</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,)</span>
 
-<span class="n">r</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="s2">&quot;custom_layer.html&quot;</span><span class="p">,</span> <span class="n">css_background_color</span><span class="o">=</span><span class="s2">&quot;#333&quot;</span><span class="p">,</span> <span class="n">notebook_display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="s2">&quot;custom_layer.html&quot;</span><span class="p">,</span> <span class="n">css_background_color</span><span class="o">=</span><span class="s2">&quot;#333&quot;</span><span class="p">,</span> <span class="n">notebook_display</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="_images/custom_layer.png"><img alt="_images/custom_layer.png" src="_images/custom_layer.png" style="width: 500px;" /></a>
@@ -232,6 +240,8 @@ You can see <a class="reference external" href="https://github.com/ajduberstein/
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="CHANGELOG.html" class="btn btn-neutral float-right" title="CHANGELOG" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
       
         <a href="tooltip.html" class="btn btn-neutral float-left" title="Configuring tooltips" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
@@ -242,7 +252,7 @@ You can see <a class="reference external" href="https://github.com/ajduberstein/
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, Uber Technologies, Inc.
+        &copy; Copyright 2020, MIT License
 
     </p>
   </div>

@@ -1,0 +1,328 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>CHANGELOG &mdash; pydeck 0.3.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Custom layers" href="custom_layers.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pydeck
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.3
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installing pydeck</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="layer.html">Layer Overview and Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deck.html">Deck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_utils.html">Data utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="view_state.html">ViewState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="view.html">View</a></li>
+<li class="toctree-l1"><a class="reference internal" href="light_settings.html">LightSettings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Jupyter</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter-specific features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binary_transfer.html">Binary data transfer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Further customization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tooltip.html">Configuring tooltips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_layers.html">Custom layers</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">CHANGELOG</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#releases">0.3 Releases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#apr-9-2020">0.3.0 - Apr 9 2020</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b4-apr-1-2020">0.3.0b4 - Apr 1 2020</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b3-mar-28-2020">0.3.0b3 - Mar 28 2020</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b2-mar-4-2020">0.3.0b2 - Mar 4 2020</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#b1-feb-26-2020">0.3.0b1 - Feb 26 2020</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">0.2 Releases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#jan-28-2020">0.2.1 - Jan 28 2020</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#jan-4-2020">0.2.0 - Jan 4 2020</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">0.1 Releases</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#dev5-sep-26-2019">0.1.dev5 - Sep 26 2019</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pydeck</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>CHANGELOG</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/CHANGELOG.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="changelog">
+<h1>CHANGELOG<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
+<p>Releases and associated GitHub PRs for pydeck are documented here.</p>
+<div class="section" id="releases">
+<h2>0.3 Releases<a class="headerlink" href="#releases" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="apr-9-2020">
+<h3>0.3.0 - Apr 9 2020<a class="headerlink" href="#apr-9-2020" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Add Black formatter to pydeck (#4453)</p></li>
+</ul>
+</div>
+<div class="section" id="b4-apr-1-2020">
+<h3>0.3.0b4 - Apr 1 2020<a class="headerlink" href="#b4-apr-1-2020" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Lock to deck.gl v8.2.0-alpha.1</p></li>
+</ul>
+</div>
+<div class="section" id="b3-mar-28-2020">
+<h3>0.3.0b3 - Mar 28 2020<a class="headerlink" href="#b3-mar-28-2020" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Fix binary data bug (#4416)</p></li>
+</ul>
+</div>
+<div class="section" id="b2-mar-4-2020">
+<h3>0.3.0b2 - Mar 4 2020<a class="headerlink" href="#b2-mar-4-2020" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Support rendering in Google Collab (#4337)</p></li>
+</ul>
+</div>
+<div class="section" id="b1-feb-26-2020">
+<h3>0.3.0b1 - Feb 26 2020<a class="headerlink" href="#b1-feb-26-2020" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Add support for dynamic deck.gl custom Layer registration (#4233)</p></li>
+<li><p>Cut unused colors module (#4257)</p></li>
+<li><p>Add support for background colors in standalone HTML renderer (#4242)</p></li>
+<li><p>Support binary data transport (#4167)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>0.2 Releases<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="jan-28-2020">
+<h3>0.2.1 - Jan 28 2020<a class="headerlink" href="#jan-28-2020" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Update to 0.2.1 (#4209) by removing deprecated pytest-runner to allow for conda-forge installation</p></li>
+<li><p>ArcLayer, BitmapLayer, ColumnLayer examples (#4189)</p></li>
+<li><p>Reduce JupyterLab bundle size (#4110)</p></li>
+<li><p>Update documentation for 0.2.0 (#4102)</p></li>
+<li><p>Simplify setup.py and add JupyterLab installation instructions (#4096)</p></li>
+<li><p>Add pydeck release checklist (#4083)</p></li>
+</ul>
+</div>
+<div class="section" id="jan-4-2020">
+<h3>0.2.0 - Jan 4 2020<a class="headerlink" href="#jan-4-2020" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Add CDN-hosted bundle for standalone HTML rendering (#4003)</p></li>
+<li><p>Update for new &#64;deck.gl/json API and add additional tests (#4020)</p></li>
+<li><p>Make a single bundle for use in standalone and Jupyter rendering (#4010)</p></li>
+<li><p>Set fewer defaults within Python API (#3960)</p></li>
+<li><p>Enable JupyterLab (#3638)</p></li>
+<li><p>Optionally surface pydeck warnings in widget UI (#3785)</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>0.1 Releases<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="dev5-sep-26-2019">
+<h3>0.1.dev5 - Sep 26 2019<a class="headerlink" href="#dev5-sep-26-2019" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Allow user to modify tooltip text</p></li>
+<li><p>Remove addition operator overload from pydeck (#3697)</p></li>
+<li><p>Hard pydeck iframe height (#3684)</p></li>
+<li><p>Update S2 library within pydeck (#3678)</p></li>
+<li><p>Set default notebook width to 100% (#3639)</p></li>
+<li><p>Update pydeck setup.py to enable a production build (#3637)</p></li>
+<li><p>Allow users to hide tooltip (#3626)</p></li>
+<li><p>Update pydeck tooltip style and modularize the Jupyter widget tooltip</p></li>
+<li><p>Update pydeck setup.py to include standalone require.js template</p></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="custom_layers.html" class="btn btn-neutral float-left" title="Custom layers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, MIT License
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

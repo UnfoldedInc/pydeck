@@ -84,11 +84,14 @@
               
             
             
-              <p class="caption"><span class="caption-text">Getting started</span></p>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installing pydeck</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Usage</span></p>
+<p class="caption"><span class="caption-text">API documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="layer.html">Layer Overview and Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deck.html">Deck</a></li>
@@ -110,6 +113,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="custom_layers.html">Custom layers</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CHANGELOG.html">CHANGELOG</a></li>
 </ul>
 
             
@@ -190,7 +197,7 @@
 <p>A lightweight template syntax is available to both the <code class="docutils literal notranslate"><span class="pre">text</span></code> and <code class="docutils literal notranslate"><span class="pre">html</span></code> keys,
 using similar conventions as Python’s <code class="docutils literal notranslate"><span class="pre">.format</span></code> syntax with variable names.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tooltip</span> <span class="o">=</span> <span class="p">{</span>
-   <span class="s2">&quot;html&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;b&gt;Elevation Value:&lt;/b&gt; </span><span class="si">{elevationValue}</span><span class="s2"> &lt;br/&gt; &lt;b&gt;Color Value:&lt;/b&gt; </span><span class="si">{colorValue}</span><span class="s2">&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;html&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;b&gt;Elevation Value:&lt;/b&gt; {elevationValue} &lt;br/&gt; &lt;b&gt;Color Value:&lt;/b&gt; {colorValue}&quot;</span><span class="p">,</span>
    <span class="s2">&quot;style&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="s2">&quot;steelblue&quot;</span><span class="p">,</span>
         <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;white&quot;</span>
@@ -210,7 +217,7 @@ whereas individual points in the <code class="docutils literal notranslate"><spa
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>Setting the tooltip’s HTML value and CSS:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tooltip</span> <span class="o">=</span> <span class="p">{</span>
-   <span class="s2">&quot;html&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;b&gt;Elevation Value:&lt;/b&gt; </span><span class="si">{elevationValue}</span><span class="s2">&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;html&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;b&gt;Elevation Value:&lt;/b&gt; {elevationValue}&quot;</span><span class="p">,</span>
    <span class="s2">&quot;style&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="s2">&quot;steelblue&quot;</span><span class="p">,</span>
         <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;white&quot;</span>
@@ -221,23 +228,23 @@ whereas individual points in the <code class="docutils literal notranslate"><spa
 <img alt="https://i.imgur.com/5tcpgYN.png" src="https://i.imgur.com/5tcpgYN.png" />
 <p>Just setting the text:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tooltip</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Elevation: </span><span class="si">{elevationValue}</span><span class="s2">&quot;</span>
+    <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Elevation: {elevationValue}&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <img alt="https://i.imgur.com/FSkiBVW.png" src="https://i.imgur.com/FSkiBVW.png" />
 <p>A full demo is below:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pydeck</span> <span class="k">as</span> <span class="nn">pdk</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pydeck</span> <span class="kn">as</span> <span class="nn">pdk</span>
 
 <span class="n">layer</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
     <span class="s1">&#39;HexagonLayer&#39;</span><span class="p">,</span>
     <span class="n">UK_ACCIDENTS_DATA</span><span class="p">,</span>
     <span class="n">get_position</span><span class="o">=</span><span class="s1">&#39;[lng, lat]&#39;</span><span class="p">,</span>
-    <span class="n">auto_highlight</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">auto_highlight</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
     <span class="n">elevation_scale</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
-    <span class="n">pickable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">pickable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
     <span class="n">elevation_range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3000</span><span class="p">],</span>
-    <span class="n">extruded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">extruded</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
     <span class="n">coverage</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Set the viewport location</span>
@@ -255,7 +262,7 @@ whereas individual points in the <code class="docutils literal notranslate"><spa
     <span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">layer</span><span class="p">],</span>
     <span class="n">initial_view_state</span><span class="o">=</span><span class="n">view_state</span><span class="p">,</span>
     <span class="n">tooltip</span><span class="o">=</span><span class="p">{</span>
-        <span class="s1">&#39;html&#39;</span><span class="p">:</span> <span class="s1">&#39;&lt;b&gt;Elevation Value:&lt;/b&gt; </span><span class="si">{elevationValue}</span><span class="s1">&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;html&#39;</span><span class="p">:</span> <span class="s1">&#39;&lt;b&gt;Elevation Value:&lt;/b&gt; {elevationValue}&#39;</span><span class="p">,</span>
         <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;white&#39;</span>
         <span class="p">}</span>
@@ -287,7 +294,7 @@ whereas individual points in the <code class="docutils literal notranslate"><spa
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, Uber Technologies, Inc.
+        &copy; Copyright 2020, MIT License
 
     </p>
   </div>

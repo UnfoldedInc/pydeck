@@ -84,11 +84,14 @@
               
             
             
-              <p class="caption"><span class="caption-text">Getting started</span></p>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installing pydeck</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Usage</span></p>
+<p class="caption"><span class="caption-text">API documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="layer.html">Layer Overview and Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deck.html">Deck</a></li>
@@ -111,6 +114,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="tooltip.html">Configuring tooltips</a></li>
 <li class="toctree-l1"><a class="reference internal" href="custom_layers.html">Custom layers</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CHANGELOG.html">CHANGELOG</a></li>
 </ul>
 
             
@@ -279,7 +286,7 @@ communication built into the Jupyter environment.</p></li>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="kn">import</span> <span class="nn">pydeck</span>
 
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 
 
 <span class="n">NODES_URL</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/ajduberstein/geo_datasets/master/social_nodes.csv&quot;</span>
@@ -291,7 +298,7 @@ communication built into the Jupyter environment.</p></li>
 <span class="sd">    This function is unused but serves as an example of how the data in</span>
 <span class="sd">    this visualization was generated</span>
 <span class="sd">    &quot;&quot;&quot;</span>
-    <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>  <span class="c1"># noqa</span>
+    <span class="kn">import</span> <span class="nn">networkx</span> <span class="kn">as</span> <span class="nn">nx</span>  <span class="c1"># noqa</span>
 
     <span class="n">g</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">random_internet_as_graph</span><span class="p">(</span><span class="n">num_nodes</span><span class="p">,</span> <span class="n">random_seed</span><span class="p">)</span>
     <span class="n">node_positions</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">fruchterman_reingold_layout</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
@@ -302,11 +309,11 @@ communication built into the Jupyter environment.</p></li>
     <span class="k">return</span> <span class="n">force_layout_df</span>
 
 
-<span class="k">def</span> <span class="nf">make_renderer</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">use_binary_transport</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">make_renderer</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">use_binary_transport</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Creates the pydeck visualization for rendering&quot;&quot;&quot;</span>
-    <span class="n">view_state</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">ViewState</span><span class="p">(</span><span class="n">offset</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">latitude</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">bearing</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">1</span><span class="p">,)</span>
+    <span class="n">view_state</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">ViewState</span><span class="p">(</span><span class="n">offset</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">latitude</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">bearing</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">1</span><span class="p">,)</span>
 
-    <span class="n">views</span> <span class="o">=</span> <span class="p">[</span><span class="n">pydeck</span><span class="o">.</span><span class="n">View</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;OrbitView&quot;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="kc">True</span><span class="p">)]</span>
+    <span class="n">views</span> <span class="o">=</span> <span class="p">[</span><span class="n">pydeck</span><span class="o">.</span><span class="n">View</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;OrbitView&quot;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="bp">True</span><span class="p">)]</span>
 
     <span class="n">nodes_layer</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
         <span class="s2">&quot;PointCloudLayer&quot;</span><span class="p">,</span>
@@ -314,21 +321,21 @@ communication built into the Jupyter environment.</p></li>
         <span class="n">get_position</span><span class="o">=</span><span class="s2">&quot;position&quot;</span><span class="p">,</span>
         <span class="n">get_normal</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
         <span class="n">get_color</span><span class="o">=</span><span class="s2">&quot;color&quot;</span><span class="p">,</span>
-        <span class="n">pickable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">pickable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
         <span class="c1"># Set use_binary_transport to `True`</span>
         <span class="n">use_binary_transport</span><span class="o">=</span><span class="n">use_binary_transport</span><span class="p">,</span>
-        <span class="n">auto_highlight</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">auto_highlight</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
         <span class="n">highlight_color</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
         <span class="n">radius</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
     <span class="p">)</span>
 
-    <span class="k">return</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Deck</span><span class="p">(</span><span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">nodes_layer</span><span class="p">],</span> <span class="n">initial_view_state</span><span class="o">=</span><span class="n">view_state</span><span class="p">,</span> <span class="n">views</span><span class="o">=</span><span class="n">views</span><span class="p">,</span> <span class="n">map_style</span><span class="o">=</span><span class="kc">None</span><span class="p">,)</span>
+    <span class="k">return</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Deck</span><span class="p">(</span><span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">nodes_layer</span><span class="p">],</span> <span class="n">initial_view_state</span><span class="o">=</span><span class="n">view_state</span><span class="p">,</span> <span class="n">views</span><span class="o">=</span><span class="n">views</span><span class="p">,</span> <span class="n">map_style</span><span class="o">=</span><span class="bp">None</span><span class="p">,)</span>
 
 
-<span class="n">r</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">r</span> <span class="o">=</span> <span class="bp">None</span>
 
 
-<span class="k">def</span> <span class="nf">generate_vis</span><span class="p">(</span><span class="n">notebook_display</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">generate_vis</span><span class="p">(</span><span class="n">notebook_display</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
     <span class="k">global</span> <span class="n">r</span>
     <span class="n">nodes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">NODES_URL</span><span class="p">)</span>
 
@@ -345,10 +352,10 @@ communication built into the Jupyter environment.</p></li>
     <span class="k">del</span> <span class="n">nodes</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span>
 
     <span class="k">if</span> <span class="ow">not</span> <span class="n">notebook_display</span><span class="p">:</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="n">make_renderer</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">use_binary_transport</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">make_renderer</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">use_binary_transport</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
         <span class="n">r</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="s2">&quot;graph_example.html&quot;</span><span class="p">,</span> <span class="n">notebook_display</span><span class="o">=</span><span class="n">notebook_display</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">r</span> <span class="o">=</span> <span class="n">make_renderer</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">use_binary_transport</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">make_renderer</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">use_binary_transport</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
         <span class="n">display</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">show</span><span class="p">())</span>  <span class="c1"># noqa</span>
 
 
@@ -379,7 +386,7 @@ communication built into the Jupyter environment.</p></li>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, Uber Technologies, Inc.
+        &copy; Copyright 2020, MIT License
 
     </p>
   </div>

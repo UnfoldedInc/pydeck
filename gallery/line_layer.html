@@ -34,7 +34,9 @@
   <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PathLayer" href="path_layer.html" />
+    <link rel="prev" title="IconLayer" href="icon_layer.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -82,11 +84,14 @@
               
             
             
-              <p class="caption"><span class="caption-text">Getting started</span></p>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installing pydeck</a></li>
 </ul>
-<p class="caption"><span class="caption-text">Usage</span></p>
+<p class="caption"><span class="caption-text">API documentation</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../layer.html">Layer Overview and Examples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../deck.html">Deck</a></li>
@@ -104,6 +109,10 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../tooltip.html">Configuring tooltips</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../custom_layers.html">Custom layers</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">CHANGELOG</a></li>
 </ul>
 
             
@@ -170,7 +179,82 @@
             
   <div class="section" id="linelayer">
 <h1>LineLayer<a class="headerlink" href="#linelayer" title="Permalink to this headline">¶</a></h1>
-<iframe width="650" height="400" src="../_static/line_layer.html"></iframe><div class="section" id="source">
+<a id="deck-link" target="_blank" href="https://deck.gl/#/documentation/deckgl-api-reference/layers/line-layer">deck.gl docs</a>
+<br /><html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>pydeck</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script src=https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.2.0-alpha.1/dist/index.js></script>
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #deck-map-container {
+      width: 100%;
+      height: 100%;
+      background-color: black;
+    }
+
+    #map {
+      pointer-events: none;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: 1;
+    }
+
+    #deckgl-overlay {
+      z-index: 2;
+      background: none;
+    }
+
+    #deck-map-wrapper {
+      width: 100%;
+      height: 100%;
+    }
+
+    #deck-container {
+      width: 100vw;
+      height: 100vh;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="deck-container">
+    </div>
+  </body>
+  <script>
+    const jsonInput = {"initialViewState": {"bearing": 0, "latitude": 47.65, "longitude": 7, "maxZoom": 16, "pitch": 50, "zoom": 4.5}, "layers": [{"@@type": "ScatterplotLayer", "data": "https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/line/airports.json", "getFillColor": [255, 140, 0], "getPosition": "@@=coordinates", "getRadius": 60, "id": "fd5664e8-8007-44b3-b35a-fef3861b84ca", "pickable": true, "radiusScale": 20}, {"@@type": "LineLayer", "autoHighlight": true, "data": "https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/line/heathrow-flights.json", "getColor": "@@=[255 * (1 - (start[2] / 10000) * 2), 128 * (start[2] / 10000), 255 * (start[2] / 10000), 255 * (1 - (start[2] / 10000))]", "getSourcePosition": "@@=start", "getTargetPosition": "@@=end", "getWidth": 10, "highlightColor": [255, 255, 0], "id": "a8a40f06-1d1c-4607-8f36-1686bed0a8d3", "pickable": true, "pickingRadius": 10}], "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "MapView", "controller": true}]};
+    const MAPBOX_API_KEY = 'pk.eyJ1IjoiZHViZXJzYWoyIiwiYSI6ImNqcHhmYzcwNTBrZHc0OW9udGljMm1pNXQifQ.DxYvaredXVDkvS0nSAuf_Q';
+    const tooltip = true;
+    const customLibraries = null;
+
+    const deck = createDeck({
+      mapboxApiKey: MAPBOX_API_KEY,
+      container: document.getElementById('deck-container'),
+      jsonInput,
+      tooltip,
+      customLibraries
+    });
+
+  </script>
+</html><style>
+#deck-container {
+    height: 50vh;
+    max-width: 650px;
+    width: 100%;
+}
+#deck-link {
+    float: right;
+    position: relative;
+    top: -20px;
+}
+</style><div class="section" id="source">
 <h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">LineLayer</span>
@@ -203,7 +287,7 @@
     <span class="n">get_position</span><span class="o">=</span><span class="s2">&quot;coordinates&quot;</span><span class="p">,</span>
     <span class="n">get_fill_color</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
     <span class="n">get_radius</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
-    <span class="n">pickable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">pickable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="n">line_layer</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
@@ -215,19 +299,17 @@
     <span class="n">get_width</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
     <span class="n">highlight_color</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
     <span class="n">picking_radius</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-    <span class="n">auto_highlight</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-    <span class="n">pickable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">auto_highlight</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">pickable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="n">layers</span> <span class="o">=</span> <span class="p">[</span><span class="n">scatterplot</span><span class="p">,</span> <span class="n">line_layer</span><span class="p">]</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Deck</span><span class="p">(</span><span class="n">layers</span><span class="o">=</span><span class="n">layers</span><span class="p">,</span> <span class="n">initial_view_state</span><span class="o">=</span><span class="n">INITIAL_VIEW_STATE</span><span class="p">)</span>
-<span class="n">r</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="s2">&quot;line_layer.html&quot;</span><span class="p">,</span> <span class="n">notebook_display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="s2">&quot;line_layer.html&quot;</span><span class="p">,</span> <span class="n">notebook_display</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
 </pre></div>
 </div>
-<br />
-<a style="float:left;" target="_blank" href="../_static/line_layer.html">Full screen example</a>
-<a style="float:right;" target="_blank" href="https://deck.gl/#/documentation/deckgl-api-reference/layers/line-layer">deck.gl docs</a></div>
+</div>
 </div>
 
 
@@ -236,12 +318,21 @@
           </div>
           <footer>
   
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="path_layer.html" class="btn btn-neutral float-right" title="PathLayer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="icon_layer.html" class="btn btn-neutral float-left" title="IconLayer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
 
   <hr/>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, Uber Technologies, Inc.
+        &copy; Copyright 2020, MIT License
 
     </p>
   </div>
