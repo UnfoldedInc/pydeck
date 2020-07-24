@@ -4,7 +4,9 @@ S2Layer
 
 .. raw:: html
 
-    <a id="deck-link" target="_blank" href="https://deck.gl/#/documentation/deckgl-api-reference/layers/s2-layer">deck.gl docs</a>
+    
+    <a id="deck-link" target="_blank" href="https://deck.gl/docs/api-reference/layers/s2-layer">deck.gl docs</a>
+    
     <br />
 
 .. raw:: html
@@ -42,7 +44,7 @@ Source
     import pydeck as pdk
     import pandas as pd
 
-    S2_LAYER_DATA = "https://raw.githubusercontent.com/uber-common/deck.gl-data/master/website/sf.s2cells.json"  # noqa
+    S2_LAYER_DATA = "https://raw.githubusercontent.com/visgl/deck.gl-data/master/website/sf.s2cells.json"  # noqa
 
     df = pd.read_json(S2_LAYER_DATA)
 

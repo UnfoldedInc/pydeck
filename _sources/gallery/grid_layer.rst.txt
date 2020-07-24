@@ -4,7 +4,9 @@ GridLayer
 
 .. raw:: html
 
-    <a id="deck-link" target="_blank" href="https://deck.gl/#/documentation/deckgl-api-reference/layers/grid-layer">deck.gl docs</a>
+    
+    <a id="deck-link" target="_blank" href="https://deck.gl/docs/api-reference/layers/grid-layer">deck.gl docs</a>
+    
     <br />
 
 .. raw:: html
@@ -57,5 +59,5 @@ Source
 
     # Render
     r = pdk.Deck(layers=[layer], initial_view_state=view_state, tooltip={"text": "{position}\nCount: {count}"},)
-    r.to_html("grid_layer.html", notebook_display=False)
+    r.to_html("grid_layer.html")
 

@@ -1,23 +1,30 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>TripsLayer &mdash; pydeck 0.3.0 documentation</title>
+  <title>TripsLayer &mdash; pydeck 0.4.0 documentation</title>
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -29,10 +36,6 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Installing pydeck" href="../installation.html" />
@@ -50,7 +53,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> pydeck
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pydeck
           
 
           
@@ -60,7 +63,7 @@
             
             
               <div class="version">
-                0.3
+                0.4
               </div>
             
           
@@ -77,6 +80,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -84,12 +88,10 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Getting started</span></p>
+              <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installing pydeck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing to pydeck</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
 <ul>
@@ -118,6 +120,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -156,7 +159,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>TripsLayer</li>
     
@@ -179,14 +182,15 @@
             
   <div class="section" id="tripslayer">
 <h1>TripsLayer<a class="headerlink" href="#tripslayer" title="Permalink to this headline">¶</a></h1>
-<a id="deck-link" target="_blank" href="https://deck.gl/#/documentation/deckgl-api-reference/layers/trips-layer">deck.gl docs</a>
+<a id="deck-link" target="_blank" href="https://deck.gl/docs/api-reference/layers/trips-layer">deck.gl docs</a>
+
 <br /><html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>pydeck</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <script src=https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.2.0-alpha.1/dist/index.js></script>
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.2.0-alpha.3/dist/index.js'></script>
     <style>
     body {
       margin: 0;
@@ -229,13 +233,15 @@
     </div>
   </body>
   <script>
-    const jsonInput = {"initialViewState": {"bearing": 0, "latitude": 37.7749295, "longitude": -122.4194155, "pitch": 45, "zoom": 11}, "layers": [{"@@type": "TripsLayer", "currentTime": 500, "data": [{"coordinates": [[-122.39079879999997, 37.7664413], [-122.3908298, 37.7667706], [-122.39271759999997, 37.7667484], [-122.3951341, 37.7665964], [-122.409425, 37.7779834], [-122.41318080000002, 37.7750068], [-122.41619750000001, 37.7774034], [-122.42135359999997, 37.7770974], [-122.42620490000002, 37.8010553], [-122.44484019999999, 37.7989071], [-122.4493488, 37.801993], [-122.44985459999998, 37.8024803], [-122.45090290000002, 37.8033639], [-122.45116330000002, 37.8034643], [-122.44840979999998, 37.8046164], [-122.44826899999998, 37.8045327], [-122.44827479999998, 37.8044851], [-122.44846849999999, 37.8043839], [-122.44856720000001, 37.8040182]], "timestamps": [0, 9, 54, 92, 345, 402, 462, 563, 880, 1070, 1117, 1120, 1127, 1130, 1166, 1176, 1181, 1186, 1200]}], "getColor": [253, 128, 93], "getPath": "@@=coordinates", "getTimestamps": "@@=timestamps", "id": "b4774c78-ee61-4ca4-b4b7-d5c494316db9", "opacity": 0.8, "rounded": true, "trailLength": 600, "widthMinPixels": 5}], "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "MapView", "controller": true}]};
-    const MAPBOX_API_KEY = 'pk.eyJ1IjoiZHViZXJzYWoyIiwiYSI6ImNqcHhmYzcwNTBrZHc0OW9udGljMm1pNXQifQ.DxYvaredXVDkvS0nSAuf_Q';
+    const jsonInput = {"initialViewState": {"bearing": 0, "latitude": 37.7749295, "longitude": -122.4194155, "pitch": 45, "zoom": 11}, "layers": [{"@@type": "TripsLayer", "currentTime": 500, "data": [{"coordinates": [[-122.39079879999997, 37.7664413], [-122.3908298, 37.7667706], [-122.39271759999997, 37.7667484], [-122.3951341, 37.7665964], [-122.409425, 37.7779834], [-122.41318080000002, 37.7750068], [-122.41619750000001, 37.7774034], [-122.42135359999997, 37.7770974], [-122.42620490000002, 37.8010553], [-122.44484019999999, 37.7989071], [-122.4493488, 37.801993], [-122.44985459999998, 37.8024803], [-122.45090290000002, 37.8033639], [-122.45116330000002, 37.8034643], [-122.44840979999998, 37.8046164], [-122.44826899999998, 37.8045327], [-122.44827479999998, 37.8044851], [-122.44846849999999, 37.8043839], [-122.44856720000001, 37.8040182]], "timestamps": [0, 9, 54, 92, 345, 402, 462, 563, 880, 1070, 1117, 1120, 1127, 1130, 1166, 1176, 1181, 1186, 1200]}], "getColor": [253, 128, 93], "getPath": "@@=coordinates", "getTimestamps": "@@=timestamps", "id": "31fcdf7c-8bf2-4c3b-8017-dc01220158f7", "opacity": 0.8, "rounded": true, "trailLength": 600, "widthMinPixels": 5}], "mapProvider": "mapbox", "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "MapView", "controller": true}]};
+    const MAPBOX_API_KEY = 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg';
+    const GOOGLE_MAPS_API_KEY = 'None';
     const tooltip = true;
     const customLibraries = null;
 
     const deck = createDeck({
       mapboxApiKey: MAPBOX_API_KEY,
+      googleMapsKey: GOOGLE_MAPS_API_KEY,
       container: document.getElementById('deck-container'),
       jsonInput,
       tooltip,
@@ -265,17 +271,17 @@
 <span class="sd">Adapted from a deck.gl documentation example.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">import</span> <span class="nn">pydeck</span> <span class="kn">as</span> <span class="nn">pdk</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pydeck</span> <span class="k">as</span> <span class="nn">pdk</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">TRIPS_LAYER_DATA</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/uber-common/deck.gl-data/master/website/sf.trips.json&quot;</span>  <span class="c1"># noqa</span>
+<span class="n">TRIPS_LAYER_DATA</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/visgl/deck.gl-data/master/website/sf.trips.json&quot;</span>  <span class="c1"># noqa</span>
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_json</span><span class="p">(</span><span class="n">TRIPS_LAYER_DATA</span><span class="p">)</span>
 
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;waypoints&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="p">[</span><span class="n">item</span><span class="p">[</span><span class="s2">&quot;coordinates&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">f</span><span class="p">])</span>
 <span class="n">df</span><span class="p">[</span><span class="s2">&quot;timestamps&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s2">&quot;waypoints&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">f</span><span class="p">:</span> <span class="p">[</span><span class="n">item</span><span class="p">[</span><span class="s2">&quot;timestamp&quot;</span><span class="p">]</span> <span class="o">-</span> <span class="mi">1554772579000</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">f</span><span class="p">])</span>
 
-<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;waypoints&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;waypoints&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">layer</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
     <span class="s2">&quot;TripsLayer&quot;</span><span class="p">,</span>
@@ -285,7 +291,7 @@
     <span class="n">get_color</span><span class="o">=</span><span class="p">[</span><span class="mi">253</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">93</span><span class="p">],</span>
     <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
     <span class="n">width_min_pixels</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-    <span class="n">rounded</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">rounded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">trail_length</span><span class="o">=</span><span class="mi">600</span><span class="p">,</span>
     <span class="n">current_time</span><span class="o">=</span><span class="mi">500</span><span class="p">,</span>
 <span class="p">)</span>
@@ -294,7 +300,7 @@
 
 <span class="c1"># Render</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">Deck</span><span class="p">(</span><span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">layer</span><span class="p">],</span> <span class="n">initial_view_state</span><span class="o">=</span><span class="n">view_state</span><span class="p">)</span>
-<span class="n">r</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="s2">&quot;trips_layer.html&quot;</span><span class="p">,</span> <span class="n">notebook_display</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="s2">&quot;trips_layer.html&quot;</span><span class="p">,</span> <span class="n">notebook_display</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -320,11 +326,19 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, MIT License
+        
+        &copy; Copyright 2020, vis.gl, a Series of LF Projects, LLC
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -336,7 +350,6 @@
   </div>
   
 
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
@@ -346,7 +359,9 @@
   
   
     
-   
+    
+
+
 
 </body>
 </html>

@@ -1,0 +1,360 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>TerrainLayer &mdash; pydeck 0.4.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="TextLayer" href="text_layer.html" />
+    <link rel="prev" title="ScreengridLayer" href="screengrid_layer.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pydeck
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../installation.html">Installing pydeck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing to pydeck</a></li>
+</ul>
+<p class="caption"><span class="caption-text">API documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../layer.html">Layer Overview and Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../deck.html">Deck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../data_utils.html">Data utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../view_state.html">ViewState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../view.html">View</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../light_settings.html">LightSettings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Jupyter</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../jupyter.html">Jupyter-specific features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../binary_transfer.html">Binary data transfer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Further customization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tooltip.html">Configuring tooltips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../custom_layers.html">Custom layers</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../CHANGELOG.html">CHANGELOG</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">pydeck</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>TerrainLayer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/gallery/terrain_layer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="terrainlayer">
+<h1>TerrainLayer<a class="headerlink" href="#terrainlayer" title="Permalink to this headline">¶</a></h1>
+<a id="deck-link" target="_blank" href="https://deck.gl/docs/api-reference/layers/terrain-layer">deck.gl docs</a>
+
+<br /><html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>pydeck</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.2.0-alpha.3/dist/index.js'></script>
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #deck-map-container {
+      width: 100%;
+      height: 100%;
+      background-color: black;
+    }
+
+    #map {
+      pointer-events: none;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: 1;
+    }
+
+    #deckgl-overlay {
+      z-index: 2;
+      background: none;
+    }
+
+    #deck-map-wrapper {
+      width: 100%;
+      height: 100%;
+    }
+
+    #deck-container {
+      width: 100vw;
+      height: 100vh;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="deck-container">
+    </div>
+  </body>
+  <script>
+    const jsonInput = {"initialViewState": {"bearing": 140, "latitude": 46.24, "longitude": -122.18, "pitch": 60, "zoom": 11.5}, "layers": [{"@@type": "TerrainLayer", "elevationData": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png", "elevationDecoder": {"bScaler": 0.00390625, "gScaler": 1, "offset": -32768, "rScaler": 256}, "id": "94965d2e-6fdd-4f75-8999-29caa54135d1", "texture": "https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}@2x.png?access_token=pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg"}], "mapProvider": "mapbox", "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "MapView", "controller": true}]};
+    const MAPBOX_API_KEY = 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg';
+    const GOOGLE_MAPS_API_KEY = 'None';
+    const tooltip = true;
+    const customLibraries = null;
+
+    const deck = createDeck({
+      mapboxApiKey: MAPBOX_API_KEY,
+      googleMapsKey: GOOGLE_MAPS_API_KEY,
+      container: document.getElementById('deck-container'),
+      jsonInput,
+      tooltip,
+      customLibraries
+    });
+
+  </script>
+</html><style>
+#deck-container {
+    height: 50vh;
+    max-width: 650px;
+    width: 100%;
+}
+#deck-link {
+    float: right;
+    position: relative;
+    top: -20px;
+}
+</style><div class="section" id="source">
+<h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">TerrainLayer</span>
+<span class="sd">===========</span>
+
+<span class="sd">Extruded terrain using AWS Open Data Terrain Tiles and Mapbox Satellite imagery</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">pydeck</span> <span class="k">as</span> <span class="nn">pdk</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># Import Mapbox API Key from environment</span>
+<span class="n">MAPBOX_API_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MAPBOX_API_KEY&quot;</span><span class="p">]</span>
+
+<span class="c1"># AWS Open Data Terrain Tiles</span>
+<span class="n">TERRAIN_IMAGE</span> <span class="o">=</span> <span class="s1">&#39;&quot;https://s3.amazonaws.com/elevation-tiles-prod/terrarium/</span><span class="si">{z}</span><span class="s1">/</span><span class="si">{x}</span><span class="s1">/</span><span class="si">{y}</span><span class="s1">.png&quot;&#39;</span>
+
+<span class="c1"># Define how to parse elevation tiles</span>
+<span class="n">ELEVATION_DECODER</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;rScaler&quot;</span><span class="p">:</span> <span class="mi">256</span><span class="p">,</span> <span class="s2">&quot;gScaler&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;bScaler&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">256</span><span class="p">,</span> <span class="s2">&quot;offset&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">32768</span><span class="p">}</span>
+
+<span class="n">SURFACE_IMAGE</span> <span class="o">=</span> <span class="s1">&#39;&quot;https://api.mapbox.com/v4/mapbox.satellite/{{z}}/{{x}}/{{y}}@2x.png?access_token=</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
+    <span class="n">MAPBOX_API_KEY</span>
+<span class="p">)</span>
+
+<span class="n">terrain_layer</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
+    <span class="s2">&quot;TerrainLayer&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">elevation_decoder</span><span class="o">=</span><span class="n">ELEVATION_DECODER</span><span class="p">,</span> <span class="n">texture</span><span class="o">=</span><span class="n">SURFACE_IMAGE</span><span class="p">,</span> <span class="n">elevation_data</span><span class="o">=</span><span class="n">TERRAIN_IMAGE</span>
+<span class="p">)</span>
+
+<span class="n">view_state</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">ViewState</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="mf">46.24</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=-</span><span class="mf">122.18</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mf">11.5</span><span class="p">,</span> <span class="n">bearing</span><span class="o">=</span><span class="mi">140</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">Deck</span><span class="p">(</span><span class="n">terrain_layer</span><span class="p">,</span> <span class="n">initial_view_state</span><span class="o">=</span><span class="n">view_state</span><span class="p">)</span>
+
+<span class="n">r</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="s2">&quot;terrain_layer.html&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="text_layer.html" class="btn btn-neutral float-right" title="TextLayer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="screengrid_layer.html" class="btn btn-neutral float-left" title="ScreengridLayer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, vis.gl, a Series of LF Projects, LLC
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+
+
+</body>
+</html>

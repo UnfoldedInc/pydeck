@@ -4,7 +4,9 @@ ColumnLayer
 
 .. raw:: html
 
-    <a id="deck-link" target="_blank" href="https://deck.gl/#/documentation/deckgl-api-reference/layers/column-layer">deck.gl docs</a>
+    
+    <a id="deck-link" target="_blank" href="https://deck.gl/docs/api-reference/layers/column-layer">deck.gl docs</a>
+    
     <br />
 
 .. raw:: html

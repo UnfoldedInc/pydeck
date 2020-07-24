@@ -4,7 +4,9 @@ IconLayer
 
 .. raw:: html
 
-    <a id="deck-link" target="_blank" href="https://deck.gl/#/documentation/deckgl-api-reference/layers/icon-layer">deck.gl docs</a>
+    
+    <a id="deck-link" target="_blank" href="https://deck.gl/docs/api-reference/layers/icon-layer">deck.gl docs</a>
+    
     <br />
 
 .. raw:: html
@@ -37,7 +39,7 @@ Source
     Location of biergartens in Germany listed on OpenStreetMap as of early 2020.
     """
 
-    import pydeck
+    import pydeck as pdk
     import pandas as pd
 
 
@@ -59,9 +61,9 @@ Source
     for i in data.index:
         data["icon_data"][i] = icon_data
 
-    view_state = pydeck.data_utils.compute_view(data[["lon", "lat"]], 0.1)
+    view_state = pdk.data_utils.compute_view(data[["lon", "lat"]], 0.1)
 
-    icon_layer = pydeck.Layer(
+    icon_layer = pdk.Layer(
         type="IconLayer",
         data=data,
         get_icon="icon_data",
@@ -71,6 +73,6 @@ Source
         pickable=True,
     )
 
-    r = pydeck.Deck(layers=[icon_layer], initial_view_state=view_state, tooltip={"text": "{tags}"})
-    r.to_html("icon_layer.html", notebook_display=False)
+    r = pdk.Deck(layers=[icon_layer], initial_view_state=view_state, tooltip={"text": "{tags}"})
+    r.to_html("icon_layer.html")
 

@@ -4,7 +4,9 @@ ScatterplotLayer
 
 .. raw:: html
 
-    <a id="deck-link" target="_blank" href="https://deck.gl/#/documentation/deckgl-api-reference/layers/scatterplot-layer">deck.gl docs</a>
+    
+    <a id="deck-link" target="_blank" href="https://deck.gl/docs/api-reference/layers/scatterplot-layer">deck.gl docs</a>
+    
     <br />
 
 .. raw:: html
@@ -43,7 +45,7 @@ Source
     import pandas as pd
     import math
 
-    SCATTERPLOT_LAYER_DATA = "https://raw.githubusercontent.com/uber-common/deck.gl-data/master/website/bart-stations.json"
+    SCATTERPLOT_LAYER_DATA = "https://raw.githubusercontent.com/visgl/deck.gl-data/master/website/bart-stations.json"
     df = pd.read_json(SCATTERPLOT_LAYER_DATA)
 
     # Use pandas to calculate additional data
@@ -72,5 +74,5 @@ Source
 
     # Render
     r = pdk.Deck(layers=[layer], initial_view_state=view_state, tooltip={"text": "{name}\n{address}"})
-    r.to_html("scatterplot_layer.html", notebook_display=False)
+    r.to_html("scatterplot_layer.html")
 

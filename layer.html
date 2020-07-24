@@ -1,23 +1,30 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Layer Overview and Examples &mdash; pydeck 0.3.0 documentation</title>
+  <title>Layer Overview and Examples &mdash; pydeck 0.4.0 documentation</title>
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -29,14 +36,10 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Deck" href="deck.html" />
-    <link rel="prev" title="Installing pydeck" href="installation.html" /> 
+    <link rel="prev" title="Contributing to pydeck" href="contributing.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -50,7 +53,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> pydeck
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> pydeck
           
 
           
@@ -60,7 +63,7 @@
             
             
               <div class="version">
-                0.3
+                0.4
               </div>
             
           
@@ -77,6 +80,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -84,12 +88,10 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Getting started</span></p>
+              <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installing pydeck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to pydeck</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
 <ul class="current">
@@ -126,6 +128,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -164,7 +167,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Layer Overview and Examples</li>
     
@@ -189,7 +192,7 @@
 <h1>Layer Overview and Examples<a class="headerlink" href="#layer-overview-and-examples" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference internal" href="#pydeck.bindings.layer.Layer" title="pydeck.bindings.layer.Layer"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydeck.bindings.layer.Layer</span></code></a> represents a kind of data visualization, like a scatterplot
 or a hexbin chart.
-The full <a class="reference external" href="https://github.com/uber/deck.gl/tree/master/docs/layers#deckgl-layer-catalog-overview">deck.gl layer catalog</a> is accessible via pydeck.
+The full <a class="reference external" href="https://deck.gl/docs/api-reference/layers">deck.gl layer catalog</a> is accessible via pydeck.
 This page will provide more examples of how to utilize the deck.gl catalog in Python via pydeck.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -197,15 +200,15 @@ This page will provide more examples of how to utilize the deck.gl catalog in Py
 incorrect or omitted layer arguments</strong>. If nothing renders in
 your viewport, check your browser’s
 <a class="reference external" href="https://javascript.info/devtools">developer console</a> or review the layer catalog.
-If you’re still stuck, file an issue with clicking <a class="reference external" href="https://github.com/uber/deck.gl/issues/new?assignees=&amp;labels=bug&amp;template=bug-report.md&amp;title=">here</a>.</p>
+If you’re still stuck, file an issue with clicking <a class="reference external" href="https://github.com/visgl/deck.gl/issues/new?assignees=&amp;labels=bug&amp;template=bug-report.md&amp;title=">here</a>.</p>
 </div>
-<dl class="class">
+<dl class="py class">
 <dt id="pydeck.bindings.layer.Layer">
-<em class="property">class </em><code class="sig-name descname">Layer</code><span class="sig-paren">(</span><em class="sig-param">type</em>, <em class="sig-param">data</em>, <em class="sig-param">id=None</em>, <em class="sig-param">use_binary_transport=None</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#pydeck.bindings.layer.Layer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Layer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_binary_transport</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydeck.bindings.layer.Layer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Configures a deck.gl layer for rendering on a map. Parameters passed
 here will be specific to the particular deck.gl layer that you are choosing to use.</p>
 <p>Please see the deck.gl
-<a class="reference external" href="https://deck.gl/#/documentation/deckgl-api-reference/layers/overview">Layer catalog</a>
+<a class="reference external" href="https://deck.gl/docs/api-reference/layers">Layer catalog</a>
 to determine the particular parameters of your layer. You are highly encouraged to look
 at the examples in the pydeck documentation.</p>
 <dl class="field-list simple">
@@ -259,7 +262,7 @@ at the examples in the pydeck documentation.</p>
 <h2>Understanding keyword arguments in pydeck layers<a class="headerlink" href="#understanding-keyword-arguments-in-pydeck-layers" title="Permalink to this headline">¶</a></h2>
 <p>Keyword arguments vary by layer. A catalog of available layers in
 deck.gl is viewable
-<a class="reference external" href="https://github.com/uber/deck.gl/tree/master/docs/layers#deckgl-layer-catalog-overview">in the deck.gl layer catalog</a>.</p>
+<a class="reference external" href="https://github.com/visgl/deck.gl/tree/master/docs/layers#deckgl-layer-catalog-overview">in the deck.gl layer catalog</a>.</p>
 <p>A few important observations:</p>
 <ul class="simple">
 <li><p>Not all layers have all parameters. For instance, <code class="docutils literal notranslate"><span class="pre">get_position</span></code> is
@@ -287,19 +290,19 @@ where you pass the desired layer’s deck.gl class name–that is, you
 should set it to the deck.gl layer you wish to plot. For example, notice
 how passing <code class="docutils literal notranslate"><span class="pre">&quot;HexagonLayer&quot;</span></code> to``type`` below gives you a <a class="reference external" href="https://deck.gl/#/examples/core-layers/hexagon-layer">deck.gl
 HexagonLayer</a>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pydeck</span> <span class="kn">as</span> <span class="nn">pdk</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pydeck</span> <span class="k">as</span> <span class="nn">pdk</span>
 
-<span class="n">UK_ACCIDENTS_DATA</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv&#39;</span>
+<span class="n">UK_ACCIDENTS_DATA</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv&#39;</span>
 
 <span class="n">layer</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
     <span class="s1">&#39;HexagonLayer&#39;</span><span class="p">,</span>  <span class="c1"># `type` positional argument is here</span>
     <span class="n">UK_ACCIDENTS_DATA</span><span class="p">,</span>
     <span class="n">get_position</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lng&#39;</span><span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">],</span>
-    <span class="n">auto_highlight</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">auto_highlight</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">elevation_scale</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
-    <span class="n">pickable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">pickable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">elevation_range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3000</span><span class="p">],</span>
-    <span class="n">extruded</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">extruded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">coverage</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Set the viewport location</span>
@@ -324,10 +327,10 @@ HexagonLayer</a>:</p>
     <span class="s1">&#39;ScatterplotLayer&#39;</span><span class="p">,</span>     <span class="c1"># Change the `type` positional argument here</span>
     <span class="n">UK_ACCIDENTS_DATA</span><span class="p">,</span>
     <span class="n">get_position</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lng&#39;</span><span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">],</span>
-    <span class="n">auto_highlight</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">auto_highlight</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">get_radius</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>          <span class="c1"># Radius is given in meters</span>
     <span class="n">get_fill_color</span><span class="o">=</span><span class="p">[</span><span class="mi">180</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">140</span><span class="p">],</span>  <span class="c1"># Set an RGBA value for fill</span>
-    <span class="n">pickable</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">pickable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="https://i.imgur.com/54a7buL.png"><img alt="New layer and color" src="https://i.imgur.com/54a7buL.png" style="width: 500px;" /></a>
@@ -338,17 +341,17 @@ HexagonLayer</a>:</p>
 expression parser that can process a limited subset of Javascript–no
 functions are allowed, but data accessors, Boolean conditions, inline
 logical statements, arithmetic operations, and arrays are available.
-The full details on the deck.gl expression parser are viewable <a class="reference external" href="https://github.com/uber/deck.gl/blob/master/docs/api-reference/json/conversion-reference.md">here</a>.</p>
+The full details on the deck.gl expression parser are viewable <a class="reference external" href="https://github.com/visgl/deck.gl/blob/master/docs/api-reference/json/conversion-reference.md">here</a>.</p>
 <p>To demonstrate the expression parser, change the color input in
 <code class="docutils literal notranslate"><span class="pre">get_fill_color</span></code> to a string:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">layer</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
     <span class="s1">&#39;ScatterplotLayer&#39;</span><span class="p">,</span>
     <span class="n">UK_ACCIDENTS_DATA</span><span class="p">,</span>
     <span class="n">get_position</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lng&#39;</span><span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">],</span>
-    <span class="n">auto_highlight</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">auto_highlight</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">get_radius</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
     <span class="n">get_fill_color</span><span class="o">=</span><span class="s1">&#39;[180, 0, 200, 140]&#39;</span><span class="p">,</span>
-    <span class="n">pickable</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">pickable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <a class="reference internal image-reference" href="https://i.imgur.com/54a7buL.png"><img alt="Passing a string instead of an array" src="https://i.imgur.com/54a7buL.png" style="width: 500px;" /></a>
@@ -361,10 +364,10 @@ variables in your data, so you can pass them from Python for use in deck.gl:</p>
     <span class="s1">&#39;ScatterplotLayer&#39;</span><span class="p">,</span>
     <span class="n">UK_ACCIDENTS_DATA</span><span class="p">,</span>
     <span class="n">get_position</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lng&#39;</span><span class="p">,</span> <span class="s1">&#39;lat&#39;</span><span class="p">],</span>
-    <span class="n">auto_highlight</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">auto_highlight</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">get_radius</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span>
     <span class="n">get_fill_color</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="s1">&#39;lng &gt; 0 ? 200 * lng : -200 * lng&#39;</span><span class="p">,</span> <span class="s1">&#39;lng&#39;</span><span class="p">,</span> <span class="mi">140</span><span class="p">],</span>
-    <span class="n">pickable</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">pickable</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -425,7 +428,7 @@ the deck.gl expression parser lets you pass a <code class="docutils literal notr
 <a class="reference external" href="https://deck.gl/#/examples/core-layers/geojson-layer-polygons">Vancouver property values example</a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pydeck</span>
 
-<span class="n">DATA_URL</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/geojson/vancouver-blocks.json&quot;</span>
+<span class="n">DATA_URL</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/geojson/vancouver-blocks.json&quot;</span>
 <span class="n">LAND_COVER</span> <span class="o">=</span> <span class="p">[[[</span><span class="o">-</span><span class="mf">123.0</span><span class="p">,</span> <span class="mf">49.196</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">123.0</span><span class="p">,</span> <span class="mf">49.324</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">123.306</span><span class="p">,</span> <span class="mf">49.324</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">123.306</span><span class="p">,</span> <span class="mf">49.196</span><span class="p">]]]</span>
 
 <span class="n">INITIAL_VIEW_STATE</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">ViewState</span><span class="p">(</span>
@@ -440,7 +443,7 @@ the deck.gl expression parser lets you pass a <code class="docutils literal notr
 <span class="n">polygon</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
     <span class="s1">&#39;PolygonLayer&#39;</span><span class="p">,</span>
     <span class="n">LAND_COVER</span><span class="p">,</span>
-    <span class="n">stroked</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+    <span class="n">stroked</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="c1"># processes the data as a flat longitude-latitude pair</span>
     <span class="n">get_polygon</span><span class="o">=</span><span class="s1">&#39;-&#39;</span><span class="p">,</span>
     <span class="n">get_fill_color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
@@ -450,14 +453,14 @@ the deck.gl expression parser lets you pass a <code class="docutils literal notr
     <span class="s1">&#39;GeoJsonLayer&#39;</span><span class="p">,</span>
     <span class="n">DATA_URL</span><span class="p">,</span>
     <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
-    <span class="n">stroked</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
-    <span class="n">filled</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-    <span class="n">extruded</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-    <span class="n">wireframe</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">stroked</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">extruded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">wireframe</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">get_elevation</span><span class="o">=</span><span class="s1">&#39;properties.valuePerSqm / 20&#39;</span><span class="p">,</span>
     <span class="n">get_fill_color</span><span class="o">=</span><span class="s1">&#39;[255, 255, properties.growth * 255]&#39;</span><span class="p">,</span>
     <span class="n">get_line_color</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span>
-    <span class="n">pickable</span><span class="o">=</span><span class="bp">True</span>
+    <span class="n">pickable</span><span class="o">=</span><span class="kc">True</span>
 <span class="p">)</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Deck</span><span class="p">(</span>
@@ -482,7 +485,7 @@ the deck.gl expression parser lets you pass a <code class="docutils literal notr
         <a href="deck.html" class="btn btn-neutral float-right" title="Deck" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="installation.html" class="btn btn-neutral float-left" title="Installing pydeck" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="contributing.html" class="btn btn-neutral float-left" title="Contributing to pydeck" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -491,11 +494,19 @@ the deck.gl expression parser lets you pass a <code class="docutils literal notr
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, MIT License
+        
+        &copy; Copyright 2020, vis.gl, a Series of LF Projects, LLC
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -507,7 +518,6 @@ the deck.gl expression parser lets you pass a <code class="docutils literal notr
   </div>
   
 
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
@@ -517,7 +527,9 @@ the deck.gl expression parser lets you pass a <code class="docutils literal notr
   
   
     
-   
+    
+
+
 
 </body>
 </html>

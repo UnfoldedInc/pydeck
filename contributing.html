@@ -1,0 +1,300 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Contributing to pydeck &mdash; pydeck 0.4.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Layer Overview and Examples" href="layer.html" />
+    <link rel="prev" title="Installing pydeck" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> pydeck
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.4
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Getting started</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installing pydeck</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing to pydeck</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#where-to-contribute">Where to contribute</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#development-installation-of-pydeck">Development installation of pydeck</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#submitting-a-pr">Submitting a PR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#building-the-documentation">Building the documentation</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">API documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="layer.html">Layer Overview and Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deck.html">Deck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="data_utils.html">Data utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="view_state.html">ViewState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="view.html">View</a></li>
+<li class="toctree-l1"><a class="reference internal" href="light_settings.html">LightSettings</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Jupyter</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter-specific features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="binary_transfer.html">Binary data transfer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Further customization</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="tooltip.html">Configuring tooltips</a></li>
+<li class="toctree-l1"><a class="reference internal" href="custom_layers.html">Custom layers</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Development</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="CHANGELOG.html">CHANGELOG</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pydeck</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Contributing to pydeck</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/contributing.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="contributing-to-pydeck">
+<h1>Contributing to pydeck<a class="headerlink" href="#contributing-to-pydeck" title="Permalink to this headline">¶</a></h1>
+<p>We encourage users to report bugs, fix them, and add features as desired.
+We support our contributors in the #pydeck channel in the <a class="reference external" href="https://join.slack.com/t/deckgl/shared_invite/zt-7oeoqie8-NQqzSp5SLTFMDeNSPxi7eg">deck.gl Slack workspace</a>.
+If you run into issues while using this guide, let us know.</p>
+<p>For governance policy and code of conduct, please see the <a class="reference external" href="https://deck.gl/docs/contributing">deck.gl contribution guidelines</a>.</p>
+<div class="section" id="where-to-contribute">
+<h2>Where to contribute<a class="headerlink" href="#where-to-contribute" title="Permalink to this headline">¶</a></h2>
+<p>At its core, pydeck is three modules:</p>
+<ul class="simple">
+<li><p>&#64;deck.gl/jupyter-widget, a Javascript library that helps bind deck.gl to a Jupyter environment</p></li>
+<li><p>&#64;deck.gl/json, a Javascript library that converts JSON configurations to deck.gl visualizations</p></li>
+<li><p>pydeck, the Python wrapper around deck.gl</p></li>
+</ul>
+<p>To contribute to either of the first two, you can follow the deck.gl contribution guidelines.</p>
+</div>
+<div class="section" id="development-installation-of-pydeck">
+<h2>Development installation of pydeck<a class="headerlink" href="#development-installation-of-pydeck" title="Permalink to this headline">¶</a></h2>
+<p>Please develop using Python 3.5 or above. You will also need <a class="reference external" href="https://yarnpkg.com/en/docs/install">yarn</a>,
+which will build deck.gl for use with your development installion of pydeck.</p>
+<p>The following commands set up a virtual environment, build the entirety of deck.gl, install most development and testing dependencies, and then activate
+enable pydeck to run on JupyterLab and Jupyter Notebook locally:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/visgl/deck.gl
+<span class="nb">cd</span> deck.gl/bindings/pydeck
+make setup-env
+. env/bin/activate
+make init
+make prepare-jupyter
+</pre></div>
+</div>
+<p>At this point, verify that this new local copy of pydeck works by running <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">test</span></code>.</p>
+</div>
+<div class="section" id="submitting-a-pr">
+<h2>Submitting a PR<a class="headerlink" href="#submitting-a-pr" title="Permalink to this headline">¶</a></h2>
+<p>Deck.gl will run a suite of local tests both on commit and on push. On push, deck.gl will run browser tests, which will take a bit
+longer than the commit hook tests. Ideally, these tests will pass locally before you push your branch to GitHub. Once pushed,
+tests will also run on Travis CI. Generally the deck.gl team will review your PR within 2-3 days.</p>
+<p>Before submitting a PR, you should run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">test</span></code> to verify that your Python tests pass locally.
+It may be helpful to run <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">-e</span> <span class="pre">.</span></code> to rebuild pydeck locally. If you need to rebuild &#64;deck.gl/json or &#64;deck.gl/jupyter-widget,
+you can run <code class="docutils literal notranslate"><span class="pre">yarn</span> <span class="pre">bootstrap</span></code> or the <code class="docutils literal notranslate"><span class="pre">webpack</span></code> commands within their individual directories.</p>
+</div>
+<div class="section" id="building-the-documentation">
+<h2>Building the documentation<a class="headerlink" href="#building-the-documentation" title="Permalink to this headline">¶</a></h2>
+<p>To build the documentation locally, run the following:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> deck.gl/bindings/pydeck/docs
+make clean <span class="o">&amp;&amp;</span> make html
+</pre></div>
+</div>
+<p>You can find the homepage at <code class="docutils literal notranslate"><span class="pre">pydeck/docs/_build/index.html</span></code>.
+Running <code class="docutils literal notranslate"><span class="pre">python3</span> <span class="pre">-m</span> <span class="pre">http.server</span></code> from <code class="docutils literal notranslate"><span class="pre">pydeck/docs/_build</span></code> will serve the documentation locally.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="layer.html" class="btn btn-neutral float-right" title="Layer Overview and Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installing pydeck" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, vis.gl, a Series of LF Projects, LLC
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    
+
+
+
+</body>
+</html>

@@ -4,7 +4,9 @@ H3HexagonLayer
 
 .. raw:: html
 
-    <a id="deck-link" target="_blank" href="https://deck.gl/#/documentation/deckgl-api-reference/layers/h3-hexagon-layer">deck.gl docs</a>
+    
+    <a id="deck-link" target="_blank" href="https://deck.gl/docs/api-reference/layers/h3-hexagon-layer">deck.gl docs</a>
+    
     <br />
 
 .. raw:: html
@@ -42,7 +44,7 @@ Source
     import pydeck as pdk
     import pandas as pd
 
-    H3_HEX_DATA = "https://raw.githubusercontent.com/uber-common/deck.gl-data/master/website/sf.h3cells.json"
+    H3_HEX_DATA = "https://raw.githubusercontent.com/visgl/deck.gl-data/master/website/sf.h3cells.json"
 
     df = pd.read_json(H3_HEX_DATA)
 
@@ -66,5 +68,5 @@ Source
 
     # Render
     r = pdk.Deck(layers=[layer], initial_view_state=view_state, tooltip={"text": "Count: {count}"})
-    r.to_html("h3_hexagon_layer.html", notebook_display=False)
+    r.to_html("h3_hexagon_layer.html")
 

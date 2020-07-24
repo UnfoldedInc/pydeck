@@ -1,23 +1,30 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installing pydeck &mdash; pydeck 0.3.0 documentation</title>
+  <title>Installing pydeck &mdash; pydeck 0.4.0 documentation</title>
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -29,13 +36,9 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Layer Overview and Examples" href="layer.html" />
+    <link rel="next" title="Contributing to pydeck" href="contributing.html" />
     <link rel="prev" title="TripsLayer" href="gallery/trips_layer.html" /> 
 </head>
 
@@ -50,7 +53,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> pydeck
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> pydeck
           
 
           
@@ -60,7 +63,7 @@
             
             
               <div class="version">
-                0.3
+                0.4
               </div>
             
           
@@ -77,6 +80,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -84,10 +88,7 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Getting started</span></p>
+              <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installing pydeck</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#via-pip">Via pip</a></li>
@@ -95,9 +96,11 @@
 <li class="toctree-l2"><a class="reference internal" href="#getting-a-mapbox-api-key">Getting a Mapbox API key</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#enabling-pydeck-for-jupyter">Enabling pydeck for Jupyter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#installing-from-source">Installing from source</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#development-notes">Development notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#development">Development</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#note-on-pre-releases">Note on pre-releases</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to pydeck</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
 <ul>
@@ -126,6 +129,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -164,7 +168,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Installing pydeck</li>
     
@@ -239,20 +243,30 @@ jupyter labextension install @deck.gl/jupyter-widget@<span class="nv">$DECKGL_SE
 <div class="section" id="installing-from-source">
 <h2>Installing from source<a class="headerlink" href="#installing-from-source" title="Permalink to this headline">¶</a></h2>
 <p>If you want to install the library from its source:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/uber/deck.gl
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/visgl/deck.gl
 <span class="nb">cd</span> deck.gl/bindings/pydeck
-make pre-init
+yarn bootstrap
+pip install .
+</pre></div>
+</div>
+<p>You can run the local tests to verify that the installation worked via <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">test</span></code>.</p>
+</div>
+<div class="section" id="development">
+<h2>Development<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h2>
+<p>If you want to install pydeck for development, you may want to use the <code class="docutils literal notranslate"><span class="pre">make</span></code> commands:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git clone https://github.com/visgl/deck.gl
+<span class="nb">cd</span> deck.gl/bindings/pydeck
+make setup-env
 . env/bin/activate
 make init
 make prepare-jupyter
 </pre></div>
 </div>
-<p>You can run the local tests to verify that the installation worked via <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">test</span></code>.</p>
 </div>
-<div class="section" id="development-notes">
-<h2>Development notes<a class="headerlink" href="#development-notes" title="Permalink to this headline">¶</a></h2>
-<p>Please note that if you are installing a pydeck prerelease, you may have to specify a specific version
-of <code class="docutils literal notranslate"><span class="pre">&#64;deck.gl/jupyter-widget</span></code> to install for JupyterLab. You can read this version from pydeck itself.</p>
+<div class="section" id="note-on-pre-releases">
+<h2>Note on pre-releases<a class="headerlink" href="#note-on-pre-releases" title="Permalink to this headline">¶</a></h2>
+<p>If you are installing a pydeck prerelease and using JupyterLab, you must install an exact version
+of <code class="docutils literal notranslate"><span class="pre">&#64;deck.gl/jupyter-widget</span></code>. You can read this version from pydeck itself:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">DECKGL_SEMVER</span><span class="o">=</span><span class="sb">`</span>python -c <span class="s2">&quot;import pydeck; print(pydeck.frontend_semver.DECKGL_SEMVER)&quot;</span><span class="sb">`</span>
 jupyter labextension install @deck.gl/jupyter-widget@<span class="nv">$DECKGL_SEMVER</span>
 </pre></div>
@@ -268,7 +282,7 @@ jupyter labextension install @deck.gl/jupyter-widget@<span class="nv">$DECKGL_SE
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="layer.html" class="btn btn-neutral float-right" title="Layer Overview and Examples" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="contributing.html" class="btn btn-neutral float-right" title="Contributing to pydeck" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="gallery/trips_layer.html" class="btn btn-neutral float-left" title="TripsLayer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -280,11 +294,19 @@ jupyter labextension install @deck.gl/jupyter-widget@<span class="nv">$DECKGL_SE
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, MIT License
+        
+        &copy; Copyright 2020, vis.gl, a Series of LF Projects, LLC
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -296,7 +318,6 @@ jupyter labextension install @deck.gl/jupyter-widget@<span class="nv">$DECKGL_SE
   </div>
   
 
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
@@ -306,7 +327,9 @@ jupyter labextension install @deck.gl/jupyter-widget@<span class="nv">$DECKGL_SE
   
   
     
-   
+    
+
+
 
 </body>
 </html>

@@ -4,7 +4,9 @@ PointCloudLayer
 
 .. raw:: html
 
-    <a id="deck-link" target="_blank" href="https://deck.gl/#/documentation/deckgl-api-reference/layers/point-cloud-layer">deck.gl docs</a>
+    
+    <a id="deck-link" target="_blank" href="https://deck.gl/docs/api-reference/layers/point-cloud-layer">deck.gl docs</a>
+    
     <br />
 
 .. raw:: html
@@ -63,5 +65,5 @@ Source
     view = pydeck.View(type="OrbitView", controller=True)
 
     r = pydeck.Deck(point_cloud_layer, initial_view_state=view_state, views=[view])
-    r.to_html("point_cloud_layer.html", css_background_color="#add8e6", notebook_display=False)
+    r.to_html("point_cloud_layer.html", css_background_color="#add8e6")
 

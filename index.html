@@ -1,23 +1,30 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>pydeck &mdash; pydeck 0.3.0 documentation</title>
+  <title>Gallery &mdash; pydeck 0.4.0 documentation</title>
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -29,10 +36,6 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="ArcLayer" href="gallery/arc_layer.html" /> 
@@ -49,7 +52,7 @@
           
 
           
-            <a href="#" class="icon icon-home"> pydeck
+            <a href="#" class="icon icon-home" alt="Documentation Home"> pydeck
           
 
           
@@ -59,7 +62,7 @@
             
             
               <div class="version">
-                0.3
+                0.4
               </div>
             
           
@@ -76,6 +79,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -83,12 +87,10 @@
               
             
             
-              <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Home</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Getting started</span></p>
+              <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installing pydeck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to pydeck</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
 <ul>
@@ -117,6 +119,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -155,9 +158,9 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="#">Docs</a> &raquo;</li>
+      <li><a href="#" class="icon icon-home"></a> &raquo;</li>
         
-      <li>pydeck</li>
+      <li>Gallery</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -176,12 +179,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="pydeck">
-<h1>pydeck<a class="headerlink" href="#pydeck" title="Permalink to this headline">¶</a></h1>
-<p>High-scale spatial rendering in Python, powered by <a class="reference external" href="https://deck.gl/#/">deck.gl</a>.</p>
+  <div class="figure align-default">
+<a class="reference external image-reference" href="/"><img alt="_images/logo.svg" class="logo" src="_images/logo.svg" /></a>
+</div>
+<div class="line-block">
+<div class="line">High-scale spatial rendering in Python, powered by <a class="reference external" href="https://deck.gl/#/">deck.gl</a>.</div>
+</div>
 <p>Get started by <a class="reference external" href="installation.html">installing pydeck</a>.</p>
 <div class="section" id="gallery">
-<h2>Gallery<a class="headerlink" href="#gallery" title="Permalink to this headline">¶</a></h2>
+<h1>Gallery<a class="headerlink" href="#gallery" title="Permalink to this headline">¶</a></h1>
 
 <style>
 .wrapper {
@@ -197,12 +203,8 @@
 }
 .thumb-text {
   z-index: 1;
-  margin-left: 2px;
-  bottom: 0;
-  left: 0;
-  position: absolute;
+  margin: 5px;
   font-weight: 100;
-  color: white;
   background: charcoal;
 }
 .grid-cell:hover {
@@ -213,154 +215,156 @@
 
 <div class='wrapper'>
 
-  
   <div class='grid-cell'>
       <a href="./gallery/arc_layer.html">
     <img width="200" src="./_images/arc_layer.png"></img>
       <div class='thumb-text'>ArcLayer</div></a>
   </div>
 
-  
+  <div class='grid-cell'>
+      <a href="./gallery/binary_transport.html">
+    <img width="200" src="./_images/binary_transport.png"></img>
+      <div class='thumb-text'>Binary Transport</div></a>
+  </div>
+
   <div class='grid-cell'>
       <a href="./gallery/bitmap_layer.html">
     <img width="200" src="./_images/bitmap_layer.png"></img>
       <div class='thumb-text'>BitmapLayer</div></a>
   </div>
 
-  
   <div class='grid-cell'>
       <a href="./gallery/column_layer.html">
     <img width="200" src="./_images/column_layer.png"></img>
       <div class='thumb-text'>ColumnLayer</div></a>
   </div>
 
-  
   <div class='grid-cell'>
       <a href="./gallery/contour_layer.html">
     <img width="200" src="./_images/contour_layer.png"></img>
       <div class='thumb-text'>ContourLayer</div></a>
   </div>
 
-  
   <div class='grid-cell'>
       <a href="./gallery/custom_layer.html">
     <img width="200" src="./_images/custom_layer.png"></img>
       <div class='thumb-text'>CustomLayer</div></a>
   </div>
 
-  
   <div class='grid-cell'>
       <a href="./gallery/geojson_layer.html">
     <img width="200" src="./_images/geojson_layer.png"></img>
       <div class='thumb-text'>GeoJsonLayer</div></a>
   </div>
 
-  
+  <div class='grid-cell'>
+      <a href="./gallery/geopandas_integration.html">
+    <img width="200" src="./_images/geopandas_integration.png"></img>
+      <div class='thumb-text'>Geopandas Integration</div></a>
+  </div>
+
+  <div class='grid-cell'>
+      <a href="./gallery/globe_view.html">
+    <img width="200" src="./_images/globe_view.png"></img>
+      <div class='thumb-text'>GlobeView</div></a>
+  </div>
+
   <div class='grid-cell'>
       <a href="./gallery/great_circle_layer.html">
     <img width="200" src="./_images/great_circle_layer.png"></img>
       <div class='thumb-text'>GreatCircleLayer</div></a>
   </div>
 
-  
   <div class='grid-cell'>
       <a href="./gallery/grid_layer.html">
     <img width="200" src="./_images/grid_layer.png"></img>
       <div class='thumb-text'>GridLayer</div></a>
   </div>
 
-  
   <div class='grid-cell'>
       <a href="./gallery/h3_cluster_layer.html">
     <img width="200" src="./_images/h3_cluster_layer.png"></img>
       <div class='thumb-text'>H3ClusterLayer</div></a>
   </div>
 
-  
   <div class='grid-cell'>
       <a href="./gallery/h3_hexagon_layer.html">
     <img width="200" src="./_images/h3_hexagon_layer.png"></img>
       <div class='thumb-text'>H3HexagonLayer</div></a>
   </div>
 
-  
   <div class='grid-cell'>
       <a href="./gallery/heatmap_layer.html">
     <img width="200" src="./_images/heatmap_layer.png"></img>
       <div class='thumb-text'>HeatmapLayer</div></a>
   </div>
 
-  
   <div class='grid-cell'>
       <a href="./gallery/hexagon_layer.html">
     <img width="200" src="./_images/hexagon_layer.png"></img>
       <div class='thumb-text'>HexagonLayer</div></a>
   </div>
 
-  
   <div class='grid-cell'>
       <a href="./gallery/icon_layer.html">
     <img width="200" src="./_images/icon_layer.png"></img>
       <div class='thumb-text'>IconLayer</div></a>
   </div>
 
-  
   <div class='grid-cell'>
       <a href="./gallery/line_layer.html">
     <img width="200" src="./_images/line_layer.png"></img>
       <div class='thumb-text'>LineLayer</div></a>
   </div>
 
-  
   <div class='grid-cell'>
       <a href="./gallery/path_layer.html">
     <img width="200" src="./_images/path_layer.png"></img>
       <div class='thumb-text'>PathLayer</div></a>
   </div>
 
-  
   <div class='grid-cell'>
       <a href="./gallery/point_cloud_layer.html">
     <img width="200" src="./_images/point_cloud_layer.png"></img>
       <div class='thumb-text'>PointCloudLayer</div></a>
   </div>
 
-  
   <div class='grid-cell'>
       <a href="./gallery/polygon_layer.html">
     <img width="200" src="./_images/polygon_layer.png"></img>
       <div class='thumb-text'>PolygonLayer</div></a>
   </div>
 
-  
   <div class='grid-cell'>
       <a href="./gallery/s2_layer.html">
     <img width="200" src="./_images/s2_layer.png"></img>
       <div class='thumb-text'>S2Layer</div></a>
   </div>
 
-  
   <div class='grid-cell'>
       <a href="./gallery/scatterplot_layer.html">
     <img width="200" src="./_images/scatterplot_layer.png"></img>
       <div class='thumb-text'>ScatterplotLayer</div></a>
   </div>
 
-  
   <div class='grid-cell'>
       <a href="./gallery/screengrid_layer.html">
     <img width="200" src="./_images/screengrid_layer.png"></img>
       <div class='thumb-text'>ScreengridLayer</div></a>
   </div>
 
-  
+  <div class='grid-cell'>
+      <a href="./gallery/terrain_layer.html">
+    <img width="200" src="./_images/terrain_layer.png"></img>
+      <div class='thumb-text'>TerrainLayer</div></a>
+  </div>
+
   <div class='grid-cell'>
       <a href="./gallery/text_layer.html">
     <img width="200" src="./_images/text_layer.png"></img>
       <div class='thumb-text'>TextLayer</div></a>
   </div>
 
-  
   <div class='grid-cell'>
       <a href="./gallery/trips_layer.html">
     <img width="200" src="./_images/trips_layer.png"></img>
@@ -369,10 +373,13 @@
 
 </div><a class="reference internal image-reference" href="_images/arc_layer.png"><img alt="_images/arc_layer.png" src="_images/arc_layer.png" style="width: 0px;" /></a>
 <a class="reference internal image-reference" href="_images/bitmap_layer.png"><img alt="_images/bitmap_layer.png" src="_images/bitmap_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/binary_transport.png"><img alt="_images/binary_transport.png" src="_images/binary_transport.png" style="width: 0px;" /></a>
 <a class="reference internal image-reference" href="_images/column_layer.png"><img alt="_images/column_layer.png" src="_images/column_layer.png" style="width: 0px;" /></a>
 <a class="reference internal image-reference" href="_images/contour_layer.png"><img alt="_images/contour_layer.png" src="_images/contour_layer.png" style="width: 0px;" /></a>
 <a class="reference internal image-reference" href="_images/custom_layer.png"><img alt="_images/custom_layer.png" src="_images/custom_layer.png" style="width: 0px;" /></a>
 <a class="reference internal image-reference" href="_images/geojson_layer.png"><img alt="_images/geojson_layer.png" src="_images/geojson_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/geopandas_integration.png"><img alt="_images/geopandas_integration.png" src="_images/geopandas_integration.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/globe_view.png"><img alt="_images/globe_view.png" src="_images/globe_view.png" style="width: 0px;" /></a>
 <a class="reference internal image-reference" href="_images/great_circle_layer.png"><img alt="_images/great_circle_layer.png" src="_images/great_circle_layer.png" style="width: 0px;" /></a>
 <a class="reference internal image-reference" href="_images/grid_layer.png"><img alt="_images/grid_layer.png" src="_images/grid_layer.png" style="width: 0px;" /></a>
 <a class="reference internal image-reference" href="_images/h3_cluster_layer.png"><img alt="_images/h3_cluster_layer.png" src="_images/h3_cluster_layer.png" style="width: 0px;" /></a>
@@ -387,16 +394,17 @@
 <a class="reference internal image-reference" href="_images/s2_layer.png"><img alt="_images/s2_layer.png" src="_images/s2_layer.png" style="width: 0px;" /></a>
 <a class="reference internal image-reference" href="_images/scatterplot_layer.png"><img alt="_images/scatterplot_layer.png" src="_images/scatterplot_layer.png" style="width: 0px;" /></a>
 <a class="reference internal image-reference" href="_images/screengrid_layer.png"><img alt="_images/screengrid_layer.png" src="_images/screengrid_layer.png" style="width: 0px;" /></a>
+<a class="reference internal image-reference" href="_images/terrain_layer.png"><img alt="_images/terrain_layer.png" src="_images/terrain_layer.png" style="width: 0px;" /></a>
 <a class="reference internal image-reference" href="_images/text_layer.png"><img alt="_images/text_layer.png" src="_images/text_layer.png" style="width: 0px;" /></a>
 <a class="reference internal image-reference" href="_images/trips_layer.png"><img alt="_images/trips_layer.png" src="_images/trips_layer.png" style="width: 0px;" /></a>
 <div class="toctree-wrapper compound">
 </div>
 </div>
 <div class="section" id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h1>
 </div>
 <div class="section" id="pydeck-in-jupyter">
-<h2><a class="reference external" href="jupyter.html">pydeck in Jupyter</a><a class="headerlink" href="#pydeck-in-jupyter" title="Permalink to this headline">¶</a></h2>
+<h1><a class="reference external" href="jupyter.html">pydeck in Jupyter</a><a class="headerlink" href="#pydeck-in-jupyter" title="Permalink to this headline">¶</a></h1>
 <p>Uniquely integrated with the Jupyter ecosystem, pydeck supports interactions in a visualization that communicate
 with the Jupyter kernel. Read more about usage in Jupyter <a class="reference external" href="jupyter.html">here</a>.</p>
 <div class="figure align-default" id="id1">
@@ -409,53 +417,51 @@ with the Jupyter kernel. Read more about usage in Jupyter <a class="reference ex
 </div>
 </div>
 <div class="section" id="layers">
-<h2><a class="reference external" href="layer.html">Layers</a><a class="headerlink" href="#layers" title="Permalink to this headline">¶</a></h2>
+<h1><a class="reference external" href="layer.html">Layers</a><a class="headerlink" href="#layers" title="Permalink to this headline">¶</a></h1>
 <p>Configure one of the many deck.gl layers for rendering in pydeck.</p>
 </div>
 <div class="section" id="deck">
-<h2><a class="reference external" href="deck.html">Deck</a><a class="headerlink" href="#deck" title="Permalink to this headline">¶</a></h2>
+<h1><a class="reference external" href="deck.html">Deck</a><a class="headerlink" href="#deck" title="Permalink to this headline">¶</a></h1>
 <p>Better understand the main object within visualization, used to write data out to a widget in Jupyter,
 save it out to HTML, and configure some global parameters of a visualization, like its size or
 tooltip.</p>
 </div>
 <div class="section" id="data-utilities">
-<h2><a class="reference external" href="data_utils.html">Data utilities</a><a class="headerlink" href="#data-utilities" title="Permalink to this headline">¶</a></h2>
+<h1><a class="reference external" href="data_utils.html">Data utilities</a><a class="headerlink" href="#data-utilities" title="Permalink to this headline">¶</a></h1>
 <p>A handful of functions to make certain common data exercises easier,
 like automatically fitting a viewport to data on a map or quickly coloring categorical data</p>
 </div>
 <div class="section" id="viewstate">
-<h2><a class="reference external" href="view_state.html">ViewState</a><a class="headerlink" href="#viewstate" title="Permalink to this headline">¶</a></h2>
+<h1><a class="reference external" href="view_state.html">ViewState</a><a class="headerlink" href="#viewstate" title="Permalink to this headline">¶</a></h1>
 <p>Used to set the precise location of a user’s vantage point on the data, like
 a user’s zoom level</p>
 </div>
 <div class="section" id="view">
-<h2><a class="reference external" href="view.html">View</a><a class="headerlink" href="#view" title="Permalink to this headline">¶</a></h2>
+<h1><a class="reference external" href="view.html">View</a><a class="headerlink" href="#view" title="Permalink to this headline">¶</a></h1>
 <p>Used to enable or disable map controls and also modify the kind of map projection,
 like plotting in flat plane instead of plotting on a mercator projection</p>
 </div>
 <div class="section" id="lightsettings-experimental">
-<h2><a class="reference external" href="light_settings.html">LightSettings (Experimental)</a><a class="headerlink" href="#lightsettings-experimental" title="Permalink to this headline">¶</a></h2>
+<h1><a class="reference external" href="light_settings.html">LightSettings (Experimental)</a><a class="headerlink" href="#lightsettings-experimental" title="Permalink to this headline">¶</a></h1>
 <p>Configure the lighting within a visualization.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>The pydeck library assumes Internet access. You will need an Internet connection or the visualization will not render.</p>
 <p>Currently, pydeck will <strong>not</strong> raise an error on incorrect or omitted Layer arguments.
 If nothing renders in your viewport, check your browser’s <a class="reference external" href="https://javascript.info/devtools">developer console</a>
-or review the layer catalog. You are encouraged to file an issue by clicking <a class="reference external" href="https://github.com/uber/deck.gl/issues/new?assignees=&amp;labels=bug&amp;template=bug-report.md&amp;title=pydeck:">here</a>
+or review the layer catalog. You are encouraged to file an issue by clicking <a class="reference external" href="https://github.com/visgl/deck.gl/issues/new?assignees=&amp;labels=bug&amp;template=bug-report.md&amp;title=pydeck:">here</a>
 and mention <code class="docutils literal notranslate"><span class="pre">pydeck</span></code> in the title.</p>
 </div>
 </div>
 <div class="section" id="index">
-<h2>Index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h2>
+<h1>Index<a class="headerlink" href="#index" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Home</a></li>
-</ul>
 </div>
 <div class="toctree-wrapper compound">
 <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installing pydeck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to pydeck</a></li>
 </ul>
 </div>
 <div class="toctree-wrapper compound">
@@ -490,11 +496,10 @@ and mention <code class="docutils literal notranslate"><span class="pre">pydeck<
 </ul>
 </div>
 <style>
-  .section #index {
-    display: none;
+  .logo {
+    width: 320px;
   }
 </style></div>
-</div>
 
 
            </div>
@@ -514,11 +519,19 @@ and mention <code class="docutils literal notranslate"><span class="pre">pydeck<
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, MIT License
+        
+        &copy; Copyright 2020, vis.gl, a Series of LF Projects, LLC
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -530,7 +543,6 @@ and mention <code class="docutils literal notranslate"><span class="pre">pydeck<
   </div>
   
 
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
@@ -540,7 +552,9 @@ and mention <code class="docutils literal notranslate"><span class="pre">pydeck<
   
   
     
-   
+    
+
+
 
 </body>
 </html>

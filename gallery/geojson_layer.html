@@ -1,23 +1,30 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>GeoJsonLayer &mdash; pydeck 0.3.0 documentation</title>
+  <title>GeoJsonLayer &mdash; pydeck 0.4.0 documentation</title>
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -29,13 +36,9 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="GreatCircleLayer" href="great_circle_layer.html" />
+    <link rel="next" title="Geopandas Integration" href="geopandas_integration.html" />
     <link rel="prev" title="CustomLayer" href="custom_layer.html" /> 
 </head>
 
@@ -50,7 +53,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> pydeck
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pydeck
           
 
           
@@ -60,7 +63,7 @@
             
             
               <div class="version">
-                0.3
+                0.4
               </div>
             
           
@@ -77,6 +80,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -84,12 +88,10 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Getting started</span></p>
+              <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installing pydeck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing to pydeck</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
 <ul>
@@ -118,6 +120,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -156,7 +159,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>GeoJsonLayer</li>
     
@@ -179,14 +182,15 @@
             
   <div class="section" id="geojsonlayer">
 <h1>GeoJsonLayer<a class="headerlink" href="#geojsonlayer" title="Permalink to this headline">¶</a></h1>
-<a id="deck-link" target="_blank" href="https://deck.gl/#/documentation/deckgl-api-reference/layers/geojson-layer">deck.gl docs</a>
+<a id="deck-link" target="_blank" href="https://deck.gl/docs/api-reference/layers/geojson-layer">deck.gl docs</a>
+
 <br /><html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>pydeck</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <script src=https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.2.0-alpha.1/dist/index.js></script>
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.2.0-alpha.3/dist/index.js'></script>
     <style>
     body {
       margin: 0;
@@ -229,13 +233,15 @@
     </div>
   </body>
   <script>
-    const jsonInput = {"initialViewState": {"bearing": 0, "latitude": 49.254, "longitude": -123.13, "maxZoom": 16, "pitch": 45, "zoom": 11}, "layers": [{"@@type": "PolygonLayer", "data": [[[-123.0, 49.196], [-123.0, 49.324], [-123.306, 49.324], [-123.306, 49.196]]], "getFillColor": [0, 0, 0, 20], "getPolygon": "@@=-", "id": "ec1e4c36-4af3-4eed-8396-74ec93e17400", "stroked": false}, {"@@type": "GeoJsonLayer", "data": "https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/geojson/vancouver-blocks.json", "extruded": true, "filled": true, "getElevation": "@@=properties.valuePerSqm / 20", "getFillColor": "@@=[255, 255, properties.growth * 255]", "getLineColor": [255, 255, 255], "id": "1cad18ea-1611-4b0a-8669-e12bb6c5c28a", "opacity": 0.8, "stroked": false, "wireframe": true}], "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "MapView", "controller": true}]};
-    const MAPBOX_API_KEY = 'pk.eyJ1IjoiZHViZXJzYWoyIiwiYSI6ImNqcHhmYzcwNTBrZHc0OW9udGljMm1pNXQifQ.DxYvaredXVDkvS0nSAuf_Q';
+    const jsonInput = {"initialViewState": {"bearing": 0, "latitude": 49.254, "longitude": -123.13, "maxZoom": 16, "pitch": 45, "zoom": 11}, "layers": [{"@@type": "PolygonLayer", "data": [[[-123.0, 49.196], [-123.0, 49.324], [-123.306, 49.324], [-123.306, 49.196]]], "getFillColor": [0, 0, 0, 20], "getPolygon": "@@=-", "id": "fa476308-ce92-45c4-bb84-9680b974fc98", "stroked": false}, {"@@type": "GeoJsonLayer", "data": "https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/geojson/vancouver-blocks.json", "extruded": true, "filled": true, "getElevation": "@@=properties.valuePerSqm / 20", "getFillColor": "@@=[255, 255, properties.growth * 255]", "getLineColor": [255, 255, 255], "id": "d9883407-a6ca-403e-90b4-c185505e946b", "opacity": 0.8, "stroked": false, "wireframe": true}], "mapProvider": "mapbox", "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "MapView", "controller": true}]};
+    const MAPBOX_API_KEY = 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg';
+    const GOOGLE_MAPS_API_KEY = 'None';
     const tooltip = true;
     const customLibraries = null;
 
     const deck = createDeck({
       mapboxApiKey: MAPBOX_API_KEY,
+      googleMapsKey: GOOGLE_MAPS_API_KEY,
       container: document.getElementById('deck-container'),
       jsonInput,
       tooltip,
@@ -265,7 +271,7 @@
 
 <span class="kn">import</span> <span class="nn">pydeck</span>
 
-<span class="n">DATA_URL</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/geojson/vancouver-blocks.json&quot;</span>
+<span class="n">DATA_URL</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/geojson/vancouver-blocks.json&quot;</span>
 <span class="n">LAND_COVER</span> <span class="o">=</span> <span class="p">[[[</span><span class="o">-</span><span class="mf">123.0</span><span class="p">,</span> <span class="mf">49.196</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">123.0</span><span class="p">,</span> <span class="mf">49.324</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">123.306</span><span class="p">,</span> <span class="mf">49.324</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mf">123.306</span><span class="p">,</span> <span class="mf">49.196</span><span class="p">]]]</span>
 
 <span class="n">INITIAL_VIEW_STATE</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">ViewState</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="mf">49.254</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=-</span><span class="mf">123.13</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">max_zoom</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">bearing</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
@@ -273,7 +279,7 @@
 <span class="n">polygon</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
     <span class="s2">&quot;PolygonLayer&quot;</span><span class="p">,</span>
     <span class="n">LAND_COVER</span><span class="p">,</span>
-    <span class="n">stroked</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
+    <span class="n">stroked</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="c1"># processes the data as a flat longitude-latitude pair</span>
     <span class="n">get_polygon</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">,</span>
     <span class="n">get_fill_color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">],</span>
@@ -283,10 +289,10 @@
     <span class="s2">&quot;GeoJsonLayer&quot;</span><span class="p">,</span>
     <span class="n">DATA_URL</span><span class="p">,</span>
     <span class="n">opacity</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span>
-    <span class="n">stroked</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span>
-    <span class="n">filled</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-    <span class="n">extruded</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-    <span class="n">wireframe</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">stroked</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+    <span class="n">filled</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">extruded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">wireframe</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">get_elevation</span><span class="o">=</span><span class="s2">&quot;properties.valuePerSqm / 20&quot;</span><span class="p">,</span>
     <span class="n">get_fill_color</span><span class="o">=</span><span class="s2">&quot;[255, 255, properties.growth * 255]&quot;</span><span class="p">,</span>
     <span class="n">get_line_color</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span>
@@ -294,7 +300,7 @@
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Deck</span><span class="p">(</span><span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">polygon</span><span class="p">,</span> <span class="n">geojson</span><span class="p">],</span> <span class="n">initial_view_state</span><span class="o">=</span><span class="n">INITIAL_VIEW_STATE</span><span class="p">)</span>
 
-<span class="n">r</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="s2">&quot;geojson_layer.html&quot;</span><span class="p">,</span> <span class="n">notebook_display</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="s2">&quot;geojson_layer.html&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -308,7 +314,7 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="great_circle_layer.html" class="btn btn-neutral float-right" title="GreatCircleLayer" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="geopandas_integration.html" class="btn btn-neutral float-right" title="Geopandas Integration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="custom_layer.html" class="btn btn-neutral float-left" title="CustomLayer" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
@@ -320,11 +326,19 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, MIT License
+        
+        &copy; Copyright 2020, vis.gl, a Series of LF Projects, LLC
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -336,7 +350,6 @@
   </div>
   
 
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
@@ -346,7 +359,9 @@
   
   
     
-   
+    
+
+
 
 </body>
 </html>

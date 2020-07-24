@@ -1,23 +1,30 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>PointCloudLayer &mdash; pydeck 0.3.0 documentation</title>
+  <title>PointCloudLayer &mdash; pydeck 0.4.0 documentation</title>
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -29,10 +36,6 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="PolygonLayer" href="polygon_layer.html" />
@@ -50,7 +53,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> pydeck
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pydeck
           
 
           
@@ -60,7 +63,7 @@
             
             
               <div class="version">
-                0.3
+                0.4
               </div>
             
           
@@ -77,6 +80,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -84,12 +88,10 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Getting started</span></p>
+              <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installing pydeck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing to pydeck</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
 <ul>
@@ -118,6 +120,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -156,7 +159,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>PointCloudLayer</li>
     
@@ -179,14 +182,15 @@
             
   <div class="section" id="pointcloudlayer">
 <h1>PointCloudLayer<a class="headerlink" href="#pointcloudlayer" title="Permalink to this headline">¶</a></h1>
-<a id="deck-link" target="_blank" href="https://deck.gl/#/documentation/deckgl-api-reference/layers/point-cloud-layer">deck.gl docs</a>
+<a id="deck-link" target="_blank" href="https://deck.gl/docs/api-reference/layers/point-cloud-layer">deck.gl docs</a>
+
 <br /><html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>pydeck</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <script src=https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.2.0-alpha.1/dist/index.js></script>
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.2.0-alpha.3/dist/index.js'></script>
     <style>
     body {
       margin: 0;
@@ -229,13 +233,15 @@
     </div>
   </body>
   <script>
-    const jsonInput = {"initialViewState": {"controller": true, "rotationOrbit": 30, "rotationX": 15, "target": [0.6562291561182103, -0.42111643013644856, 319.7242551382074], "zoom": 5.3}, "layers": [{"@@type": "PointCloudLayer", "autoHighlight": true, "data": "https://raw.githubusercontent.com/ajduberstein/geo_datasets/master/small_waterfall.csv", "getColor": "@@=[r, g, b]", "getNormal": [0, 0, 15], "getPosition": "@@=[x, y, z]", "id": "448dbb17-e1f8-4f00-a379-89c975ad3822", "pickable": true, "pointSize": 3}], "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "OrbitView", "controller": true}]};
-    const MAPBOX_API_KEY = 'pk.eyJ1IjoiZHViZXJzYWoyIiwiYSI6ImNqcHhmYzcwNTBrZHc0OW9udGljMm1pNXQifQ.DxYvaredXVDkvS0nSAuf_Q';
+    const jsonInput = {"initialViewState": {"controller": true, "rotationOrbit": 30, "rotationX": 15, "target": [0.6562291561182103, -0.42111643013644856, 319.7242551382074], "zoom": 5.3}, "layers": [{"@@type": "PointCloudLayer", "autoHighlight": true, "data": "https://raw.githubusercontent.com/ajduberstein/geo_datasets/master/small_waterfall.csv", "getColor": "@@=[r, g, b]", "getNormal": [0, 0, 15], "getPosition": "@@=[x, y, z]", "id": "794241f2-a69f-4920-82bf-dd4b39359f09", "pickable": true, "pointSize": 3}], "mapProvider": "mapbox", "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "OrbitView", "controller": true}]};
+    const MAPBOX_API_KEY = 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg';
+    const GOOGLE_MAPS_API_KEY = 'None';
     const tooltip = true;
     const customLibraries = null;
 
     const deck = createDeck({
       mapboxApiKey: MAPBOX_API_KEY,
+      googleMapsKey: GOOGLE_MAPS_API_KEY,
       container: document.getElementById('deck-container'),
       jsonInput,
       tooltip,
@@ -266,7 +272,7 @@
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">pydeck</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
 
 <span class="n">DATA_URL</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/ajduberstein/geo_datasets/master/small_waterfall.csv&quot;</span>
@@ -280,16 +286,16 @@
     <span class="n">get_position</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">],</span>
     <span class="n">get_color</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="s2">&quot;g&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">],</span>
     <span class="n">get_normal</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">],</span>
-    <span class="n">auto_highlight</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-    <span class="n">pickable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">auto_highlight</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">pickable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">point_size</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="n">view_state</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">ViewState</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">rotation_x</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">rotation_orbit</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mf">5.3</span><span class="p">)</span>
-<span class="n">view</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">View</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;OrbitView&quot;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">view_state</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">ViewState</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rotation_x</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">rotation_orbit</span><span class="o">=</span><span class="mi">30</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mf">5.3</span><span class="p">)</span>
+<span class="n">view</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">View</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;OrbitView&quot;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Deck</span><span class="p">(</span><span class="n">point_cloud_layer</span><span class="p">,</span> <span class="n">initial_view_state</span><span class="o">=</span><span class="n">view_state</span><span class="p">,</span> <span class="n">views</span><span class="o">=</span><span class="p">[</span><span class="n">view</span><span class="p">])</span>
-<span class="n">r</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="s2">&quot;point_cloud_layer.html&quot;</span><span class="p">,</span> <span class="n">css_background_color</span><span class="o">=</span><span class="s2">&quot;#add8e6&quot;</span><span class="p">,</span> <span class="n">notebook_display</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="s2">&quot;point_cloud_layer.html&quot;</span><span class="p">,</span> <span class="n">css_background_color</span><span class="o">=</span><span class="s2">&quot;#add8e6&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -315,11 +321,19 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, MIT License
+        
+        &copy; Copyright 2020, vis.gl, a Series of LF Projects, LLC
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -331,7 +345,6 @@
   </div>
   
 
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
@@ -341,7 +354,9 @@
   
   
     
-   
+    
+
+
 
 </body>
 </html>

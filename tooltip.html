@@ -1,23 +1,30 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Configuring tooltips &mdash; pydeck 0.3.0 documentation</title>
+  <title>Configuring tooltips &mdash; pydeck 0.4.0 documentation</title>
   
 
   
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="_static/favicon.png"/>
   
   
   
 
   
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -29,10 +36,6 @@
     <script type="text/javascript" src="_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Custom layers" href="custom_layers.html" />
@@ -50,7 +53,7 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> pydeck
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> pydeck
           
 
           
@@ -60,7 +63,7 @@
             
             
               <div class="version">
-                0.3
+                0.4
               </div>
             
           
@@ -77,6 +80,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -84,12 +88,10 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Getting started</span></p>
+              <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installing pydeck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing to pydeck</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
 <ul>
@@ -122,6 +124,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -160,7 +163,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="index.html">Docs</a> &raquo;</li>
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>Configuring tooltips</li>
     
@@ -197,7 +200,7 @@
 <p>A lightweight template syntax is available to both the <code class="docutils literal notranslate"><span class="pre">text</span></code> and <code class="docutils literal notranslate"><span class="pre">html</span></code> keys,
 using similar conventions as Python’s <code class="docutils literal notranslate"><span class="pre">.format</span></code> syntax with variable names.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tooltip</span> <span class="o">=</span> <span class="p">{</span>
-   <span class="s2">&quot;html&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;b&gt;Elevation Value:&lt;/b&gt; {elevationValue} &lt;br/&gt; &lt;b&gt;Color Value:&lt;/b&gt; {colorValue}&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;html&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;b&gt;Elevation Value:&lt;/b&gt; </span><span class="si">{elevationValue}</span><span class="s2"> &lt;br/&gt; &lt;b&gt;Color Value:&lt;/b&gt; </span><span class="si">{colorValue}</span><span class="s2">&quot;</span><span class="p">,</span>
    <span class="s2">&quot;style&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="s2">&quot;steelblue&quot;</span><span class="p">,</span>
         <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;white&quot;</span>
@@ -206,7 +209,7 @@ using similar conventions as Python’s <code class="docutils literal notranslat
 </pre></div>
 </div>
 <p>Variable names available to the template are top level primitives in an individual
-row of data given by deck.gl’s <a class="reference external" href="https://github.com/uber/deck.gl/blob/master/docs/developer-guide/interactivity.md#the-picking-info-object">pickingInfo.object</a> and vary by layer.
+row of data given by deck.gl’s <a class="reference external" href="https://github.com/visgl/deck.gl/blob/master/docs/developer-guide/interactivity.md#the-picking-info-object">pickingInfo.object</a> and vary by layer.
 For example, in an aggregation layer like <code class="docutils literal notranslate"><span class="pre">HexagonLayer</span></code>, the
 top-level attributes for an individual picked datum include <code class="docutils literal notranslate"><span class="pre">elevationValue</span></code>,
 <code class="docutils literal notranslate"><span class="pre">colorValue</span></code> and a list of <code class="docutils literal notranslate"><span class="pre">points</span></code> under the cursor.</p>
@@ -217,7 +220,7 @@ whereas individual points in the <code class="docutils literal notranslate"><spa
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
 <p>Setting the tooltip’s HTML value and CSS:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tooltip</span> <span class="o">=</span> <span class="p">{</span>
-   <span class="s2">&quot;html&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;b&gt;Elevation Value:&lt;/b&gt; {elevationValue}&quot;</span><span class="p">,</span>
+   <span class="s2">&quot;html&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;b&gt;Elevation Value:&lt;/b&gt; </span><span class="si">{elevationValue}</span><span class="s2">&quot;</span><span class="p">,</span>
    <span class="s2">&quot;style&quot;</span><span class="p">:</span> <span class="p">{</span>
         <span class="s2">&quot;backgroundColor&quot;</span><span class="p">:</span> <span class="s2">&quot;steelblue&quot;</span><span class="p">,</span>
         <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;white&quot;</span>
@@ -228,23 +231,23 @@ whereas individual points in the <code class="docutils literal notranslate"><spa
 <img alt="https://i.imgur.com/5tcpgYN.png" src="https://i.imgur.com/5tcpgYN.png" />
 <p>Just setting the text:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tooltip</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Elevation: {elevationValue}&quot;</span>
+    <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Elevation: </span><span class="si">{elevationValue}</span><span class="s2">&quot;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
 <img alt="https://i.imgur.com/FSkiBVW.png" src="https://i.imgur.com/FSkiBVW.png" />
 <p>A full demo is below:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pydeck</span> <span class="kn">as</span> <span class="nn">pdk</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pydeck</span> <span class="k">as</span> <span class="nn">pdk</span>
 
 <span class="n">layer</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
     <span class="s1">&#39;HexagonLayer&#39;</span><span class="p">,</span>
     <span class="n">UK_ACCIDENTS_DATA</span><span class="p">,</span>
     <span class="n">get_position</span><span class="o">=</span><span class="s1">&#39;[lng, lat]&#39;</span><span class="p">,</span>
-    <span class="n">auto_highlight</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">auto_highlight</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">elevation_scale</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
-    <span class="n">pickable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">pickable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">elevation_range</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3000</span><span class="p">],</span>
-    <span class="n">extruded</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">extruded</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">coverage</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="c1"># Set the viewport location</span>
@@ -262,7 +265,7 @@ whereas individual points in the <code class="docutils literal notranslate"><spa
     <span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">layer</span><span class="p">],</span>
     <span class="n">initial_view_state</span><span class="o">=</span><span class="n">view_state</span><span class="p">,</span>
     <span class="n">tooltip</span><span class="o">=</span><span class="p">{</span>
-        <span class="s1">&#39;html&#39;</span><span class="p">:</span> <span class="s1">&#39;&lt;b&gt;Elevation Value:&lt;/b&gt; {elevationValue}&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;html&#39;</span><span class="p">:</span> <span class="s1">&#39;&lt;b&gt;Elevation Value:&lt;/b&gt; </span><span class="si">{elevationValue}</span><span class="s1">&#39;</span><span class="p">,</span>
         <span class="s1">&#39;style&#39;</span><span class="p">:</span> <span class="p">{</span>
             <span class="s1">&#39;color&#39;</span><span class="p">:</span> <span class="s1">&#39;white&#39;</span>
         <span class="p">}</span>
@@ -294,11 +297,19 @@ whereas individual points in the <code class="docutils literal notranslate"><spa
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, MIT License
+        
+        &copy; Copyright 2020, vis.gl, a Series of LF Projects, LLC
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -310,7 +321,6 @@ whereas individual points in the <code class="docutils literal notranslate"><spa
   </div>
   
 
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
@@ -320,7 +330,9 @@ whereas individual points in the <code class="docutils literal notranslate"><spa
   
   
     
-   
+    
+
+
 
 </body>
 </html>

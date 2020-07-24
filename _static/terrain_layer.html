@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>pydeck</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.2.0-alpha.3/dist/index.js'></script>
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #deck-map-container {
+      width: 100%;
+      height: 100%;
+      background-color: black;
+    }
+
+    #map {
+      pointer-events: none;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      z-index: 1;
+    }
+
+    #deckgl-overlay {
+      z-index: 2;
+      background: none;
+    }
+
+    #deck-map-wrapper {
+      width: 100%;
+      height: 100%;
+    }
+
+    #deck-container {
+      width: 100vw;
+      height: 100vh;
+    }
+    </style>
+  </head>
+  <body>
+    <div id="deck-container">
+    </div>
+  </body>
+  <script>
+    const jsonInput = {"initialViewState": {"bearing": 140, "latitude": 46.24, "longitude": -122.18, "pitch": 60, "zoom": 11.5}, "layers": [{"@@type": "TerrainLayer", "elevationData": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png", "elevationDecoder": {"bScaler": 0.00390625, "gScaler": 1, "offset": -32768, "rScaler": 256}, "id": "94965d2e-6fdd-4f75-8999-29caa54135d1", "texture": "https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}@2x.png?access_token=pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg"}], "mapProvider": "mapbox", "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "MapView", "controller": true}]};
+    const MAPBOX_API_KEY = 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg';
+    const GOOGLE_MAPS_API_KEY = 'None';
+    const tooltip = true;
+    const customLibraries = null;
+
+    const deck = createDeck({
+      mapboxApiKey: MAPBOX_API_KEY,
+      googleMapsKey: GOOGLE_MAPS_API_KEY,
+      container: document.getElementById('deck-container'),
+      jsonInput,
+      tooltip,
+      customLibraries
+    });
+
+  </script>
+</html>

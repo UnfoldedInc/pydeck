@@ -1,23 +1,30 @@
 
 
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
   <meta charset="utf-8">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>LineLayer &mdash; pydeck 0.3.0 documentation</title>
+  <title>LineLayer &mdash; pydeck 0.4.0 documentation</title>
   
 
   
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
   
   
   
 
   
-  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
     
       <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -29,10 +36,6 @@
     <script type="text/javascript" src="../_static/js/theme.js"></script>
 
     
-
-  
-  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="PathLayer" href="path_layer.html" />
@@ -50,7 +53,7 @@
           
 
           
-            <a href="../index.html" class="icon icon-home"> pydeck
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> pydeck
           
 
           
@@ -60,7 +63,7 @@
             
             
               <div class="version">
-                0.3
+                0.4
               </div>
             
           
@@ -77,6 +80,7 @@
           
         </div>
 
+        
         <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
           
             
@@ -84,12 +88,10 @@
               
             
             
-              <ul>
-<li class="toctree-l1"><a class="reference internal" href="../index.html">Home</a></li>
-</ul>
-<p class="caption"><span class="caption-text">Getting started</span></p>
+              <p class="caption"><span class="caption-text">Getting started</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../installation.html">Installing pydeck</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing to pydeck</a></li>
 </ul>
 <p class="caption"><span class="caption-text">API documentation</span></p>
 <ul>
@@ -118,6 +120,7 @@
             
           
         </div>
+        
       </div>
     </nav>
 
@@ -156,7 +159,7 @@
 
   <ul class="wy-breadcrumbs">
     
-      <li><a href="../index.html">Docs</a> &raquo;</li>
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
         
       <li>LineLayer</li>
     
@@ -179,14 +182,15 @@
             
   <div class="section" id="linelayer">
 <h1>LineLayer<a class="headerlink" href="#linelayer" title="Permalink to this headline">¶</a></h1>
-<a id="deck-link" target="_blank" href="https://deck.gl/#/documentation/deckgl-api-reference/layers/line-layer">deck.gl docs</a>
+<a id="deck-link" target="_blank" href="https://deck.gl/docs/api-reference/layers/line-layer">deck.gl docs</a>
+
 <br /><html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>pydeck</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <script src=https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.2.0-alpha.1/dist/index.js></script>
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.2.0-alpha.3/dist/index.js'></script>
     <style>
     body {
       margin: 0;
@@ -229,13 +233,15 @@
     </div>
   </body>
   <script>
-    const jsonInput = {"initialViewState": {"bearing": 0, "latitude": 47.65, "longitude": 7, "maxZoom": 16, "pitch": 50, "zoom": 4.5}, "layers": [{"@@type": "ScatterplotLayer", "data": "https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/line/airports.json", "getFillColor": [255, 140, 0], "getPosition": "@@=coordinates", "getRadius": 60, "id": "fd5664e8-8007-44b3-b35a-fef3861b84ca", "pickable": true, "radiusScale": 20}, {"@@type": "LineLayer", "autoHighlight": true, "data": "https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/line/heathrow-flights.json", "getColor": "@@=[255 * (1 - (start[2] / 10000) * 2), 128 * (start[2] / 10000), 255 * (start[2] / 10000), 255 * (1 - (start[2] / 10000))]", "getSourcePosition": "@@=start", "getTargetPosition": "@@=end", "getWidth": 10, "highlightColor": [255, 255, 0], "id": "a8a40f06-1d1c-4607-8f36-1686bed0a8d3", "pickable": true, "pickingRadius": 10}], "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "MapView", "controller": true}]};
-    const MAPBOX_API_KEY = 'pk.eyJ1IjoiZHViZXJzYWoyIiwiYSI6ImNqcHhmYzcwNTBrZHc0OW9udGljMm1pNXQifQ.DxYvaredXVDkvS0nSAuf_Q';
+    const jsonInput = {"initialViewState": {"bearing": 0, "latitude": 47.65, "longitude": 7, "maxZoom": 16, "pitch": 50, "zoom": 4.5}, "layers": [{"@@type": "ScatterplotLayer", "data": "https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/line/airports.json", "getFillColor": [255, 140, 0], "getPosition": "@@=coordinates", "getRadius": 60, "id": "4cc2af31-6edb-40cc-8e5e-1796b0ee03f0", "pickable": true, "radiusScale": 20}, {"@@type": "LineLayer", "autoHighlight": true, "data": "https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/line/heathrow-flights.json", "getColor": "@@=[255 * (1 - (start[2] / 10000) * 2), 128 * (start[2] / 10000), 255 * (start[2] / 10000), 255 * (1 - (start[2] / 10000))]", "getSourcePosition": "@@=start", "getTargetPosition": "@@=end", "getWidth": 10, "highlightColor": [255, 255, 0], "id": "c54acf89-3002-4fc2-a9f2-0c96f85aa311", "pickable": true, "pickingRadius": 10}], "mapProvider": "mapbox", "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "MapView", "controller": true}]};
+    const MAPBOX_API_KEY = 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg';
+    const GOOGLE_MAPS_API_KEY = 'None';
     const tooltip = true;
     const customLibraries = null;
 
     const deck = createDeck({
       mapboxApiKey: MAPBOX_API_KEY,
+      googleMapsKey: GOOGLE_MAPS_API_KEY,
       container: document.getElementById('deck-container'),
       jsonInput,
       tooltip,
@@ -263,14 +269,14 @@
 <span class="sd">Flights from Heathrow around Europe, adapted from the deck.gl documentation.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 
-<span class="kn">import</span> <span class="nn">pydeck</span>
+<span class="kn">import</span> <span class="nn">pydeck</span> <span class="k">as</span> <span class="nn">pdk</span>
 
 <span class="n">DATA_URL</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;AIRPORTS&quot;</span><span class="p">:</span> <span class="s2">&quot;https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/line/airports.json&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;FLIGHT_PATHS&quot;</span><span class="p">:</span> <span class="s2">&quot;https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/line/heathrow-flights.json&quot;</span><span class="p">,</span>  <span class="c1"># noqa</span>
+    <span class="s2">&quot;AIRPORTS&quot;</span><span class="p">:</span> <span class="s2">&quot;https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/line/airports.json&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;FLIGHT_PATHS&quot;</span><span class="p">:</span> <span class="s2">&quot;https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/line/heathrow-flights.json&quot;</span><span class="p">,</span>  <span class="c1"># noqa</span>
 <span class="p">}</span>
 
-<span class="n">INITIAL_VIEW_STATE</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">ViewState</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="mf">47.65</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mf">4.5</span><span class="p">,</span> <span class="n">max_zoom</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">bearing</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">INITIAL_VIEW_STATE</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">ViewState</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="mf">47.65</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mf">4.5</span><span class="p">,</span> <span class="n">max_zoom</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">bearing</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1"># RGBA value generated in Javascript by deck.gl&#39;s Javascript expression parser</span>
 <span class="n">GET_COLOR_JS</span> <span class="o">=</span> <span class="p">[</span>
@@ -280,17 +286,17 @@
     <span class="s2">&quot;255 * (1 - (start[2] / 10000))&quot;</span><span class="p">,</span>
 <span class="p">]</span>
 
-<span class="n">scatterplot</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
+<span class="n">scatterplot</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
     <span class="s2">&quot;ScatterplotLayer&quot;</span><span class="p">,</span>
     <span class="n">DATA_URL</span><span class="p">[</span><span class="s2">&quot;AIRPORTS&quot;</span><span class="p">],</span>
     <span class="n">radius_scale</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span>
     <span class="n">get_position</span><span class="o">=</span><span class="s2">&quot;coordinates&quot;</span><span class="p">,</span>
     <span class="n">get_fill_color</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">140</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
     <span class="n">get_radius</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
-    <span class="n">pickable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">pickable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 
-<span class="n">line_layer</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
+<span class="n">line_layer</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
     <span class="s2">&quot;LineLayer&quot;</span><span class="p">,</span>
     <span class="n">DATA_URL</span><span class="p">[</span><span class="s2">&quot;FLIGHT_PATHS&quot;</span><span class="p">],</span>
     <span class="n">get_source_position</span><span class="o">=</span><span class="s2">&quot;start&quot;</span><span class="p">,</span>
@@ -299,14 +305,14 @@
     <span class="n">get_width</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
     <span class="n">highlight_color</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
     <span class="n">picking_radius</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-    <span class="n">auto_highlight</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
-    <span class="n">pickable</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span>
+    <span class="n">auto_highlight</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">pickable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="n">layers</span> <span class="o">=</span> <span class="p">[</span><span class="n">scatterplot</span><span class="p">,</span> <span class="n">line_layer</span><span class="p">]</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Deck</span><span class="p">(</span><span class="n">layers</span><span class="o">=</span><span class="n">layers</span><span class="p">,</span> <span class="n">initial_view_state</span><span class="o">=</span><span class="n">INITIAL_VIEW_STATE</span><span class="p">)</span>
-<span class="n">r</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="s2">&quot;line_layer.html&quot;</span><span class="p">,</span> <span class="n">notebook_display</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">Deck</span><span class="p">(</span><span class="n">layers</span><span class="o">=</span><span class="n">layers</span><span class="p">,</span> <span class="n">initial_view_state</span><span class="o">=</span><span class="n">INITIAL_VIEW_STATE</span><span class="p">)</span>
+<span class="n">r</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="s2">&quot;line_layer.html&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -332,11 +338,19 @@
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2020, MIT License
+        
+        &copy; Copyright 2020, vis.gl, a Series of LF Projects, LLC
 
     </p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
 
 </footer>
 
@@ -348,7 +362,6 @@
   </div>
   
 
-
   <script type="text/javascript">
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
@@ -358,7 +371,9 @@
   
   
     
-   
+    
+
+
 
 </body>
 </html>

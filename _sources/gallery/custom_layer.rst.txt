@@ -4,7 +4,9 @@ CustomLayer
 
 .. raw:: html
 
-    <a id="deck-link" target="_blank" href="https://deck.gl/#/documentation/deckgl-api-reference/layers/custom-layer">deck.gl docs</a>
+    
+    <a id="deck-link" target="_blank" href="https://deck.gl/docs/api-reference/layers/custom-layer">deck.gl docs</a>
+    
     <br />
 
 .. raw:: html
@@ -47,7 +49,7 @@ Source
     pydeck.settings.custom_libraries = [
         {
             "libraryName": "LabeledGeoJsonLayerLibrary",
-            "resourceUri": "https://unpkg.com/pydeck-custom-layer-demo@0.0.1/dist/bundle.js",
+            "resourceUri": "https://unpkg.com/pydeck-custom-layer-demo/dist/bundle.js",
         }
     ]
 
@@ -68,7 +70,7 @@ Source
 
     view_state = pydeck.ViewState(latitude=0, longitude=0, zoom=1)
 
-    r = pydeck.Deck(custom_layer, initial_view_state=view_state, map_style="",)
+    r = pydeck.Deck(custom_layer, initial_view_state=view_state, map_provider=None)
 
-    r.to_html("custom_layer.html", css_background_color="#333", notebook_display=False)
+    r.to_html("custom_layer.html", css_background_color="#333")
 
