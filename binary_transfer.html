@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Binary data transfer &mdash; pydeck 0.4.0 documentation</title>
+  <title>Binary data transfer &mdash; pydeck 0.5.0 documentation</title>
   
 
   
@@ -39,7 +39,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Configuring tooltips" href="tooltip.html" />
-    <link rel="prev" title="Jupyter-specific features" href="jupyter.html" /> 
+    <link rel="prev" title="Event handling" href="event_handling.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.4
+                0.5
               </div>
             
           
@@ -105,6 +105,7 @@
 <p class="caption"><span class="caption-text">Jupyter</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter-specific features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="event_handling.html">Event handling</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Binary data transfer</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#motivation">Motivation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#usage">Usage</a></li>
@@ -280,6 +281,105 @@ communication built into the Jupyter environment.</p></li>
 </div>
 <div class="section" id="example">
 <h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">Binary Transport</span>
+<span class="sd">================</span>
+
+<span class="sd">Example of binary transport in pydeck. This notebook renders 10k points via the web sockets within</span>
+<span class="sd">a Jupyter notebook if you run with ``generate_vis(notebook_display=True)``</span>
+
+<span class="sd">Since binary transfer relies on Jupyter&#39;s kernel communication,</span>
+<span class="sd">note that the .html in the pydeck documentation does not use binary transfer</span>
+<span class="sd">and is just for illustration.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">pydeck</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+
+<span class="n">NODES_URL</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/ajduberstein/geo_datasets/master/social_nodes.csv&quot;</span>
+
+
+<span class="k">def</span> <span class="nf">generate_graph_data</span><span class="p">(</span><span class="n">num_nodes</span><span class="p">,</span> <span class="n">random_seed</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Generates a graph of 10k nodes with a 3D force layout</span>
+
+<span class="sd">    This function is unused but serves as an example of how the data in</span>
+<span class="sd">    this visualization was generated</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>  <span class="c1"># noqa</span>
+
+    <span class="n">g</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">random_internet_as_graph</span><span class="p">(</span><span class="n">num_nodes</span><span class="p">,</span> <span class="n">random_seed</span><span class="p">)</span>
+    <span class="n">node_positions</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">fruchterman_reingold_layout</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+
+    <span class="n">force_layout_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_records</span><span class="p">(</span><span class="n">node_positions</span><span class="p">)</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+    <span class="n">force_layout_df</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">d</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">g</span><span class="o">.</span><span class="n">nodes</span><span class="o">.</span><span class="n">data</span><span class="p">()]</span>
+    <span class="n">force_layout_df</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span> <span class="s2">&quot;group&quot;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">force_layout_df</span>
+
+
+<span class="k">def</span> <span class="nf">make_renderer</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">use_binary_transport</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Creates the pydeck visualization for rendering&quot;&quot;&quot;</span>
+    <span class="n">view_state</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">ViewState</span><span class="p">(</span>
+        <span class="n">offset</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="n">latitude</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">longitude</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">bearing</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">pitch</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+        <span class="n">zoom</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="n">views</span> <span class="o">=</span> <span class="p">[</span><span class="n">pydeck</span><span class="o">.</span><span class="n">View</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;OrbitView&quot;</span><span class="p">,</span> <span class="n">controller</span><span class="o">=</span><span class="kc">True</span><span class="p">)]</span>
+
+    <span class="n">nodes_layer</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
+        <span class="s2">&quot;PointCloudLayer&quot;</span><span class="p">,</span>
+        <span class="n">nodes</span><span class="p">,</span>
+        <span class="n">get_position</span><span class="o">=</span><span class="s2">&quot;position&quot;</span><span class="p">,</span>
+        <span class="n">get_normal</span><span class="o">=</span><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">],</span>
+        <span class="n">get_color</span><span class="o">=</span><span class="s2">&quot;color&quot;</span><span class="p">,</span>
+        <span class="n">pickable</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="c1"># Set use_binary_transport to `True`</span>
+        <span class="n">use_binary_transport</span><span class="o">=</span><span class="n">use_binary_transport</span><span class="p">,</span>
+        <span class="n">auto_highlight</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">highlight_color</span><span class="o">=</span><span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
+        <span class="n">radius</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
+    <span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Deck</span><span class="p">(</span><span class="n">layers</span><span class="o">=</span><span class="p">[</span><span class="n">nodes_layer</span><span class="p">],</span> <span class="n">initial_view_state</span><span class="o">=</span><span class="n">view_state</span><span class="p">,</span> <span class="n">views</span><span class="o">=</span><span class="n">views</span><span class="p">,</span> <span class="n">map_provider</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+
+
+<span class="n">r</span> <span class="o">=</span> <span class="kc">None</span>
+
+
+<span class="k">def</span> <span class="nf">generate_vis</span><span class="p">(</span><span class="n">notebook_display</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="k">global</span> <span class="n">r</span>
+    <span class="n">nodes</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">NODES_URL</span><span class="p">)</span>
+
+    <span class="n">colors</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">data_utils</span><span class="o">.</span><span class="n">assign_random_colors</span><span class="p">(</span><span class="n">nodes</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">])</span>
+    <span class="c1"># Divide by 255 to normalize the colors</span>
+    <span class="c1"># Specify positions and colors as columns of lists</span>
+    <span class="n">nodes</span><span class="p">[</span><span class="s2">&quot;color&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+        <span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="p">[</span><span class="n">c</span> <span class="o">/</span> <span class="mi">255</span> <span class="k">if</span> <span class="n">notebook_display</span> <span class="k">else</span> <span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">colors</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">])],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+    <span class="p">)</span>
+    <span class="n">nodes</span><span class="p">[</span><span class="s2">&quot;position&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">nodes</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;z&quot;</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="c1"># Remove all unused columns</span>
+    <span class="k">del</span> <span class="n">nodes</span><span class="p">[</span><span class="s2">&quot;x&quot;</span><span class="p">]</span>
+    <span class="k">del</span> <span class="n">nodes</span><span class="p">[</span><span class="s2">&quot;y&quot;</span><span class="p">]</span>
+    <span class="k">del</span> <span class="n">nodes</span><span class="p">[</span><span class="s2">&quot;z&quot;</span><span class="p">]</span>
+    <span class="k">del</span> <span class="n">nodes</span><span class="p">[</span><span class="s2">&quot;group&quot;</span><span class="p">]</span>
+
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">notebook_display</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">make_renderer</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">use_binary_transport</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="n">r</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="s2">&quot;binary_transport.html&quot;</span><span class="p">,</span> <span class="n">css_background_color</span><span class="o">=</span><span class="s2">&quot;charcoal&quot;</span><span class="p">,</span> <span class="n">notebook_display</span><span class="o">=</span><span class="n">notebook_display</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">r</span> <span class="o">=</span> <span class="n">make_renderer</span><span class="p">(</span><span class="n">nodes</span><span class="p">,</span> <span class="n">use_binary_transport</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">r</span><span class="o">.</span><span class="n">show</span><span class="p">())</span>  <span class="c1"># noqa</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">generate_vis</span><span class="p">()</span>
+</pre></div>
+</div>
 </div>
 </div>
 
@@ -294,7 +394,7 @@ communication built into the Jupyter environment.</p></li>
         <a href="tooltip.html" class="btn btn-neutral float-right" title="Configuring tooltips" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="jupyter.html" class="btn btn-neutral float-left" title="Jupyter-specific features" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="event_handling.html" class="btn btn-neutral float-left" title="Event handling" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

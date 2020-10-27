@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>TripsLayer &mdash; pydeck 0.4.0 documentation</title>
+  <title>TripsLayer &mdash; pydeck 0.5.0 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.4
+                0.5
               </div>
             
           
@@ -105,6 +105,7 @@
 <p class="caption"><span class="caption-text">Jupyter</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../jupyter.html">Jupyter-specific features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../event_handling.html">Event handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../binary_transfer.html">Binary data transfer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Further customization</span></p>
@@ -190,7 +191,7 @@
     <title>pydeck</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.2.0-alpha.3/dist/index.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.3.*/dist/index.js'></script>
     <style>
     body {
       margin: 0;
@@ -233,8 +234,8 @@
     </div>
   </body>
   <script>
-    const jsonInput = {"initialViewState": {"bearing": 0, "latitude": 37.7749295, "longitude": -122.4194155, "pitch": 45, "zoom": 11}, "layers": [{"@@type": "TripsLayer", "currentTime": 500, "data": [{"coordinates": [[-122.39079879999997, 37.7664413], [-122.3908298, 37.7667706], [-122.39271759999997, 37.7667484], [-122.3951341, 37.7665964], [-122.409425, 37.7779834], [-122.41318080000002, 37.7750068], [-122.41619750000001, 37.7774034], [-122.42135359999997, 37.7770974], [-122.42620490000002, 37.8010553], [-122.44484019999999, 37.7989071], [-122.4493488, 37.801993], [-122.44985459999998, 37.8024803], [-122.45090290000002, 37.8033639], [-122.45116330000002, 37.8034643], [-122.44840979999998, 37.8046164], [-122.44826899999998, 37.8045327], [-122.44827479999998, 37.8044851], [-122.44846849999999, 37.8043839], [-122.44856720000001, 37.8040182]], "timestamps": [0, 9, 54, 92, 345, 402, 462, 563, 880, 1070, 1117, 1120, 1127, 1130, 1166, 1176, 1181, 1186, 1200]}], "getColor": [253, 128, 93], "getPath": "@@=coordinates", "getTimestamps": "@@=timestamps", "id": "653d28c0-4637-4e6c-8c54-3bcd1a62fa40", "opacity": 0.8, "rounded": true, "trailLength": 600, "widthMinPixels": 5}], "mapProvider": "mapbox", "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "MapView", "controller": true}]};
-    const MAPBOX_API_KEY = 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg';
+    const jsonInput = {"initialViewState": {"bearing": 0, "latitude": 37.7749295, "longitude": -122.4194155, "pitch": 45, "zoom": 11}, "layers": [{"@@type": "TripsLayer", "currentTime": 500, "data": [{"coordinates": [[-122.39079879999997, 37.7664413], [-122.3908298, 37.7667706], [-122.39271759999997, 37.7667484], [-122.3951341, 37.7665964], [-122.409425, 37.7779834], [-122.41318080000002, 37.7750068], [-122.41619750000001, 37.7774034], [-122.42135359999997, 37.7770974], [-122.42620490000002, 37.8010553], [-122.44484019999999, 37.7989071], [-122.4493488, 37.801993], [-122.44985459999998, 37.8024803], [-122.45090290000002, 37.8033639], [-122.45116330000002, 37.8034643], [-122.44840979999998, 37.8046164], [-122.44826899999998, 37.8045327], [-122.44827479999998, 37.8044851], [-122.44846849999999, 37.8043839], [-122.44856720000001, 37.8040182]], "timestamps": [0, 9, 54, 92, 345, 402, 462, 563, 880, 1070, 1117, 1120, 1127, 1130, 1166, 1176, 1181, 1186, 1200]}], "getColor": [253, 128, 93], "getPath": "@@=coordinates", "getTimestamps": "@@=timestamps", "id": "8e6946fa-9c5b-44f7-b7ab-4df81f2bbdd2", "opacity": 0.8, "rounded": true, "trailLength": 600, "widthMinPixels": 5}], "mapProvider": "mapbox", "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "MapView", "controller": true}]};
+    const MAPBOX_API_KEY = 'pk.eyJ1IjoiYW5kcmV3ZHViZXJzdGVpbiIsImEiOiJja2VpdW8zcDgwMHo3MnJwYnkzczFrY2d0In0.XGYJn-P2YmKJAlvyaJsYhA';
     const GOOGLE_MAPS_API_KEY = 'None';
     const tooltip = true;
     const customLibraries = null;

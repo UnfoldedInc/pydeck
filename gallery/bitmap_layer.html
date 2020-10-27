@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>BitmapLayer &mdash; pydeck 0.4.0 documentation</title>
+  <title>BitmapLayer &mdash; pydeck 0.5.0 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.4
+                0.5
               </div>
             
           
@@ -105,6 +105,7 @@
 <p class="caption"><span class="caption-text">Jupyter</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../jupyter.html">Jupyter-specific features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../event_handling.html">Event handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../binary_transfer.html">Binary data transfer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Further customization</span></p>
@@ -190,7 +191,7 @@
     <title>pydeck</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.2.0-alpha.3/dist/index.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.3.*/dist/index.js'></script>
     <style>
     body {
       margin: 0;
@@ -233,8 +234,8 @@
     </div>
   </body>
   <script>
-    const jsonInput = {"initialViewState": {"bearing": -45, "latitude": 37.7576171, "longitude": -122.5776844, "pitch": 60, "zoom": 10}, "layers": [{"@@type": "BitmapLayer", "bounds": [[-122.52690000000051, 37.70313158980733], [-122.52690000000051, 37.816395657523195], [-122.34604834372873, 37.816134829424335], [-122.34656848822227, 37.70339041384273]], "id": "b138a84e-6e34-460a-9af3-f4243795aeb1", "image": "https://i.imgur.com/W95ked7.jpg", "opacity": 0.7}], "mapProvider": "mapbox", "mapStyle": "mapbox://styles/mapbox/satellite-v9", "views": [{"@@type": "MapView", "controller": true}]};
-    const MAPBOX_API_KEY = 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg';
+    const jsonInput = {"initialViewState": {"bearing": -45, "latitude": 37.7576171, "longitude": -122.5776844, "pitch": 60, "zoom": 10}, "layers": [{"@@type": "BitmapLayer", "bounds": [[-122.52690000000051, 37.70313158980733], [-122.52690000000051, 37.816395657523195], [-122.34604834372873, 37.816134829424335], [-122.34656848822227, 37.70339041384273]], "id": "0271af23-c327-44f6-b16c-7f7551fb38de", "image": "https://i.imgur.com/W95ked7.jpg", "opacity": 0.7}], "mapProvider": "mapbox", "mapStyle": "mapbox://styles/mapbox/satellite-v9", "views": [{"@@type": "MapView", "controller": true}]};
+    const MAPBOX_API_KEY = 'pk.eyJ1IjoiYW5kcmV3ZHViZXJzdGVpbiIsImEiOiJja2VpdW8zcDgwMHo3MnJwYnkzczFrY2d0In0.XGYJn-P2YmKJAlvyaJsYhA';
     const GOOGLE_MAPS_API_KEY = 'None';
     const tooltip = true;
     const customLibraries = null;
@@ -286,7 +287,13 @@
 
 <span class="n">bitmap_layer</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span><span class="s2">&quot;BitmapLayer&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">IMG_URL</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">BOUNDS</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 
-<span class="n">view_state</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">ViewState</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="mf">37.7576171</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=-</span><span class="mf">122.5776844</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">bearing</span><span class="o">=-</span><span class="mi">45</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="mi">60</span><span class="p">,)</span>
+<span class="n">view_state</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">ViewState</span><span class="p">(</span>
+    <span class="n">latitude</span><span class="o">=</span><span class="mf">37.7576171</span><span class="p">,</span>
+    <span class="n">longitude</span><span class="o">=-</span><span class="mf">122.5776844</span><span class="p">,</span>
+    <span class="n">zoom</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">bearing</span><span class="o">=-</span><span class="mi">45</span><span class="p">,</span>
+    <span class="n">pitch</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">Deck</span><span class="p">(</span><span class="n">bitmap_layer</span><span class="p">,</span> <span class="n">initial_view_state</span><span class="o">=</span><span class="n">view_state</span><span class="p">,</span> <span class="n">map_style</span><span class="o">=</span><span class="n">pdk</span><span class="o">.</span><span class="n">map_styles</span><span class="o">.</span><span class="n">SATELLITE</span><span class="p">)</span>
 
