@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>BitmapLayer &mdash; pydeck 0.4.0 documentation</title>
+  <title>BitmapLayer &mdash; pydeck 0.5.0 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.4
+                0.5
               </div>
             
           
@@ -105,6 +105,7 @@
 <p class="caption"><span class="caption-text">Jupyter</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../jupyter.html">Jupyter-specific features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../event_handling.html">Event handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../binary_transfer.html">Binary data transfer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Further customization</span></p>
@@ -189,9 +190,10 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>pydeck</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ4lisXd8iTvSwJK2_hVg81vfwhI9S2KE&libraries=places"></script>
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.2.*/dist/index.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.4.0-alpha.2/dist/index.js'></script>
     <style>
     body {
       margin: 0;
@@ -234,15 +236,13 @@
     </div>
   </body>
   <script>
-    const jsonInput = {"initialViewState": {"bearing": -45, "latitude": 37.7576171, "longitude": -122.5776844, "pitch": 60, "zoom": 10}, "layers": [{"@@type": "BitmapLayer", "bounds": [[-122.52690000000051, 37.70313158980733], [-122.52690000000051, 37.816395657523195], [-122.34604834372873, 37.816134829424335], [-122.34656848822227, 37.70339041384273]], "id": "a0367714-feff-434c-b313-8defe501deb2", "image": "https://i.imgur.com/W95ked7.jpg", "opacity": 0.7}], "mapProvider": "mapbox", "mapStyle": "mapbox://styles/mapbox/satellite-v9", "views": [{"@@type": "MapView", "controller": true}]};
-    const MAPBOX_API_KEY = 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg';
-    const GOOGLE_MAPS_API_KEY = 'AIzaSyAQ4lisXd8iTvSwJK2_hVg81vfwhI9S2KE';
+    const jsonInput = {"initialViewState": {"bearing": -45, "latitude": 37.7576171, "longitude": -122.5776844, "pitch": 60, "zoom": 10}, "layers": [{"@@type": "BitmapLayer", "bounds": [[-122.52690000000051, 37.70313158980733], [-122.52690000000051, 37.816395657523195], [-122.34604834372873, 37.816134829424335], [-122.34656848822227, 37.70339041384273]], "id": "8f60de57-88f1-4bf8-9f3b-bf69209b0b89", "image": {"isLocal": false, "path": "https://i.imgur.com/W95ked7.jpg"}, "opacity": 0.7}], "mapProvider": "carto", "mapStyle": "satellite", "views": [{"@@type": "MapView", "controller": true}]};
     const tooltip = true;
     const customLibraries = null;
 
-    const deck = createDeck({
-      mapboxApiKey: MAPBOX_API_KEY,
-      googleMapsKey: GOOGLE_MAPS_API_KEY,
+    const deckInstance = createDeck({
+      mapboxApiKey: 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg',
+      googleMapsKey: 'AIzaSyAQ4lisXd8iTvSwJK2_hVg81vfwhI9S2KE',
       container: document.getElementById('deck-container'),
       jsonInput,
       tooltip,
@@ -275,7 +275,7 @@
 
 
 <span class="c1"># Map of San Francisco from 1906</span>
-<span class="n">IMG_URL</span> <span class="o">=</span> <span class="s1">&#39;&quot;https://i.imgur.com/W95ked7.jpg&quot;&#39;</span>
+<span class="n">IMG_URL</span> <span class="o">=</span> <span class="s2">&quot;https://i.imgur.com/W95ked7.jpg&quot;</span>
 
 <span class="c1"># Specifies the corners of the image bounding box</span>
 <span class="n">BOUNDS</span> <span class="o">=</span> <span class="p">[</span>
@@ -285,7 +285,7 @@
     <span class="p">[</span><span class="o">-</span><span class="mf">122.34656848822227</span><span class="p">,</span> <span class="mf">37.70339041384273</span><span class="p">],</span>
 <span class="p">]</span>
 
-<span class="n">bitmap_layer</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span><span class="s2">&quot;BitmapLayer&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">IMG_URL</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">BOUNDS</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
+<span class="n">bitmap_layer</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span><span class="s2">&quot;BitmapLayer&quot;</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">IMG_URL</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">BOUNDS</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 
 <span class="n">view_state</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">ViewState</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="mf">37.7576171</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=-</span><span class="mf">122.5776844</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">bearing</span><span class="o">=-</span><span class="mi">45</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="mi">60</span><span class="p">,)</span>
 

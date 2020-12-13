@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>View &mdash; pydeck 0.4.0 documentation</title>
+  <title>View &mdash; pydeck 0.5.0 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.4
+                0.5
               </div>
             
           
@@ -105,6 +105,7 @@
 <p class="caption"><span class="caption-text">Jupyter</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter-specific features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="event_handling.html">Event handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binary_transfer.html">Binary data transfer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Further customization</span></p>
@@ -184,7 +185,7 @@
 <span id="view"></span><h1>View<a class="headerlink" href="#module-pydeck.bindings.view" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="pydeck.bindings.view.View">
-<em class="property">class </em><code class="sig-name descname">View</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">controller</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">width</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">height</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydeck.bindings.view.View" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">View</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">controller</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">width</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">height</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydeck.bindings.view.View" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pydeck.bindings.json_tools.JSONMixin</span></code></p>
 <p>Represents a “hard configuration” of a camera location</p>
 <dl class="field-list simple">
@@ -192,6 +193,7 @@
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>type</strong> (<em>str</em><em>, </em><em>default None</em>) – deck.gl view to display, e.g., MapView</p></li>
 <li><p><strong>controller</strong> (<em>bool</em><em>, </em><em>default None</em>) – If enabled, camera becomes interactive.</p></li>
+<li><p><strong>**kwargs</strong> – Any of the parameters passable to a deck.gl View</p></li>
 </ul>
 </dd>
 </dl>

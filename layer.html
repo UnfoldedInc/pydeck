@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Layer Overview and Examples &mdash; pydeck 0.4.0 documentation</title>
+  <title>Layer Overview and Examples &mdash; pydeck 0.5.0 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.4
+                0.5
               </div>
             
           
@@ -113,6 +113,7 @@
 <p class="caption"><span class="caption-text">Jupyter</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter-specific features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="event_handling.html">Event handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binary_transfer.html">Binary data transfer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Further customization</span></p>
@@ -192,7 +193,7 @@
 <h1>Layer Overview and Examples<a class="headerlink" href="#layer-overview-and-examples" title="Permalink to this headline">¶</a></h1>
 <p><a class="reference internal" href="#pydeck.bindings.layer.Layer" title="pydeck.bindings.layer.Layer"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydeck.bindings.layer.Layer</span></code></a> represents a kind of data visualization, like a scatterplot
 or a hexbin chart.
-The full <a class="reference external" href="https://deck.gl/docs/api-reference/layers">deck.gl layer catalog</a> is accessible via pydeck.
+The full <a class="reference external" href="/docs/api-reference/layers/README.md">deck.gl layer catalog</a> is accessible via pydeck.
 This page will provide more examples of how to utilize the deck.gl catalog in Python via pydeck.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
@@ -204,7 +205,7 @@ If you’re still stuck, file an issue with clicking <a class="reference externa
 </div>
 <dl class="py class">
 <dt id="pydeck.bindings.layer.Layer">
-<em class="property">class </em><code class="sig-name descname">Layer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type</span></em>, <em class="sig-param"><span class="n">data</span></em>, <em class="sig-param"><span class="n">id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_binary_transport</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydeck.bindings.layer.Layer" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Layer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">type</span></em>, <em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">use_binary_transport</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydeck.bindings.layer.Layer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Configures a deck.gl layer for rendering on a map. Parameters passed
 here will be specific to the particular deck.gl layer that you are choosing to use.</p>
 <p>Please see the deck.gl
@@ -216,7 +217,7 @@ at the examples in the pydeck documentation.</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>type</strong> (<em>str</em>) – Type of layer to render, e.g., <cite>HexagonLayer</cite></p></li>
 <li><p><strong>id</strong> (<em>str</em><em>, </em><em>default None</em>) – Unique name for layer</p></li>
-<li><p><strong>data</strong> (<em>str</em><em> or </em><em>list of dict of {str: Any}</em><em> or </em><em>pandas.DataFrame</em>) – Either a URL of data to load in or an array of data</p></li>
+<li><p><strong>data</strong> (<em>str</em><em> or </em><em>list of dict of {str: Any}</em><em> or </em><em>pandas.DataFrame</em><em>, </em><em>default None</em>) – Either a URL of data to load in or an array of data</p></li>
 <li><p><strong>use_binary_transport</strong> (<em>bool</em><em>, </em><em>default None</em>) – Boolean indicating binary data</p></li>
 <li><p><strong>**kwargs</strong> – Any of the parameters passable to a deck.gl layer.</p></li>
 </ul>

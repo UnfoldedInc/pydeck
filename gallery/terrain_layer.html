@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>TerrainLayer &mdash; pydeck 0.4.0 documentation</title>
+  <title>TerrainLayer &mdash; pydeck 0.5.0 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.4
+                0.5
               </div>
             
           
@@ -105,6 +105,7 @@
 <p class="caption"><span class="caption-text">Jupyter</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../jupyter.html">Jupyter-specific features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../event_handling.html">Event handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../binary_transfer.html">Binary data transfer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Further customization</span></p>
@@ -189,9 +190,10 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>pydeck</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ4lisXd8iTvSwJK2_hVg81vfwhI9S2KE&libraries=places"></script>
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.2.*/dist/index.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.4.0-alpha.2/dist/index.js'></script>
     <style>
     body {
       margin: 0;
@@ -234,15 +236,13 @@
     </div>
   </body>
   <script>
-    const jsonInput = {"initialViewState": {"bearing": 140, "latitude": 46.24, "longitude": -122.18, "pitch": 60, "zoom": 11.5}, "layers": [{"@@type": "TerrainLayer", "elevationData": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png", "elevationDecoder": {"bScaler": 0.00390625, "gScaler": 1, "offset": -32768, "rScaler": 256}, "id": "913a2308-e831-4ced-a2d5-9905929444ce", "texture": "https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}@2x.png?access_token=pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg"}], "mapProvider": "mapbox", "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "MapView", "controller": true}]};
-    const MAPBOX_API_KEY = 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg';
-    const GOOGLE_MAPS_API_KEY = 'AIzaSyAQ4lisXd8iTvSwJK2_hVg81vfwhI9S2KE';
+    const jsonInput = {"initialViewState": {"bearing": 140, "latitude": 46.24, "longitude": -122.18, "pitch": 60, "zoom": 11.5}, "layers": [{"@@type": "TerrainLayer", "elevationData": {"isLocal": false, "path": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png"}, "elevationDecoder": {"bScaler": 0.00390625, "gScaler": 1, "offset": -32768, "rScaler": 256}, "id": "aa680156-1fed-4eef-a216-cdba4bcb2501", "texture": {"isLocal": false, "path": "https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}@2x.png?access_token=pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg"}}], "mapProvider": "carto", "mapStyle": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json", "views": [{"@@type": "MapView", "controller": true}]};
     const tooltip = true;
     const customLibraries = null;
 
-    const deck = createDeck({
-      mapboxApiKey: MAPBOX_API_KEY,
-      googleMapsKey: GOOGLE_MAPS_API_KEY,
+    const deckInstance = createDeck({
+      mapboxApiKey: 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg',
+      googleMapsKey: 'AIzaSyAQ4lisXd8iTvSwJK2_hVg81vfwhI9S2KE',
       container: document.getElementById('deck-container'),
       jsonInput,
       tooltip,
@@ -277,17 +277,15 @@
 <span class="n">MAPBOX_API_KEY</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s2">&quot;MAPBOX_API_KEY&quot;</span><span class="p">]</span>
 
 <span class="c1"># AWS Open Data Terrain Tiles</span>
-<span class="n">TERRAIN_IMAGE</span> <span class="o">=</span> <span class="s1">&#39;&quot;https://s3.amazonaws.com/elevation-tiles-prod/terrarium/</span><span class="si">{z}</span><span class="s1">/</span><span class="si">{x}</span><span class="s1">/</span><span class="si">{y}</span><span class="s1">.png&quot;&#39;</span>
+<span class="n">TERRAIN_IMAGE</span> <span class="o">=</span> <span class="s2">&quot;https://s3.amazonaws.com/elevation-tiles-prod/terrarium/</span><span class="si">{z}</span><span class="s2">/</span><span class="si">{x}</span><span class="s2">/</span><span class="si">{y}</span><span class="s2">.png&quot;</span>
 
 <span class="c1"># Define how to parse elevation tiles</span>
 <span class="n">ELEVATION_DECODER</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;rScaler&quot;</span><span class="p">:</span> <span class="mi">256</span><span class="p">,</span> <span class="s2">&quot;gScaler&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;bScaler&quot;</span><span class="p">:</span> <span class="mi">1</span> <span class="o">/</span> <span class="mi">256</span><span class="p">,</span> <span class="s2">&quot;offset&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">32768</span><span class="p">}</span>
 
-<span class="n">SURFACE_IMAGE</span> <span class="o">=</span> <span class="s1">&#39;&quot;https://api.mapbox.com/v4/mapbox.satellite/{{z}}/{{x}}/{{y}}@2x.png?access_token=</span><span class="si">{}</span><span class="s1">&quot;&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span>
-    <span class="n">MAPBOX_API_KEY</span>
-<span class="p">)</span>
+<span class="n">SURFACE_IMAGE</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;https://api.mapbox.com/v4/mapbox.satellite/</span><span class="se">{{</span><span class="s2">z</span><span class="se">}}</span><span class="s2">/</span><span class="se">{{</span><span class="s2">x</span><span class="se">}}</span><span class="s2">/</span><span class="se">{{</span><span class="s2">y</span><span class="se">}}</span><span class="s2">@2x.png?access_token=</span><span class="si">{</span><span class="n">MAPBOX_API_KEY</span><span class="si">}</span><span class="s2">&quot;</span>
 
 <span class="n">terrain_layer</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
-    <span class="s2">&quot;TerrainLayer&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">elevation_decoder</span><span class="o">=</span><span class="n">ELEVATION_DECODER</span><span class="p">,</span> <span class="n">texture</span><span class="o">=</span><span class="n">SURFACE_IMAGE</span><span class="p">,</span> <span class="n">elevation_data</span><span class="o">=</span><span class="n">TERRAIN_IMAGE</span>
+    <span class="s2">&quot;TerrainLayer&quot;</span><span class="p">,</span> <span class="n">elevation_decoder</span><span class="o">=</span><span class="n">ELEVATION_DECODER</span><span class="p">,</span> <span class="n">texture</span><span class="o">=</span><span class="n">SURFACE_IMAGE</span><span class="p">,</span> <span class="n">elevation_data</span><span class="o">=</span><span class="n">TERRAIN_IMAGE</span>
 <span class="p">)</span>
 
 <span class="n">view_state</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">ViewState</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="mf">46.24</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=-</span><span class="mf">122.18</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mf">11.5</span><span class="p">,</span> <span class="n">bearing</span><span class="o">=</span><span class="mi">140</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>

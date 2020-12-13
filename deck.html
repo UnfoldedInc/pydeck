@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Deck &mdash; pydeck 0.4.0 documentation</title>
+  <title>Deck &mdash; pydeck 0.5.0 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.4
+                0.5
               </div>
             
           
@@ -105,6 +105,7 @@
 <p class="caption"><span class="caption-text">Jupyter</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter-specific features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="event_handling.html">Event handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binary_transfer.html">Binary data transfer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Further customization</span></p>
@@ -184,35 +185,34 @@
 <h1>Deck<a class="headerlink" href="#deck" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="pydeck.bindings.deck.Deck">
-<em class="property">class </em><code class="sig-name descname">Deck</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layers</span><span class="o">=</span><span class="default_value">[]</span></em>, <em class="sig-param"><span class="n">views</span><span class="o">=</span><span class="default_value">[{'&#64;&#64;type': 'MapView', 'controller': true}]</span></em>, <em class="sig-param"><span class="n">map_style</span><span class="o">=</span><span class="default_value">'mapbox://styles/mapbox/dark-v9'</span></em>, <em class="sig-param"><span class="n">mapbox_key</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">google_maps_key</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initial_view_state</span><span class="o">=</span><span class="default_value">{'latitude': 0, 'longitude': 0, 'zoom': 1}</span></em>, <em class="sig-param"><span class="n">width</span><span class="o">=</span><span class="default_value">'100%'</span></em>, <em class="sig-param"><span class="n">height</span><span class="o">=</span><span class="default_value">500</span></em>, <em class="sig-param"><span class="n">tooltip</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">effects</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">map_provider</span><span class="o">=</span><span class="default_value">'mapbox'</span></em>, <em class="sig-param"><span class="n">parameters</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydeck.bindings.deck.Deck" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Deck</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">layers</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">views</span><span class="o">=</span><span class="default_value">[{'&#64;&#64;type': 'MapView', 'controller': true}]</span></em>, <em class="sig-param"><span class="n">map_style</span><span class="o">=</span><span class="default_value">'dark'</span></em>, <em class="sig-param"><span class="n">api_keys</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">initial_view_state</span><span class="o">=</span><span class="default_value">{'latitude': 0, 'longitude': 0, 'zoom': 1}</span></em>, <em class="sig-param"><span class="n">width</span><span class="o">=</span><span class="default_value">'100%'</span></em>, <em class="sig-param"><span class="n">height</span><span class="o">=</span><span class="default_value">500</span></em>, <em class="sig-param"><span class="n">tooltip</span><span class="o">=</span><span class="default_value">True</span></em>, <em class="sig-param"><span class="n">description</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">effects</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">map_provider</span><span class="o">=</span><span class="default_value">'carto'</span></em>, <em class="sig-param"><span class="n">parameters</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pydeck.bindings.deck.Deck" title="Permalink to this definition">¶</a></dt>
 <dd><p>This is the renderer and configuration for a deck.gl visualization, similar to the
 <a class="reference external" href="https://deck.gl/#/documentation/deckgl-api-reference/deck">Deck</a> class from deck.gl.
 Pass <cite>Deck</cite> a Mapbox API token to display a basemap; see the notes below.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>layers</strong> (<em>pydeck.Layer</em><em> or </em><em>list of pydeck.Layer</em><em>, </em><em>default</em><em> [</em><em>]</em>) – List of <a class="reference internal" href="layer.html#pydeck.bindings.layer.Layer" title="pydeck.bindings.layer.Layer"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydeck.bindings.layer.Layer</span></code></a> layers to render.</p></li>
+<li><p><strong>layers</strong> (<em>pydeck.Layer</em><em> or </em><em>list of pydeck.Layer</em><em>, </em><em>default None</em>) – List of <a class="reference internal" href="layer.html#pydeck.bindings.layer.Layer" title="pydeck.bindings.layer.Layer"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydeck.bindings.layer.Layer</span></code></a> layers to render.</p></li>
 <li><p><strong>views</strong> (list of pydeck.View, default <code class="docutils literal notranslate"><span class="pre">[pydeck.View(type=&quot;MapView&quot;,</span> <span class="pre">controller=True)]</span></code>) – List of <a class="reference internal" href="view.html#pydeck.bindings.view.View" title="pydeck.bindings.view.View"><code class="xref py py-class docutils literal notranslate"><span class="pre">pydeck.bindings.view.View</span></code></a> objects to render.</p></li>
-<li><p><strong>map_style</strong> (<em>str</em><em>, </em><em>default 'mapbox://styles/mapbox/dark-v9'</em>) – URI for Mapbox basemap style. See Mapbox’s <a class="reference external" href="https://www.mapbox.com/gallery/">gallery</a> for examples.
-If not using a basemap, you can set this value to to an empty string, <code class="docutils literal notranslate"><span class="pre">''</span></code>.</p></li>
+<li><p><strong>api_keys</strong> (<em>dict</em><em>, </em><em>default None</em>) – Dictionary of geospatial API service providers, where the keys are <code class="docutils literal notranslate"><span class="pre">mapbox</span></code>, <code class="docutils literal notranslate"><span class="pre">google_maps</span></code>, or <code class="docutils literal notranslate"><span class="pre">carto</span></code>
+and the values are the API key. Defaults to None if not set. Any of the environment variables
+<code class="docutils literal notranslate"><span class="pre">MAPBOX_API_KEY</span></code>, <code class="docutils literal notranslate"><span class="pre">GOOGLE_MAPS_API_KEY</span></code>, and <code class="docutils literal notranslate"><span class="pre">CARTO_API_KEY</span></code> can be set instead of hardcoding the key here.</p></li>
+<li><p><strong>map_provider</strong> (<em>str</em><em>, </em><em>default 'carto'</em>) – If multiple API keys are set (e.g., both Mapbox and Google Maps), inform pydeck which basemap provider to prefer.
+Values can be <code class="docutils literal notranslate"><span class="pre">carto</span></code>, <code class="docutils literal notranslate"><span class="pre">mapbox</span></code> or <code class="docutils literal notranslate"><span class="pre">google_maps</span></code></p></li>
+<li><p><strong>map_style</strong> (<em>str</em><em>, </em><em>default 'dark'</em>) – One of ‘light’, ‘dark’, ‘road’, ‘satellite’, ‘dark_no_labels’, and ‘light_no_labels’, or
+URI for basemap style, which varies by provider. The default is Carto’s Dark Matter map.
+For Mapbox examples, see  Mapbox’s <a class="reference external" href="https://www.mapbox.com/gallery/">gallery</a>.
+If not using a basemap, set <code class="docutils literal notranslate"><span class="pre">map_provider=None</span></code>.</p></li>
 <li><p><strong>initial_view_state</strong> (pydeck.ViewState, default <code class="docutils literal notranslate"><span class="pre">pydeck.ViewState(latitude=0,</span> <span class="pre">longitude=0,</span> <span class="pre">zoom=1)</span></code>) – Initial camera angle relative to the map, defaults to a fully zoomed out 0, 0-centered map
 To compute a viewport from data, see <a class="reference internal" href="data_utils.html#pydeck.data_utils.viewport_helpers.compute_view" title="pydeck.data_utils.viewport_helpers.compute_view"><code class="xref py py-func docutils literal notranslate"><span class="pre">pydeck.data_utils.viewport_helpers.compute_view()</span></code></a></p></li>
-<li><p><strong>mapbox_key</strong> (<em>str</em><em>, </em><em>default None</em>) – Read on initialization from the <code class="docutils literal notranslate"><span class="pre">MAPBOX_API_KEY</span></code> environment variable. Defaults to None if not set.
-See your Mapbox
-<a class="reference external" href="https://docs.mapbox.com/help/how-mapbox-works/access-tokens/#mapbox-account-dashboard">dashboard</a>
-to get an API token.
-If not using a basemap, you can set this value to <cite>‘’</cite>.</p></li>
-<li><p><strong>google_maps_key</strong> (<em>str</em><em>, </em><em>default None</em>) – Read on initialization from the <code class="docutils literal notranslate"><span class="pre">PYDECK_GOOGLE_MAPS_API_KEY</span></code> environment variable if not set.
-Defaults to None if the environment variable is also not set.
-Not used on all layers.</p></li>
-<li><p><strong>map_provider</strong> (<em>str</em><em>, </em><em>default 'mapbox'</em>) – If multiple API keys are set (e.g., both Mapbox and Google Maps), inform pydeck which
-basemap provider to prefer. Currently the other alternative value is <code class="docutils literal notranslate"><span class="pre">'google_maps'</span></code>.</p></li>
 <li><p><strong>height</strong> (<em>int</em><em>, </em><em>default 500</em>) – Height of Jupyter notebook cell, in pixels.</p></li>
 <li><p><strong>width</strong> (<em>int`</em><em> or </em><em>string</em><em>, </em><em>default '100%'</em>) – Width of visualization, in pixels (if a number) or as a CSS value string.</p></li>
 <li><p><strong>tooltip</strong> (<em>bool</em><em> or </em><em>dict of {str: str}</em><em>, </em><em>default True</em>) – If <code class="docutils literal notranslate"><span class="pre">True</span></code>/<code class="docutils literal notranslate"><span class="pre">False</span></code>, toggles a default tooltip on visualization hover.
 Layers must have <code class="docutils literal notranslate"><span class="pre">pickable=True</span></code> set in order to display a tooltip.
 For more advanced usage, the user can pass a dict to configure more custom tooltip features.
 Further documentation is <a class="reference external" href="tooltip.html">here</a>.</p></li>
+<li><p><strong>_Deck</strong> (<em>.</em>) – <a class="reference external" href="https://deck.gl/#/documentation/deckgl-api-reference/deck">https://deck.gl/#/documentation/deckgl-api-reference/deck</a></p></li>
+<li><p><strong>_gallery</strong> (<em>.</em>) – <a class="reference external" href="https://www.mapbox.com/gallery/">https://www.mapbox.com/gallery/</a></p></li>
 </ul>
 </dd>
 </dl>

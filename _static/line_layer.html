@@ -3,9 +3,10 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>pydeck</title>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ4lisXd8iTvSwJK2_hVg81vfwhI9S2KE&libraries=places"></script>
+    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.2.*/dist/index.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.4.0-alpha.2/dist/index.js'></script>
     <style>
     body {
       margin: 0;
@@ -48,15 +49,13 @@
     </div>
   </body>
   <script>
-    const jsonInput = {"initialViewState": {"bearing": 0, "latitude": 47.65, "longitude": 7, "maxZoom": 16, "pitch": 50, "zoom": 4.5}, "layers": [{"@@type": "ScatterplotLayer", "data": "https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/line/airports.json", "getFillColor": [255, 140, 0], "getPosition": "@@=coordinates", "getRadius": 60, "id": "b75943c3-02f2-4aa4-a347-0c1230998c0e", "pickable": true, "radiusScale": 20}, {"@@type": "LineLayer", "autoHighlight": true, "data": "https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/line/heathrow-flights.json", "getColor": "@@=[255 * (1 - (start[2] / 10000) * 2), 128 * (start[2] / 10000), 255 * (start[2] / 10000), 255 * (1 - (start[2] / 10000))]", "getSourcePosition": "@@=start", "getTargetPosition": "@@=end", "getWidth": 10, "highlightColor": [255, 255, 0], "id": "26a884e7-d1a8-4180-b955-f223fcd69436", "pickable": true, "pickingRadius": 10}], "mapProvider": "mapbox", "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "MapView", "controller": true}]};
-    const MAPBOX_API_KEY = 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg';
-    const GOOGLE_MAPS_API_KEY = 'AIzaSyAQ4lisXd8iTvSwJK2_hVg81vfwhI9S2KE';
+    const jsonInput = {"initialViewState": {"bearing": 0, "latitude": 47.65, "longitude": 7, "maxZoom": 16, "pitch": 50, "zoom": 4.5}, "layers": [{"@@type": "ScatterplotLayer", "data": "https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/line/airports.json", "getFillColor": [255, 140, 0], "getPosition": "@@=coordinates", "getRadius": 60, "id": "94e274c1-518a-45dc-8d41-91ab38e29213", "pickable": true, "radiusScale": 20}, {"@@type": "LineLayer", "autoHighlight": true, "data": "https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/line/heathrow-flights.json", "getColor": "@@=[255 * (1 - (start[2] / 10000) * 2), 128 * (start[2] / 10000), 255 * (start[2] / 10000), 255 * (1 - (start[2] / 10000))]", "getSourcePosition": "@@=start", "getTargetPosition": "@@=end", "getWidth": 10, "highlightColor": [255, 255, 0], "id": "850e5c1d-2184-43a4-b55b-301d2e6a3bb3", "pickable": true, "pickingRadius": 10}], "mapProvider": "carto", "mapStyle": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json", "views": [{"@@type": "MapView", "controller": true}]};
     const tooltip = true;
     const customLibraries = null;
 
-    const deck = createDeck({
-      mapboxApiKey: MAPBOX_API_KEY,
-      googleMapsKey: GOOGLE_MAPS_API_KEY,
+    const deckInstance = createDeck({
+      mapboxApiKey: 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg',
+      googleMapsKey: 'AIzaSyAQ4lisXd8iTvSwJK2_hVg81vfwhI9S2KE',
       container: document.getElementById('deck-container'),
       jsonInput,
       tooltip,

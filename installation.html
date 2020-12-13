@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installing pydeck &mdash; pydeck 0.4.0 documentation</title>
+  <title>Installing pydeck &mdash; pydeck 0.5.0 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.4
+                0.5
               </div>
             
           
@@ -114,6 +114,7 @@
 <p class="caption"><span class="caption-text">Jupyter</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="jupyter.html">Jupyter-specific features</a></li>
+<li class="toctree-l1"><a class="reference internal" href="event_handling.html">Event handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="binary_transfer.html">Binary data transfer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Further customization</span></p>
@@ -232,7 +233,7 @@ interactively only work if pydeck is enabled for use in a Jupyter environments.<
 jupyter nbextension <span class="nb">enable</span> --sys-prefix --py pydeck
 </pre></div>
 </div>
-<p>To enable pydeck for JupyterLab:</p>
+<p>To enable pydeck for JupyterLab (on Mac/Unix-like systems):</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter labextension install @jupyter-widgets/jupyterlab-manager
 <span class="nv">DECKGL_SEMVER</span><span class="o">=</span><span class="sb">`</span>python -c <span class="s2">&quot;import pydeck; print(pydeck.frontend_semver.DECKGL_SEMVER)&quot;</span><span class="sb">`</span>
 jupyter labextension install @deck.gl/jupyter-widget@<span class="nv">$DECKGL_SEMVER</span>
