@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>HexagonLayer &mdash; pydeck 0.5.0 documentation</title>
+  <title>HexagonLayer &mdash; pydeck 0.4.0 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.5
+                0.4
               </div>
             
           
@@ -105,7 +105,6 @@
 <p class="caption"><span class="caption-text">Jupyter</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../jupyter.html">Jupyter-specific features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../event_handling.html">Event handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../binary_transfer.html">Binary data transfer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Further customization</span></p>
@@ -189,9 +188,10 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>pydeck</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ4lisXd8iTvSwJK2_hVg81vfwhI9S2KE&libraries=places"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.3.*/dist/index.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.2.*/dist/index.js'></script>
     <style>
     body {
       margin: 0;
@@ -234,9 +234,9 @@
     </div>
   </body>
   <script>
-    const jsonInput = {"initialViewState": {"bearing": -27.36, "latitude": 52.2323, "longitude": -1.415, "maxZoom": 15, "minZoom": 5, "pitch": 40.5, "zoom": 6}, "layers": [{"@@type": "HexagonLayer", "autoHighlight": true, "coverage": 1, "data": "https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv", "elevationRange": [0, 3000], "elevationScale": 50, "extruded": true, "getPosition": "@@=[lng, lat]", "id": "c7ef83fc-de33-479a-b0b7-fe81711354c2", "pickable": true}], "mapProvider": "mapbox", "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "MapView", "controller": true}]};
-    const MAPBOX_API_KEY = 'pk.eyJ1IjoiYW5kcmV3ZHViZXJzdGVpbiIsImEiOiJja2VpdW8zcDgwMHo3MnJwYnkzczFrY2d0In0.XGYJn-P2YmKJAlvyaJsYhA';
-    const GOOGLE_MAPS_API_KEY = 'None';
+    const jsonInput = {"initialViewState": {"bearing": -27.36, "latitude": 52.2323, "longitude": -1.415, "maxZoom": 15, "minZoom": 5, "pitch": 40.5, "zoom": 6}, "layers": [{"@@type": "HexagonLayer", "autoHighlight": true, "coverage": 1, "data": "https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv", "elevationRange": [0, 3000], "elevationScale": 50, "extruded": true, "getPosition": "@@=[lng, lat]", "id": "5f49e13a-2004-494b-bf0c-a340e2e8aacc", "pickable": true}], "mapProvider": "mapbox", "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "MapView", "controller": true}]};
+    const MAPBOX_API_KEY = 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg';
+    const GOOGLE_MAPS_API_KEY = 'AIzaSyAQ4lisXd8iTvSwJK2_hVg81vfwhI9S2KE';
     const tooltip = true;
     const customLibraries = null;
 
@@ -295,13 +295,7 @@
 
 <span class="c1"># Set the viewport location</span>
 <span class="n">view_state</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">ViewState</span><span class="p">(</span>
-    <span class="n">longitude</span><span class="o">=-</span><span class="mf">1.415</span><span class="p">,</span>
-    <span class="n">latitude</span><span class="o">=</span><span class="mf">52.2323</span><span class="p">,</span>
-    <span class="n">zoom</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
-    <span class="n">min_zoom</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span>
-    <span class="n">max_zoom</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span>
-    <span class="n">pitch</span><span class="o">=</span><span class="mf">40.5</span><span class="p">,</span>
-    <span class="n">bearing</span><span class="o">=-</span><span class="mf">27.36</span><span class="p">,</span>
+    <span class="n">longitude</span><span class="o">=-</span><span class="mf">1.415</span><span class="p">,</span> <span class="n">latitude</span><span class="o">=</span><span class="mf">52.2323</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span> <span class="n">min_zoom</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">max_zoom</span><span class="o">=</span><span class="mi">15</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="mf">40.5</span><span class="p">,</span> <span class="n">bearing</span><span class="o">=-</span><span class="mf">27.36</span><span class="p">,</span>
 <span class="p">)</span>
 
 <span class="c1"># Render</span>

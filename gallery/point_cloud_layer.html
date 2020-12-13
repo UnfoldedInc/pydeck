@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>PointCloudLayer &mdash; pydeck 0.5.0 documentation</title>
+  <title>PointCloudLayer &mdash; pydeck 0.4.0 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.5
+                0.4
               </div>
             
           
@@ -105,7 +105,6 @@
 <p class="caption"><span class="caption-text">Jupyter</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../jupyter.html">Jupyter-specific features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../event_handling.html">Event handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../binary_transfer.html">Binary data transfer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Further customization</span></p>
@@ -189,9 +188,10 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>pydeck</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ4lisXd8iTvSwJK2_hVg81vfwhI9S2KE&libraries=places"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.3.*/dist/index.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.2.*/dist/index.js'></script>
     <style>
     body {
       margin: 0;
@@ -234,9 +234,9 @@
     </div>
   </body>
   <script>
-    const jsonInput = {"initialViewState": {"controller": true, "rotationOrbit": 30, "rotationX": 15, "target": [0.6562291561182103, -0.42111643013644856, 319.7242551382074], "zoom": 5.3}, "layers": [{"@@type": "PointCloudLayer", "autoHighlight": true, "data": "https://raw.githubusercontent.com/ajduberstein/geo_datasets/master/small_waterfall.csv", "getColor": "@@=[r, g, b]", "getNormal": [0, 0, 15], "getPosition": "@@=[x, y, z]", "id": "413913cc-b021-4e5c-8eb4-ab0b958930f4", "pickable": true, "pointSize": 3}], "mapProvider": "mapbox", "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "OrbitView", "controller": true}]};
-    const MAPBOX_API_KEY = 'pk.eyJ1IjoiYW5kcmV3ZHViZXJzdGVpbiIsImEiOiJja2VpdW8zcDgwMHo3MnJwYnkzczFrY2d0In0.XGYJn-P2YmKJAlvyaJsYhA';
-    const GOOGLE_MAPS_API_KEY = 'None';
+    const jsonInput = {"initialViewState": {"controller": true, "rotationOrbit": 30, "rotationX": 15, "target": [0.6562291561182103, -0.42111643013644856, 319.7242551382074], "zoom": 5.3}, "layers": [{"@@type": "PointCloudLayer", "autoHighlight": true, "data": "https://raw.githubusercontent.com/ajduberstein/geo_datasets/master/small_waterfall.csv", "getColor": "@@=[r, g, b]", "getNormal": [0, 0, 15], "getPosition": "@@=[x, y, z]", "id": "9e9a4d8b-3385-425a-95a5-edd1d55bd1f4", "pickable": true, "pointSize": 3}], "mapProvider": "mapbox", "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "OrbitView", "controller": true}]};
+    const MAPBOX_API_KEY = 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg';
+    const GOOGLE_MAPS_API_KEY = 'AIzaSyAQ4lisXd8iTvSwJK2_hVg81vfwhI9S2KE';
     const tooltip = true;
     const customLibraries = null;
 

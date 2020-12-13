@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CustomLayer &mdash; pydeck 0.5.0 documentation</title>
+  <title>CustomLayer &mdash; pydeck 0.4.0 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.5
+                0.4
               </div>
             
           
@@ -105,7 +105,6 @@
 <p class="caption"><span class="caption-text">Jupyter</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../jupyter.html">Jupyter-specific features</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../event_handling.html">Event handling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../binary_transfer.html">Binary data transfer</a></li>
 </ul>
 <p class="caption"><span class="caption-text">Further customization</span></p>
@@ -189,9 +188,10 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>pydeck</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ4lisXd8iTvSwJK2_hVg81vfwhI9S2KE&libraries=places"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.3.*/dist/index.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.2.*/dist/index.js'></script>
     <style>
     body {
       margin: 0;
@@ -234,9 +234,9 @@
     </div>
   </body>
   <script>
-    const jsonInput = {"initialViewState": {"latitude": 0, "longitude": 0, "zoom": 1}, "layers": [{"@@type": "LabeledGeoJsonLayer", "billboard": false, "data": "https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json", "filled": false, "getLabel": "@@=properties.name", "getLabelColor": [0, 255, 255], "getLabelSize": 200000, "getLineColor": [180, 180, 180], "id": "8cded6d7-f398-4cae-9f0f-9944037a7011", "labelSizeUnits": "meters", "lineWidthMinPixels": 1}], "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "MapView", "controller": true}]};
-    const MAPBOX_API_KEY = 'pk.eyJ1IjoiYW5kcmV3ZHViZXJzdGVpbiIsImEiOiJja2VpdW8zcDgwMHo3MnJwYnkzczFrY2d0In0.XGYJn-P2YmKJAlvyaJsYhA';
-    const GOOGLE_MAPS_API_KEY = 'None';
+    const jsonInput = {"initialViewState": {"latitude": 0, "longitude": 0, "zoom": 1}, "layers": [{"@@type": "LabeledGeoJsonLayer", "billboard": false, "data": "https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json", "filled": false, "getLabel": "@@=properties.name", "getLabelColor": [0, 255, 255], "getLabelSize": 200000, "getLineColor": [180, 180, 180], "id": "07a114d0-b278-4464-99a0-b86fc0c61dd1", "labelSizeUnits": "meters", "lineWidthMinPixels": 1}], "mapStyle": "mapbox://styles/mapbox/dark-v9", "views": [{"@@type": "MapView", "controller": true}]};
+    const MAPBOX_API_KEY = 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg';
+    const GOOGLE_MAPS_API_KEY = 'AIzaSyAQ4lisXd8iTvSwJK2_hVg81vfwhI9S2KE';
     const tooltip = true;
     const customLibraries = [{'libraryName': 'LabeledGeoJsonLayerLibrary', 'resourceUri': 'https://unpkg.com/pydeck-custom-layer-demo/dist/bundle.js'}];
 
