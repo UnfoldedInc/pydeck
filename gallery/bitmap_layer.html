@@ -189,7 +189,6 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>pydeck</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAQ4lisXd8iTvSwJK2_hVg81vfwhI9S2KE&libraries=places"></script>
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
@@ -236,13 +235,13 @@
     </div>
   </body>
   <script>
-    const jsonInput = {"initialViewState": {"bearing": -45, "latitude": 37.7576171, "longitude": -122.5776844, "pitch": 60, "zoom": 10}, "layers": [{"@@type": "BitmapLayer", "bounds": [[-122.52690000000051, 37.70313158980733], [-122.52690000000051, 37.816395657523195], [-122.34604834372873, 37.816134829424335], [-122.34656848822227, 37.70339041384273]], "id": "8f60de57-88f1-4bf8-9f3b-bf69209b0b89", "image": {"isLocal": false, "path": "https://i.imgur.com/W95ked7.jpg"}, "opacity": 0.7}], "mapProvider": "carto", "mapStyle": "satellite", "views": [{"@@type": "MapView", "controller": true}]};
+    const jsonInput = {"initialViewState": {"bearing": -45, "latitude": 37.7576171, "longitude": -122.5776844, "pitch": 60, "zoom": 10}, "layers": [{"@@type": "BitmapLayer", "bounds": [[-122.52690000000051, 37.70313158980733], [-122.52690000000051, 37.816395657523195], [-122.34604834372873, 37.816134829424335], [-122.34656848822227, 37.70339041384273]], "id": "5c0dd841-921a-4256-a72b-b6c403d46d0a", "image": {"isLocal": false, "path": "https://i.imgur.com/W95ked7.jpg"}, "opacity": 0.7}], "mapProvider": "carto", "mapStyle": "satellite", "views": [{"@@type": "MapView", "controller": true}]};
     const tooltip = true;
     const customLibraries = null;
 
     const deckInstance = createDeck({
       mapboxApiKey: 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg',
-      googleMapsKey: 'AIzaSyAQ4lisXd8iTvSwJK2_hVg81vfwhI9S2KE',
+      googleMapsKey: 'None',
       container: document.getElementById('deck-container'),
       jsonInput,
       tooltip,
