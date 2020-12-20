@@ -15,9 +15,11 @@ ContourLayer
 .. raw:: html
 
     <style>
+   .wy-nav-content {
+        max-width: 100% !important;
+    }
     #deck-container {
         height: 50vh;
-        max-width: 650px;
         width: 100%;
     }
     #deck-link {
@@ -88,7 +90,7 @@ Source
         get_position=["lng", "lat"],
         contours=CONTOURS_0,
         cell_size=CELL_SIZE,
-        aggregation='"MEAN"',
+        aggregation=pdk.types.String("MEAN"),
         get_weight="weight",
         pickable=True,
     )
@@ -99,7 +101,7 @@ Source
         get_position=["lng", "lat"],
         contours=CONTOURS_1,
         cell_size=CELL_SIZE,
-        aggregation='"MEAN"',
+        aggregation=pdk.types.String("MEAN"),
         get_weight="weight",
         pickable=True,
     )
@@ -108,6 +110,7 @@ Source
     r = pdk.Deck(
         layers=[cattle, poultry],
         initial_view_state=view,
+        map_provider="mapbox",
         map_style=pdk.map_styles.SATELLITE,
         tooltip={"text": "Concentration of cattle in blue, concentration of poultry in orange"},
     )

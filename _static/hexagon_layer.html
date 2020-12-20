@@ -1,61 +1,60 @@
+<!DOCTYPE html>
 <html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>pydeck</title>
-    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.4.0-alpha.2/dist/index.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.4.0-alpha.4/dist/index.js'></script>
     <style>
     body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
 
-    #deck-map-container {
-      width: 100%;
-      height: 100%;
-      background-color: black;
-    }
+#deck-map-container {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
 
-    #map {
-      pointer-events: none;
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      z-index: 1;
-    }
+#map {
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
 
-    #deckgl-overlay {
-      z-index: 2;
-      background: none;
-    }
+#deckgl-overlay {
+  z-index: 2;
+  background: none;
+}
 
-    #deck-map-wrapper {
-      width: 100%;
-      height: 100%;
-    }
+#deck-map-wrapper {
+  width: 100%;
+  height: 100%;
+}
 
-    #deck-container {
-      width: 100vw;
-      height: 100vh;
-    }
-    </style>
+#deck-container {
+  width: 100vw;
+  height: 100vh;
+}    </style>
   </head>
   <body>
     <div id="deck-container">
     </div>
   </body>
   <script>
-    const jsonInput = {"initialViewState": {"bearing": -27.36, "latitude": 52.2323, "longitude": -1.415, "maxZoom": 15, "minZoom": 5, "pitch": 40.5, "zoom": 6}, "layers": [{"@@type": "HexagonLayer", "autoHighlight": true, "coverage": 1, "data": "https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv", "elevationRange": [0, 3000], "elevationScale": 50, "extruded": true, "getPosition": "@@=[lng, lat]", "id": "194a0608-9b95-46b2-ad41-6c18ff1e7275", "pickable": true}], "mapProvider": "carto", "mapStyle": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json", "views": [{"@@type": "MapView", "controller": true}]};
+    const jsonInput = {"initialViewState": {"bearing": -27.36, "latitude": 52.2323, "longitude": -1.415, "maxZoom": 15, "minZoom": 5, "pitch": 40.5, "zoom": 6}, "layers": [{"@@type": "HexagonLayer", "autoHighlight": true, "coverage": 1, "data": "https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv", "elevationRange": [0, 3000], "elevationScale": 50, "extruded": true, "getPosition": "@@=[lng, lat]", "id": "3ca8baef-fdd9-4fda-a443-09ae11613d0a", "pickable": true}], "mapProvider": "carto", "mapStyle": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json", "views": [{"@@type": "MapView", "controller": true}]};
     const tooltip = true;
     const customLibraries = null;
 
     const deckInstance = createDeck({
-      mapboxApiKey: 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg',
-      googleMapsKey: 'None',
-      container: document.getElementById('deck-container'),
+            mapboxApiKey: 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg',
+                  container: document.getElementById('deck-container'),
       jsonInput,
       tooltip,
       customLibraries

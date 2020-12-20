@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CustomLayer &mdash; pydeck 0.5.0 documentation</title>
+  <title>CustomLayer &mdash; pydeck 0.6.0-b.1 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.5
+                0.6
               </div>
             
           
@@ -185,82 +185,83 @@
 <h1>CustomLayer<a class="headerlink" href="#customlayer" title="Permalink to this headline">¶</a></h1>
 <a id="deck-link" target="_blank" href="https://deck.gl/docs/api-reference/layers/custom-layer">deck.gl docs</a>
 
-<br /><html>
+<br /><!DOCTYPE html>
+<html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>pydeck</title>
-    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.4.0-alpha.2/dist/index.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.4.0-alpha.4/dist/index.js'></script>
     <style>
     body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
 
-    #deck-map-container {
-      width: 100%;
-      height: 100%;
-      background-color: black;
-    }
+#deck-map-container {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
 
-    #map {
-      pointer-events: none;
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      z-index: 1;
-    }
+#map {
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
 
-    #deckgl-overlay {
-      z-index: 2;
-      background: #333;
-    }
+#deckgl-overlay {
+  z-index: 2;
+  background: #333;
+}
 
-    #deck-map-wrapper {
-      width: 100%;
-      height: 100%;
-    }
+#deck-map-wrapper {
+  width: 100%;
+  height: 100%;
+}
 
-    #deck-container {
-      width: 100vw;
-      height: 100vh;
-    }
-    </style>
+#deck-container {
+  width: 100vw;
+  height: 100vh;
+}    </style>
   </head>
   <body>
     <div id="deck-container">
     </div>
   </body>
   <script>
-    const jsonInput = {"initialViewState": {"latitude": 0, "longitude": 0, "zoom": 1}, "layers": [{"@@type": "LabeledGeoJsonLayer", "billboard": false, "data": "https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json", "filled": false, "getLabel": "@@=properties.name", "getLabelColor": [0, 255, 255], "getLabelSize": 200000, "getLineColor": [180, 180, 180], "id": "cc9c3767-52cb-433c-bc5a-61d9a2eb2191", "labelSizeUnits": "meters", "lineWidthMinPixels": 1}], "mapStyle": "dark", "views": [{"@@type": "MapView", "controller": true}]};
+    const jsonInput = {"initialViewState": {"latitude": 0, "longitude": 0, "zoom": 1}, "layers": [{"@@type": "LabeledGeoJsonLayer", "billboard": false, "data": "https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json", "filled": false, "getLabel": "@@=properties.name", "getLabelColor": [0, 255, 255], "getLabelSize": 200000, "getLineColor": [180, 180, 180], "id": "0d680cd6-f17f-43e9-aeec-b37807284b89", "labelSizeUnits": "meters", "lineWidthMinPixels": 1}], "mapStyle": "dark", "views": [{"@@type": "MapView", "controller": true}]};
     const tooltip = true;
     const customLibraries = [{'libraryName': 'LabeledGeoJsonLayerLibrary', 'resourceUri': 'https://unpkg.com/pydeck-custom-layer-demo/dist/bundle.js'}];
 
     const deckInstance = createDeck({
-      mapboxApiKey: 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg',
-      googleMapsKey: 'None',
-      container: document.getElementById('deck-container'),
+            mapboxApiKey: 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg',
+                  container: document.getElementById('deck-container'),
       jsonInput,
       tooltip,
       customLibraries
     });
 
   </script>
-</html><style>
-#deck-container {
-    height: 50vh;
-    max-width: 650px;
-    width: 100%;
-}
-#deck-link {
-    float: right;
-    position: relative;
-    top: -20px;
-}
-</style><div class="section" id="source">
+</html> <style>
+.wy-nav-content {
+     max-width: 100% !important;
+ }
+ #deck-container {
+     height: 50vh;
+     width: 100%;
+ }
+ #deck-link {
+     float: right;
+     position: relative;
+     top: -20px;
+ }
+ </style><div class="section" id="source">
 <h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">CustomLayer</span>
@@ -294,7 +295,7 @@
     <span class="n">get_label</span><span class="o">=</span><span class="s2">&quot;properties.name&quot;</span><span class="p">,</span>
     <span class="n">get_label_size</span><span class="o">=</span><span class="mi">200000</span><span class="p">,</span>
     <span class="n">get_label_color</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span>
-    <span class="n">label_size_units</span><span class="o">=</span><span class="s1">&#39;&quot;meters&quot;&#39;</span><span class="p">,</span>
+    <span class="n">label_size_units</span><span class="o">=</span><span class="n">pydeck</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="s2">&quot;meters&quot;</span><span class="p">),</span>
     <span class="n">line_width_min_pixels</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
 <span class="p">)</span>
 

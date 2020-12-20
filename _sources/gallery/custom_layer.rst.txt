@@ -15,9 +15,11 @@ CustomLayer
 .. raw:: html
 
     <style>
+   .wy-nav-content {
+        max-width: 100% !important;
+    }
     #deck-container {
         height: 50vh;
-        max-width: 650px;
         width: 100%;
     }
     #deck-link {
@@ -64,7 +66,7 @@ Source
         get_label="properties.name",
         get_label_size=200000,
         get_label_color=[0, 255, 255],
-        label_size_units='"meters"',
+        label_size_units=pydeck.types.String("meters"),
         line_width_min_pixels=1,
     )
 

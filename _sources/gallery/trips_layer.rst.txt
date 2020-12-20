@@ -15,9 +15,11 @@ TripsLayer
 .. raw:: html
 
     <style>
+   .wy-nav-content {
+        max-width: 100% !important;
+    }
     #deck-container {
         height: 50vh;
-        max-width: 650px;
         width: 100%;
     }
     #deck-link {
@@ -70,5 +72,5 @@ Source
 
     # Render
     r = pdk.Deck(layers=[layer], initial_view_state=view_state)
-    r.to_html("trips_layer.html", notebook_display=False)
+    r.to_html("trips_layer.html")
 

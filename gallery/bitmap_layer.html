@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>BitmapLayer &mdash; pydeck 0.5.0 documentation</title>
+  <title>BitmapLayer &mdash; pydeck 0.6.0-b.1 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.5
+                0.6
               </div>
             
           
@@ -185,82 +185,83 @@
 <h1>BitmapLayer<a class="headerlink" href="#bitmaplayer" title="Permalink to this headline">¶</a></h1>
 <a id="deck-link" target="_blank" href="https://deck.gl/docs/api-reference/layers/bitmap-layer">deck.gl docs</a>
 
-<br /><html>
+<br /><!DOCTYPE html>
+<html>
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>pydeck</title>
-    <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.0/mapbox-gl.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.4.0-alpha.2/dist/index.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.4.0-alpha.4/dist/index.js'></script>
     <style>
     body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-    }
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
 
-    #deck-map-container {
-      width: 100%;
-      height: 100%;
-      background-color: black;
-    }
+#deck-map-container {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
 
-    #map {
-      pointer-events: none;
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      z-index: 1;
-    }
+#map {
+  pointer-events: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+}
 
-    #deckgl-overlay {
-      z-index: 2;
-      background: none;
-    }
+#deckgl-overlay {
+  z-index: 2;
+  background: none;
+}
 
-    #deck-map-wrapper {
-      width: 100%;
-      height: 100%;
-    }
+#deck-map-wrapper {
+  width: 100%;
+  height: 100%;
+}
 
-    #deck-container {
-      width: 100vw;
-      height: 100vh;
-    }
-    </style>
+#deck-container {
+  width: 100vw;
+  height: 100vh;
+}    </style>
   </head>
   <body>
     <div id="deck-container">
     </div>
   </body>
   <script>
-    const jsonInput = {"initialViewState": {"bearing": -45, "latitude": 37.7576171, "longitude": -122.5776844, "pitch": 60, "zoom": 10}, "layers": [{"@@type": "BitmapLayer", "bounds": [[-122.52690000000051, 37.70313158980733], [-122.52690000000051, 37.816395657523195], [-122.34604834372873, 37.816134829424335], [-122.34656848822227, 37.70339041384273]], "id": "5c0dd841-921a-4256-a72b-b6c403d46d0a", "image": {"isLocal": false, "path": "https://i.imgur.com/W95ked7.jpg"}, "opacity": 0.7}], "mapProvider": "carto", "mapStyle": "satellite", "views": [{"@@type": "MapView", "controller": true}]};
+    const jsonInput = {"initialViewState": {"bearing": -45, "latitude": 37.7576171, "longitude": -122.5776844, "pitch": 60, "zoom": 10}, "layers": [{"@@type": "BitmapLayer", "bounds": [[-122.52690000000051, 37.70313158980733], [-122.52690000000051, 37.816395657523195], [-122.34604834372873, 37.816134829424335], [-122.34656848822227, 37.70339041384273]], "id": "44a11c44-333e-48c4-ae23-d406240ed350", "image": "https://i.imgur.com/W95ked7.jpg", "opacity": 0.7}], "mapProvider": "mapbox", "mapStyle": "mapbox://styles/mapbox/satellite-v9", "views": [{"@@type": "MapView", "controller": true}]};
     const tooltip = true;
     const customLibraries = null;
 
     const deckInstance = createDeck({
-      mapboxApiKey: 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg',
-      googleMapsKey: 'None',
-      container: document.getElementById('deck-container'),
+            mapboxApiKey: 'pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg',
+                  container: document.getElementById('deck-container'),
       jsonInput,
       tooltip,
       customLibraries
     });
 
   </script>
-</html><style>
-#deck-container {
-    height: 50vh;
-    max-width: 650px;
-    width: 100%;
-}
-#deck-link {
-    float: right;
-    position: relative;
-    top: -20px;
-}
-</style><div class="section" id="source">
+</html> <style>
+.wy-nav-content {
+     max-width: 100% !important;
+ }
+ #deck-container {
+     height: 50vh;
+     width: 100%;
+ }
+ #deck-link {
+     float: right;
+     position: relative;
+     top: -20px;
+ }
+ </style><div class="section" id="source">
 <h2>Source<a class="headerlink" href="#source" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">BitmapLayer</span>
@@ -286,9 +287,15 @@
 
 <span class="n">bitmap_layer</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span><span class="s2">&quot;BitmapLayer&quot;</span><span class="p">,</span> <span class="n">image</span><span class="o">=</span><span class="n">IMG_URL</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">BOUNDS</span><span class="p">,</span> <span class="n">opacity</span><span class="o">=</span><span class="mf">0.7</span><span class="p">)</span>
 
-<span class="n">view_state</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">ViewState</span><span class="p">(</span><span class="n">latitude</span><span class="o">=</span><span class="mf">37.7576171</span><span class="p">,</span> <span class="n">longitude</span><span class="o">=-</span><span class="mf">122.5776844</span><span class="p">,</span> <span class="n">zoom</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">bearing</span><span class="o">=-</span><span class="mi">45</span><span class="p">,</span> <span class="n">pitch</span><span class="o">=</span><span class="mi">60</span><span class="p">,)</span>
+<span class="n">view_state</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">ViewState</span><span class="p">(</span>
+    <span class="n">latitude</span><span class="o">=</span><span class="mf">37.7576171</span><span class="p">,</span>
+    <span class="n">longitude</span><span class="o">=-</span><span class="mf">122.5776844</span><span class="p">,</span>
+    <span class="n">zoom</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
+    <span class="n">bearing</span><span class="o">=-</span><span class="mi">45</span><span class="p">,</span>
+    <span class="n">pitch</span><span class="o">=</span><span class="mi">60</span><span class="p">,</span>
+<span class="p">)</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">Deck</span><span class="p">(</span><span class="n">bitmap_layer</span><span class="p">,</span> <span class="n">initial_view_state</span><span class="o">=</span><span class="n">view_state</span><span class="p">,</span> <span class="n">map_style</span><span class="o">=</span><span class="n">pdk</span><span class="o">.</span><span class="n">map_styles</span><span class="o">.</span><span class="n">SATELLITE</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">pdk</span><span class="o">.</span><span class="n">Deck</span><span class="p">(</span><span class="n">bitmap_layer</span><span class="p">,</span> <span class="n">initial_view_state</span><span class="o">=</span><span class="n">view_state</span><span class="p">,</span> <span class="n">map_provider</span><span class="o">=</span><span class="s2">&quot;mapbox&quot;</span><span class="p">,</span> <span class="n">map_style</span><span class="o">=</span><span class="n">pdk</span><span class="o">.</span><span class="n">map_styles</span><span class="o">.</span><span class="n">SATELLITE</span><span class="p">)</span>
 
 <span class="n">r</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="s2">&quot;bitmap_layer.html&quot;</span><span class="p">)</span>
 </pre></div>

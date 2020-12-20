@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Layer Overview and Examples &mdash; pydeck 0.5.0 documentation</title>
+  <title>Layer Overview and Examples &mdash; pydeck 0.6.0-b.1 documentation</title>
   
 
   
@@ -63,7 +63,7 @@
             
             
               <div class="version">
-                0.5
+                0.6
               </div>
             
           
@@ -374,19 +374,22 @@ variables in your data, so you can pass them from Python for use in deck.gl:</p>
 </div>
 <div class="section" id="passing-string-constants">
 <h2>Passing string constants<a class="headerlink" href="#passing-string-constants" title="Permalink to this headline">¶</a></h2>
-<p>Strings most often in pydeck indicate a data set or deck.gl variable name but
-occasionally indicate a constant. In order to indiciate to the library that you’re passing a string constant,
-you must quote the string. For example, below
-we plot the mean of billions of dollars of profit per employee by passing <code class="docutils literal notranslate"><span class="pre">'&quot;MEAN&quot;'</span></code> to <code class="docutils literal notranslate"><span class="pre">aggregation</span></code>,
+<p>Strings most often in pydeck indicate a data set variable name, like <code class="docutils literal notranslate"><span class="pre">lng</span></code> or <code class="docutils literal notranslate"><span class="pre">lat</span></code> in the previous examples.
+Some pydeck arguments require a string constant, however.
+In order to indiciate to the library that you’re passing a string constant, you must wrap your strings in the <code class="docutils literal notranslate"><span class="pre">pydeck.String</span></code> constructor.
+For example, below
+we plot the mean of billions of dollars of profit per employee by passing <code class="docutils literal notranslate"><span class="pre">'MEAN'</span></code> to <code class="docutils literal notranslate"><span class="pre">aggregation</span></code>,
 giving us the average for that statistic within an area:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">DATA_SOURCE</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/ajduberstein/geo_datasets/master/fortune_500.csv&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pydeck.types</span> <span class="kn">import</span> <span class="n">String</span>
+
+<span class="n">DATA_SOURCE</span> <span class="o">=</span> <span class="s1">&#39;https://raw.githubusercontent.com/ajduberstein/geo_datasets/master/fortune_500.csv&#39;</span>
 
 <span class="n">layer</span> <span class="o">=</span> <span class="n">pydeck</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span>
     <span class="s2">&quot;HeatmapLayer&quot;</span><span class="p">,</span>
     <span class="n">DATA_SOURCE</span><span class="p">,</span>
     <span class="n">opacity</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span>
     <span class="n">get_position</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;longitude&quot;</span><span class="p">,</span> <span class="s2">&quot;latitude&quot;</span><span class="p">],</span>
-    <span class="n">aggregation</span><span class="o">=</span><span class="s1">&#39;&quot;MEAN&quot;&#39;</span><span class="p">,</span>
+    <span class="n">aggregation</span><span class="o">=</span><span class="n">String</span><span class="p">(</span><span class="s1">&#39;MEAN&#39;</span><span class="p">),</span>
     <span class="n">get_weight</span><span class="o">=</span><span class="s2">&quot;profit / employees &gt; 0 ? profit / employees : 0&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
