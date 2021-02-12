@@ -6,7 +6,7 @@
         <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.4.0-alpha.4/dist/index.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.4.*/dist/index.js'></script>
     <style>
     body {
   margin: 0;
@@ -41,14 +41,15 @@
 #deck-container {
   width: 100vw;
   height: 100vh;
-}    </style>
+}
+    </style>
   </head>
   <body>
     <div id="deck-container">
     </div>
   </body>
   <script>
-    const jsonInput = {"initialViewState": {"bearing": -27.36, "latitude": 52.2323, "longitude": -1.415, "maxZoom": 15, "minZoom": 5, "pitch": 40.5, "zoom": 6}, "layers": [{"@@type": "HexagonLayer", "autoHighlight": true, "coverage": 1, "data": "https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv", "elevationRange": [0, 3000], "elevationScale": 50, "extruded": true, "getPosition": "@@=[lng, lat]", "id": "3ca8baef-fdd9-4fda-a443-09ae11613d0a", "pickable": true}], "mapProvider": "carto", "mapStyle": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json", "views": [{"@@type": "MapView", "controller": true}]};
+    const jsonInput = {"initialViewState": {"bearing": -27.36, "latitude": 52.2323, "longitude": -1.415, "maxZoom": 15, "minZoom": 5, "pitch": 40.5, "zoom": 6}, "layers": [{"@@type": "HexagonLayer", "autoHighlight": true, "coverage": 1, "data": "https://raw.githubusercontent.com/visgl/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv", "elevationRange": [0, 3000], "elevationScale": 50, "extruded": true, "getPosition": "@@=[lng, lat]", "id": "6918a4b8-aa97-49b0-97c9-66925a9c2564", "pickable": true}], "mapProvider": "carto", "mapStyle": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json", "views": [{"@@type": "MapView", "controller": true}]};
     const tooltip = true;
     const customLibraries = null;
 

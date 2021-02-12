@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CustomLayer &mdash; pydeck 0.6.0-b.1 documentation</title>
+  <title>CustomLayer &mdash; pydeck 0.6.1 documentation</title>
   
 
   
@@ -193,7 +193,7 @@
         <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.4.0-alpha.4/dist/index.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.4.*/dist/index.js'></script>
     <style>
     body {
   margin: 0;
@@ -228,14 +228,15 @@
 #deck-container {
   width: 100vw;
   height: 100vh;
-}    </style>
+}
+    </style>
   </head>
   <body>
     <div id="deck-container">
     </div>
   </body>
   <script>
-    const jsonInput = {"initialViewState": {"latitude": 0, "longitude": 0, "zoom": 1}, "layers": [{"@@type": "LabeledGeoJsonLayer", "billboard": false, "data": "https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json", "filled": false, "getLabel": "@@=properties.name", "getLabelColor": [0, 255, 255], "getLabelSize": 200000, "getLineColor": [180, 180, 180], "id": "0d680cd6-f17f-43e9-aeec-b37807284b89", "labelSizeUnits": "meters", "lineWidthMinPixels": 1}], "mapStyle": "dark", "views": [{"@@type": "MapView", "controller": true}]};
+    const jsonInput = {"initialViewState": {"latitude": 0, "longitude": 0, "zoom": 1}, "layers": [{"@@type": "LabeledGeoJsonLayer", "billboard": false, "data": "https://raw.githubusercontent.com/johan/world.geo.json/master/countries.geo.json", "filled": false, "getLabel": "@@=properties.name", "getLabelColor": [0, 255, 255], "getLabelSize": 200000, "getLineColor": [180, 180, 180], "id": "d268067a-afb3-4bb2-8c1f-a717945b0ef1", "labelSizeUnits": "meters", "lineWidthMinPixels": 1}], "mapStyle": "dark", "views": [{"@@type": "MapView", "controller": true}]};
     const tooltip = true;
     const customLibraries = [{'libraryName': 'LabeledGeoJsonLayerLibrary', 'resourceUri': 'https://unpkg.com/pydeck-custom-layer-demo/dist/bundle.js'}];
 
@@ -330,7 +331,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, vis.gl, a Series of LF Projects, LLC
+        &copy; Copyright 2021, vis.gl, a Series of LF Projects, LLC
 
     </p>
   </div>

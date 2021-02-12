@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Installing pydeck &mdash; pydeck 0.6.0-b.1 documentation</title>
+  <title>Installing pydeck &mdash; pydeck 0.6.1 documentation</title>
   
 
   
@@ -196,8 +196,8 @@
 <blockquote>
 <div><ol class="arabic simple">
 <li><p>Install the library via pip or conda</p></li>
-<li><p>Get a Mapbox API token</p></li>
 <li><p>Enable pydeck for JupyterLab or Jupyter Notebook</p></li>
+<li><p>Include an API key from Google Maps or Mapbox (Optional)</p></li>
 </ol>
 </div></blockquote>
 <div class="section" id="via-pip">
@@ -215,13 +215,13 @@
 </div>
 <div class="section" id="getting-a-mapbox-api-key">
 <h2>Getting a Mapbox API key<a class="headerlink" href="#getting-a-mapbox-api-key" title="Permalink to this headline">¶</a></h2>
-<p>To add basemap tiles, you must get a Mapbox API key, which you can do by
+<p>By default, pydeck 0.6 provides basemap tiles through Carto.</p>
+<p>You can optionally use a Mapbox API key, by
 registering for Mapbox via <a class="reference external" href="https://account.mapbox.com/auth/signup/">this link</a>.
-You should then create a <a class="reference external" href="https://account.mapbox.com/access-tokens/">new public API token</a>.</p>
-<p>Mapbox tiles are free for a rather high level of usage. You can learn more about
-Mapbox tokens via their <a class="reference external" href="https://docs.mapbox.com/help/how-mapbox-works/access-tokens/#how-access-tokens-work">documentation</a>.</p>
-<p>If you set a <code class="docutils literal notranslate"><span class="pre">MAPBOX_API_KEY</span></code> environment variable, pydeck will detect it. This way, you do not
-need to specify the Mapbox token in your source code.</p>
+You should then create a <a class="reference external" href="https://account.mapbox.com/access-tokens/">new public API token</a>.
+You can learn more about Mapbox tokens via their <a class="reference external" href="https://docs.mapbox.com/help/how-mapbox-works/access-tokens/#how-access-tokens-work">documentation</a>.</p>
+<p>You can also use a Google Maps API key in a similar way. Currently Google Maps is not supported for 3D visualizations.</p>
+<p>If you set a <code class="docutils literal notranslate"><span class="pre">MAPBOX_API_KEY</span></code> or <code class="docutils literal notranslate"><span class="pre">GOOGLE_MAPS_API_KEY</span></code> environment variables, pydeck will detect them.</p>
 </div>
 <div class="section" id="enabling-pydeck-for-jupyter">
 <h2>Enabling pydeck for Jupyter<a class="headerlink" href="#enabling-pydeck-for-jupyter" title="Permalink to this headline">¶</a></h2>
@@ -239,7 +239,7 @@ jupyter nbextension <span class="nb">enable</span> --sys-prefix --py pydeck
 jupyter labextension install @deck.gl/jupyter-widget@<span class="nv">$DECKGL_SEMVER</span>
 </pre></div>
 </div>
-<p>Currently while you can install pydeck in Google Colab via pip, it is not enabled for server use there.</p>
+<p>pydeck also works in Google Colab. While you can install pydeck in Google Colab via pip, it is not yet enabled for server use.</p>
 </div>
 <div class="section" id="installing-from-source">
 <h2>Installing from source<a class="headerlink" href="#installing-from-source" title="Permalink to this headline">¶</a></h2>
@@ -296,7 +296,7 @@ jupyter labextension install @deck.gl/jupyter-widget@<span class="nv">$DECKGL_SE
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, vis.gl, a Series of LF Projects, LLC
+        &copy; Copyright 2021, vis.gl, a Series of LF Projects, LLC
 
     </p>
   </div>

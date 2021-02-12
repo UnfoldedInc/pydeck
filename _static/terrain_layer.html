@@ -6,7 +6,7 @@
         <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.4.0-alpha.4/dist/index.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.4.*/dist/index.js'></script>
     <style>
     body {
   margin: 0;
@@ -41,14 +41,15 @@
 #deck-container {
   width: 100vw;
   height: 100vh;
-}    </style>
+}
+    </style>
   </head>
   <body>
     <div id="deck-container">
     </div>
   </body>
   <script>
-    const jsonInput = {"initialViewState": {"bearing": 140, "latitude": 46.24, "longitude": -122.18, "pitch": 60, "zoom": 11.5}, "layers": [{"@@type": "TerrainLayer", "elevationData": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png", "elevationDecoder": {"bScaler": 0.00390625, "gScaler": 1, "offset": -32768, "rScaler": 256}, "id": "e358c975-293d-42d6-a76a-06dfc0bdd922", "texture": "https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}@2x.png?access_token=pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg"}], "mapProvider": "carto", "mapStyle": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json", "views": [{"@@type": "MapView", "controller": true}]};
+    const jsonInput = {"initialViewState": {"bearing": 140, "latitude": 46.24, "longitude": -122.18, "pitch": 60, "zoom": 11.5}, "layers": [{"@@type": "TerrainLayer", "elevationData": "https://s3.amazonaws.com/elevation-tiles-prod/terrarium/{z}/{x}/{y}.png", "elevationDecoder": {"bScaler": 0.00390625, "gScaler": 1, "offset": -32768, "rScaler": 256}, "id": "0325af68-f8b1-45f0-a55e-8f0b6fdacc1a", "texture": "https://api.mapbox.com/v4/mapbox.satellite/{z}/{x}/{y}@2x.png?access_token=pk.eyJ1IjoidWJlcmRhdGEiLCJhIjoidGllX1gxUSJ9.gElUooDF7u51guCQREmAhg"}], "mapProvider": "carto", "mapStyle": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json", "views": [{"@@type": "MapView", "controller": true}]};
     const tooltip = true;
     const customLibraries = null;
 

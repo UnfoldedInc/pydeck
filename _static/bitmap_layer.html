@@ -6,7 +6,7 @@
         <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
-    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@8.4.0-alpha.4/dist/index.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~8.4.*/dist/index.js'></script>
     <style>
     body {
   margin: 0;
@@ -41,14 +41,15 @@
 #deck-container {
   width: 100vw;
   height: 100vh;
-}    </style>
+}
+    </style>
   </head>
   <body>
     <div id="deck-container">
     </div>
   </body>
   <script>
-    const jsonInput = {"initialViewState": {"bearing": -45, "latitude": 37.7576171, "longitude": -122.5776844, "pitch": 60, "zoom": 10}, "layers": [{"@@type": "BitmapLayer", "bounds": [[-122.52690000000051, 37.70313158980733], [-122.52690000000051, 37.816395657523195], [-122.34604834372873, 37.816134829424335], [-122.34656848822227, 37.70339041384273]], "id": "44a11c44-333e-48c4-ae23-d406240ed350", "image": "https://i.imgur.com/W95ked7.jpg", "opacity": 0.7}], "mapProvider": "mapbox", "mapStyle": "mapbox://styles/mapbox/satellite-v9", "views": [{"@@type": "MapView", "controller": true}]};
+    const jsonInput = {"initialViewState": {"bearing": -45, "latitude": 37.7576171, "longitude": -122.5776844, "pitch": 60, "zoom": 10}, "layers": [{"@@type": "BitmapLayer", "bounds": [[-122.52690000000051, 37.70313158980733], [-122.52690000000051, 37.816395657523195], [-122.34604834372873, 37.816134829424335], [-122.34656848822227, 37.70339041384273]], "id": "62bd126b-a0ea-4d64-b071-9769245013a8", "image": "https://i.imgur.com/W95ked7.jpg", "opacity": 0.7}], "mapProvider": "mapbox", "mapStyle": "mapbox://styles/mapbox/satellite-v9", "views": [{"@@type": "MapView", "controller": true}]};
     const tooltip = true;
     const customLibraries = null;
 

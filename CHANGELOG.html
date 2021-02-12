@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>CHANGELOG &mdash; pydeck 0.6.0-b.1 documentation</title>
+  <title>CHANGELOG &mdash; pydeck 0.6.1 documentation</title>
   
 
   
@@ -115,19 +115,22 @@
 <p class="caption"><span class="caption-text">Development</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">CHANGELOG</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#releases">0.5 Releases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#releases">0.6 Releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#feb-12-2021">0.6.1 - Feb 12 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#feb-7-2021">0.6.0 - Feb 7 2021</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">0.5 Releases</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#oct-23-2020">0.5.0 - Oct 23 2020</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#b1-aug-23-2020">0.5.0b1 - Aug 23 2020</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">0.4 Releases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">0.4 Releases</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#aug-3-2020">0.4.1 - Aug 3 2020</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#jul-23-2020">0.4.0 - Jul 23 2020</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#b2-jun-8-2020">0.4.0b2 - Jun 8 2020</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#b1-jun-4-2020">0.4.0b1 - Jun 4 2020</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">0.3 Releases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id3">0.3 Releases</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#apr-20-2020">0.3.1 - Apr 20 2020</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#apr-9-2020">0.3.0 - Apr 9 2020</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#b4-apr-1-2020">0.3.0b4 - Apr 1 2020</a></li>
@@ -136,12 +139,12 @@
 <li class="toctree-l3"><a class="reference internal" href="#b1-feb-26-2020">0.3.0b1 - Feb 26 2020</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">0.2 Releases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id4">0.2 Releases</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#jan-28-2020">0.2.1 - Jan 28 2020</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#jan-4-2020">0.2.0 - Jan 4 2020</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">0.1 Releases</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id5">0.1 Releases</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#dev5-sep-26-2019">0.1.dev5 - Sep 26 2019</a></li>
 </ul>
 </li>
@@ -216,7 +219,25 @@
 <h1>CHANGELOG<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
 <p>Releases and associated GitHub PRs for pydeck are documented here.</p>
 <div class="section" id="releases">
-<h2>0.5 Releases<a class="headerlink" href="#releases" title="Permalink to this headline">¶</a></h2>
+<h2>0.6 Releases<a class="headerlink" href="#releases" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="feb-12-2021">
+<h2>0.6.1 - Feb 12 2021<a class="headerlink" href="#feb-12-2021" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Fix API keys bug where pydeck fails to use API keys passed
+as parameters to a Deck object (#5475)</p></li>
+</ul>
+</div>
+<div class="section" id="feb-7-2021">
+<h2>0.6.0 - Feb 7 2021<a class="headerlink" href="#feb-7-2021" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Lock to &#64;deck.gl/<a class="reference external" href="mailto:jupyter-widget&#37;&#52;&#48;~8&#46;4&#46;*">jupyter-widget<span>&#64;</span>~8<span>&#46;</span>4<span>&#46;</span>*</a></p></li>
+<li><p>Improve support for multiple map providders; make Carto default base map provider (#5131)</p></li>
+<li><p>Improve local image file loading experience for BitmapLayer and TileLayer (#5269)</p></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2>0.5 Releases<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="oct-23-2020">
 <h3>0.5.0 - Oct 23 2020<a class="headerlink" href="#oct-23-2020" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -230,8 +251,8 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>0.4 Releases<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h2>0.4 Releases<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="aug-3-2020">
 <h3>0.4.1 - Aug 3 2020<a class="headerlink" href="#aug-3-2020" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -263,8 +284,8 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id2">
-<h2>0.3 Releases<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h2>0.3 Releases<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="apr-20-2020">
 <h3>0.3.1 - Apr 20 2020<a class="headerlink" href="#apr-20-2020" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -305,8 +326,8 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id3">
-<h2>0.2 Releases<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id4">
+<h2>0.2 Releases<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="jan-28-2020">
 <h3>0.2.1 - Jan 28 2020<a class="headerlink" href="#jan-28-2020" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -330,8 +351,8 @@
 </ul>
 </div>
 </div>
-<div class="section" id="id4">
-<h2>0.1 Releases<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h2>0.1 Releases<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="dev5-sep-26-2019">
 <h3>0.1.dev5 - Sep 26 2019<a class="headerlink" href="#dev5-sep-26-2019" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
@@ -368,7 +389,7 @@
   <div role="contentinfo">
     <p>
         
-        &copy; Copyright 2020, vis.gl, a Series of LF Projects, LLC
+        &copy; Copyright 2021, vis.gl, a Series of LF Projects, LLC
 
     </p>
   </div>
